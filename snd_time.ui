@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1673</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot_2">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: 0.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_8&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS:SND:DIO:AMPL_8&quot;, &quot;color&quot;: &quot;#00aaff&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_9&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS:SND:DIO:AMPL_9&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+      </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::AtFixedRate</enum>
+     </property>
+     <property name="timeSpan">
+      <double>120.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;XCS-SB1-BMMON:SUM&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;XCS-SB1-BMMON:SUM&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SB1:BMMON:SUM&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS-SB1-BMMON&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;XCS-SB1-BMMON:SUM&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+      </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::AtFixedRate</enum>
+     </property>
+     <property name="timeSpan">
+      <double>120.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot_3">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SB2:BMMON:SUM&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS-SB2-BMMON:SUM&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+      </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::AtFixedRate</enum>
+     </property>
+     <property name="timeSpan">
+      <double>120.000000000000000</double>
+     </property>
+     <property name="updateInterval">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot_4">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_11&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS:SND:DIO:AMPL_11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_12&quot;, &quot;plot_style&quot;: null, &quot;name&quot;: &quot;XCS:SND:DIO:AMPL_12&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_15&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;XCS:SND:DIO:AMPL_15&quot;, &quot;color&quot;: &quot;#55aaff&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+      </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::AtFixedRate</enum>
+     </property>
+     <property name="timeSpan">
+      <double>120.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMTimePlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.timeplot</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
