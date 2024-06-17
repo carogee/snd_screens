@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>350</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="PyDMLabel" name="PyDMLabel">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: AlignCenter;
+    border: 1px solid #FF17365D;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FF17365D;
+    padding: 5px 0px;
+    color: rgb(255, 255, 255);
+    max-height: 25px;
+    font-size: 14px;
+}</string>
+       </property>
+       <property name="text">
+        <string>${CAM}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMImageView" name="PyDMImageView">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="imageChannel" stdset="0">
+        <string>ca://${CAM}:image1:ArrayData</string>
+       </property>
+       <property name="widthChannel" stdset="0">
+        <string>ca://${CAM}:image1:ArraySize1_RBV</string>
+       </property>
+       <property name="maxRedrawRate" stdset="0">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>62</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame#frame{
+    border: 1px solid #FF17365D;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_mot1">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="macros" stdset="0">
+           <string>{&quot;MOTOR&quot;: &quot;${MOT1}&quot;}</string>
+          </property>
+          <property name="filename" stdset="0">
+           <string>./widgets/motor_tweak.ui</string>
+          </property>
+          <property name="loadWhenShown" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="disconnectWhenHidden" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_mot2">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="macros" stdset="0">
+           <string>{&quot;MOTOR&quot;: &quot;${MOT2}&quot;}</string>
+          </property>
+          <property name="filename" stdset="0">
+           <string>./widgets/motor_tweak.ui</string>
+          </property>
+          <property name="loadWhenShown" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="disconnectWhenHidden" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEmbeddedDisplay</class>
+   <extends>QFrame</extends>
+   <header>pydm.widgets.embedded_display</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMImageView</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.image</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

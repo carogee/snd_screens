@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1673</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="title" stdset="0">
+      <string extracomment="SND DIO"/>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_8&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SB1:BMMON:SUM&quot;, &quot;name&quot;: &quot;Ch8&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_2">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_9&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:DIO:AMPL_8&quot;, &quot;name&quot;: &quot;Ch9&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMScatterPlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.scatterplot</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

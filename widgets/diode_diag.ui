@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>877</width>
+    <height>1122</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{&quot;IPM&quot;: &quot;${IPM}&quot;}</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>./timeplot_ipm.ui</string>
+       </property>
+       <property name="loadWhenShown" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="disconnectWhenHidden" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_3">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="macros" stdset="0">
+          <string>{&quot;EBUILDPV&quot;: &quot;${EBUILDPV}&quot;, &quot;XIDX&quot;: &quot;${XIDX}&quot;, &quot;YIDX&quot;: &quot;${YIDX1}&quot;, &quot;TITLE&quot;: &quot;${TITLE} ch0&quot;}</string>
+         </property>
+         <property name="filename" stdset="0">
+          <string>./event_builder_embedded.ui</string>
+         </property>
+         <property name="loadWhenShown" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="disconnectWhenHidden" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_2">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="macros" stdset="0">
+          <string>{&quot;EBUILDPV&quot;: &quot;${EBUILDPV}&quot;, &quot;XIDX&quot;: &quot;${XIDX}&quot;, &quot;YIDX&quot;: &quot;${YIDX0}&quot;, &quot;TITLE&quot;: &quot;${TITLE} ch1&quot;}</string>
+         </property>
+         <property name="filename" stdset="0">
+          <string>./event_builder_embedded.ui</string>
+         </property>
+         <property name="loadWhenShown" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="disconnectWhenHidden" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_5">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="macros" stdset="0">
+          <string>{&quot;EBUILDPV&quot;: &quot;${EBUILDPV}&quot;, &quot;XIDX&quot;: &quot;${XIDX}&quot;, &quot;YIDX&quot;: &quot;${YIDX3}&quot;, &quot;TITLE&quot;: &quot;${TITLE} ch2&quot;}</string>
+         </property>
+         <property name="filename" stdset="0">
+          <string>./event_builder_embedded.ui</string>
+         </property>
+         <property name="loadWhenShown" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="disconnectWhenHidden" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_4">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="macros" stdset="0">
+          <string>{&quot;EBUILDPV&quot;: &quot;${EBUILDPV}&quot;, &quot;XIDX&quot;: &quot;${XIDX}&quot;, &quot;YIDX&quot;: &quot;${YIDX2}&quot;, &quot;TITLE&quot;: &quot;${TITLE} ch3&quot;}</string>
+         </property>
+         <property name="filename" stdset="0">
+          <string>./event_builder_embedded.ui</string>
+         </property>
+         <property name="loadWhenShown" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="disconnectWhenHidden" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMEmbeddedDisplay</class>
+   <extends>QFrame</extends>
+   <header>pydm.widgets.embedded_display</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

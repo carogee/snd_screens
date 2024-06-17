@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>353</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="title_label">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    qproperty-alignment: AlignCenter;
+    border: 1px solid #FF17365D;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FF17365D;
+    padding: 5px 0px;
+    color: rgb(255, 255, 255);
+    max-height: 25px;
+    font-size: 14px;
+}</string>
+       </property>
+       <property name="text">
+        <string>${TITLE}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMEventPlot" name="event_plot">
+       <property name="minimumSize">
+        <size>
+         <width>400</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="yAxes">
+        <stringlist>
+         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        </stringlist>
+       </property>
+       <property name="curves">
+        <stringlist>
+         <string>{&quot;channel&quot;: &quot;ca://${EBUILDPV}.VALA&quot;, &quot;y_idx&quot;: &quot;${YIDX}&quot;, &quot;x_idx&quot;: &quot;${XIDX}&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 5, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMEventPlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.eventplot</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

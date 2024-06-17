@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>200</width>
+    <height>68</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>200</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>200</width>
+    <height>80</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="PyDMPushButton" name="PyDMPushButton">
+         <property name="maximumSize">
+          <size>
+           <width>65</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>On</string>
+         </property>
+         <property name="rules" stdset="0">
+          <string>[{&quot;name&quot;: &quot;disable&quot;, &quot;property&quot;: &quot;Enable&quot;, &quot;initial_value&quot;: &quot;&quot;, &quot;expression&quot;: &quot;ch[0]=='Off'&quot;, &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://${MPOD}:SetSwitch&quot;, &quot;trigger&quot;: true, &quot;use_enum&quot;: true}]}]</string>
+         </property>
+         <property name="alarmSensitiveContent" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="alarmSensitiveBorder" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${MPOD}:SetSwitch</string>
+         </property>
+         <property name="passwordProtected" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="password" stdset="0">
+          <string/>
+         </property>
+         <property name="protectedPassword" stdset="0">
+          <string/>
+         </property>
+         <property name="showConfirmDialog" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="confirmMessage" stdset="0">
+          <string>Are you sure you want to proceed?</string>
+         </property>
+         <property name="pressValue" stdset="0">
+          <string>1</string>
+         </property>
+         <property name="releaseValue" stdset="0">
+          <string>None</string>
+         </property>
+         <property name="relativeChange" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="writeWhenRelease" stdset="0">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PyDMPushButton" name="PyDMPushButton_2">
+         <property name="maximumSize">
+          <size>
+           <width>65</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>Off</string>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${MPOD}:SetSwitch</string>
+         </property>
+         <property name="pressValue" stdset="0">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="PyDMLabel" name="PyDMLabel">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="precision" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="showUnits" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="precisionFromPV" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="alarmSensitiveContent" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="alarmSensitiveBorder" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://${MPOD}:GetVoltageMeasurement</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
