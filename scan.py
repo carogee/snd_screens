@@ -17,8 +17,18 @@ from ophyd import Device
 from ophyd.sim import det, motor #simulation motors/detectors                             
 
 
-#Write a practice scan with the simulated motor                                                       
+#callback to show live plots/tables                                                                     
+from bluesky.callbacks.best_effort import BestEffortCallback
+bec = BestEffortCallback()
+RE = RunEngine({})
+RE.subscribe(bec)
 
+from bluesky.utils import install_kicker
 
+#practice scan with simulated motor                                                                     
+
+dets = [det]
+#RE(scan([det], motor, 1,5,5))                                                                          
+RE(count([det], num=5))
 
 print("Done")
