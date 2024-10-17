@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>328</width>
+    <height>304</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+       </property>
+       <property name="text">
+        <string>Configuring Motor Angle: T2:TH</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(194, 197, 211);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="labelAlignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="formAlignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+          <property name="horizontalSpacing">
+           <number>10</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>6</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Start</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="PyDMLineEdit" name="PyDMLineEdit">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="precision" stdset="0">
+             <number>0</number>
+            </property>
+            <property name="showUnits" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="alarmSensitiveContent" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="PyDMToolTip" stdset="0">
+             <string/>
+            </property>
+            <property name="monitorDisp" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string/>
+            </property>
+            <property name="displayFormat" stdset="0">
+             <enum>PyDMLineEdit::String</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(36, 36, 36);</string>
+            </property>
+            <property name="precision" stdset="0">
+             <number>7</number>
+            </property>
+            <property name="showUnits" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="alarmSensitiveContent" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="PyDMToolTip" stdset="0">
+             <string/>
+            </property>
+            <property name="monitorDisp" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://XCS:SND:T2:TH.VAL</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Step Size:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="PyDMLineEdit" name="PyDMLineEdit_3">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(15, 15, 15);</string>
+            </property>
+            <property name="precision" stdset="0">
+             <number>7</number>
+            </property>
+            <property name="showUnits" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="alarmSensitiveContent" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="PyDMToolTip" stdset="0">
+             <string/>
+            </property>
+            <property name="monitorDisp" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://XCS:SND:T2:TH.TWV</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="PyDMPushButton" name="PyDMPushButton">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 86, 52);</string>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="PyDMPushButton" name="PyDMPushButton_2">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>START</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
