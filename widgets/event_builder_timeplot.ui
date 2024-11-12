@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
-    <height>393</height>
+    <width>315</width>
+    <height>239</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,8 +49,8 @@
       <widget class="PyDMTimePlot" name="timeplot">
        <property name="minimumSize">
         <size>
-         <width>400</width>
-         <height>300</height>
+         <width>200</width>
+         <height>150</height>
         </size>
        </property>
        <property name="toolTip">
@@ -58,7 +58,7 @@
        </property>
        <property name="yAxes">
         <stringlist>
-         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0816000000000001, &quot;maxRange&quot;: 1.0816000000000001, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
         </stringlist>
        </property>
        <property name="curves">
