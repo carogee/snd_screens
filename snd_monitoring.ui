@@ -31,7 +31,7 @@
      <x>80</x>
      <y>10</y>
      <width>851</width>
-     <height>881</height>
+     <height>898</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -41,8 +41,8 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="2" column="0">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_7">
+    <item row="0" column="0">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_1">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -53,10 +53,10 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;IDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;IPM4&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;0&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;CC1 vs IPM4&quot;}</string>
       </property>
       <property name="filename" stdset="0">
-       <string>widgets/event_builder_timeplot.py</string>
+       <string>widgets/event_builder_embedded.py</string>
       </property>
       <property name="loadWhenShown" stdset="0">
        <bool>true</bool>
@@ -81,66 +81,10 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;IDX&quot;: &quot;2&quot;, &quot;TITLE&quot;: &quot;IPM5&quot;}</string>
+       <string>{&quot;IPM&quot;: &quot;IPM_5&quot;, &quot;&quot;: &quot;&quot;}</string>
       </property>
       <property name="filename" stdset="0">
-       <string>widgets/event_builder_timeplot.py</string>
-      </property>
-      <property name="loadWhenShown" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="disconnectWhenHidden" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="followSymlinks" stdset="0">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;4&quot;, &quot;XIDX&quot;: &quot;3&quot;, &quot;TITLE&quot;: &quot;T1 Th2 vs Th1&quot;}</string>
-      </property>
-      <property name="filename" stdset="0">
-       <string>widgets/event_builder_embedded.py</string>
-      </property>
-      <property name="loadWhenShown" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="disconnectWhenHidden" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="followSymlinks" stdset="0">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;0&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;CC1 vs IPM4&quot;}</string>
-      </property>
-      <property name="filename" stdset="0">
-       <string>widgets/event_builder_embedded.py</string>
+       <string>widgets/timeplot_ipm.ui</string>
       </property>
       <property name="loadWhenShown" stdset="0">
        <bool>true</bool>
@@ -181,8 +125,8 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_2">
+    <item row="1" column="1">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_5">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -193,7 +137,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;3&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;T1 Th1 vs IPM4&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;4&quot;, &quot;XIDX&quot;: &quot;3&quot;, &quot;TITLE&quot;: &quot;T1 Th2 vs Th1&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -237,8 +181,8 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_6">
+    <item row="0" column="1">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_2">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -249,7 +193,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;7&quot;, &quot;XIDX&quot;: &quot;1&quot;, &quot;TITLE&quot;: &quot;Delay (Ch15) vs CC2&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;3&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;T1 Th1 vs IPM4&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -278,6 +222,62 @@
       </property>
       <property name="macros" stdset="0">
        <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;CC2 vs CC1&quot;}</string>
+      </property>
+      <property name="filename" stdset="0">
+       <string>widgets/event_builder_embedded.py</string>
+      </property>
+      <property name="loadWhenShown" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="disconnectWhenHidden" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="followSymlinks" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="macros" stdset="0">
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;7&quot;, &quot;XIDX&quot;: &quot;1&quot;, &quot;TITLE&quot;: &quot;Delay (Ch15) vs CC2&quot;}</string>
+      </property>
+      <property name="filename" stdset="0">
+       <string>widgets/event_builder_embedded.py</string>
+      </property>
+      <property name="loadWhenShown" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="disconnectWhenHidden" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="followSymlinks" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_11">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="macros" stdset="0">
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;,&quot;XIDX&quot;: &quot;10&quot;, &quot;TITLE&quot;: &quot;CC &amp; DD vs Energy&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -327,34 +327,6 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_11">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;10&quot;, &quot;TITLE&quot;: &quot;CC &amp; DD vs Energy&quot;}</string>
-      </property>
-      <property name="filename" stdset="0">
-       <string>widgets/event_builder_embedded.py</string>
-      </property>
-      <property name="loadWhenShown" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="disconnectWhenHidden" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="followSymlinks" stdset="0">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="2">
      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_9">
       <property name="sizePolicy">
@@ -377,6 +349,34 @@
       </property>
       <property name="filename" stdset="0">
        <string>widgets/timeplot_cc.ui</string>
+      </property>
+      <property name="loadWhenShown" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="disconnectWhenHidden" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="followSymlinks" stdset="0">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_7">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="macros" stdset="0">
+       <string>{&quot;IPM&quot;: &quot;IPM_4&quot;, &quot;&quot;: &quot;&quot;}</string>
+      </property>
+      <property name="filename" stdset="0">
+       <string>widgets/timeplot_ipm.ui</string>
       </property>
       <property name="loadWhenShown" stdset="0">
        <bool>true</bool>

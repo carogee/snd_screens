@@ -103,7 +103,7 @@
        </property>
        <property name="yAxes">
         <stringlist>
-         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -119.818692, &quot;maxRange&quot;: 110.443692, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -113.6058568, &quot;maxRange&quot;: 136.7308568, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
         </stringlist>
        </property>
        <property name="showLegend">
@@ -111,8 +111,8 @@
        </property>
        <property name="curves">
         <stringlist>
-         <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;Ch8&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 3, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
-         <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_9&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;Ch9&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 3, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+         <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;Ch8&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+         <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_9&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;Ch9&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
         </stringlist>
        </property>
        <property name="bufferSize">
