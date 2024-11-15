@@ -57,7 +57,7 @@ from bluesky.utils import install_kicker
 class AngleX1Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleX1Align,self).__init__(parent)
-		uic.loadUi("angle_x1.ui",self)
+		uic.loadUi("/cds/home/c/cagee/SND/angle_x1.ui",self)
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)	
 	def anglex1(self):
@@ -80,11 +80,11 @@ class AngleX1Align(PyDMPushButton):
 		RE.stop()
 		print("Stopped scanning motor X1")
 	def ui_filename(self):
-		return 'angle_x1.ui'
+		return '/cds/home/c/cagee/SND/angle_x1.ui'
 class AngleX2Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleX2Align,self).__init__(parent)
-		uic.loadUi("angle_x2.ui",self)	
+		uic.loadUi("/cds/home/c/cagee/SND/angle_x2.ui",self)	
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)	
 	def anglex2(self):
@@ -101,11 +101,11 @@ class AngleX2Align(PyDMPushButton):
 		RE.stop()
 		print("Stopped scanning motor X2")
 	def ui_filename(self):
-		return 'angle_x2.ui'
+		return '/cds/home/c/cagee/SND/angle_x2.ui'
 class AngleX3Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleX3Align,self).__init__(parent)
-		uic.loadUi("angle_x3.ui",self)
+		uic.loadUi("/cds/home/c/cagee/SND/angle_x3.ui",self)
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)
 	def anglex3(self):
@@ -121,11 +121,11 @@ class AngleX3Align(PyDMPushButton):
 		RE.stop()
 		print("stopped scanning motor X3") 
 	def ui_filename(self):
-		return 'angle_x3.ui'
+		return '/cds/home/c/cagee/SND/angle_x3.ui'
 class AngleX4Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleX4Align,self).__init__(parent)
-		uic.loadUi("angle_x4.ui",self)
+		uic.loadUi("/cds/home/c/cagee/SND/angle_x4.ui",self)
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)
 	def anglex4(self):
@@ -141,11 +141,11 @@ class AngleX4Align(PyDMPushButton):
 		RE.stop()
 		print("Stopped scanning motor X4")
 	def ui_filename(self):
-		return 'angle_x4.ui'
+		return '/cds/home/c/cagee/SND/angle_x4.ui'
 class AngleCC1Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleCC1Align,self).__init__(parent)
-		uic.loadUi('angle_cc1.ui',self)
+		uic.loadUi('/cds/home/c/cagee/SND/angle_cc1.ui',self)
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)
 	def anglecc1(self):
@@ -162,11 +162,11 @@ class AngleCC1Align(PyDMPushButton):
 		RE.stop()
 		print("Stopped scanning motor cc1")
 	def ui_filename(self):
-		return 'angle_cc1.ui'
+		return '/cds/home/c/cagee/SND/angle_cc1.ui'
 class AngleCC2Align(PyDMPushButton):
 	def __init__(self,parent=None):
 		super(AngleCC2Align,self).__init__(parent)
-		uic.loadUi('angle_cc2.ui',self)
+		uic.loadUi('/cds/home/c/cagee/SND/angle_cc2.ui',self)
 		self.startButton.clicked.connect(self.start_scan)
 		self.stopButton.clicked.connect(self.stop_scan)
 	def anglecc2(self):
@@ -184,7 +184,7 @@ class AngleCC2Align(PyDMPushButton):
 		RE.stop()
 		print("Stopped Scanning motor cc2")
 	def ui_filename(self):
-		return 'angle_cc2.ui'
+		return '/cds/home/c/cagee/SND/angle_cc2.ui'
 
 print("Done Scanning")
 
