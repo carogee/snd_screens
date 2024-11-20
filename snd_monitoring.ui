@@ -59,7 +59,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;11&quot;, &quot;XIDX&quot;: &quot;1&quot;, &quot;TITLE&quot;: &quot;CC1 vs IPM4&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;0&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;CC1 vs IPM4&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -87,7 +87,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;IPM&quot;: &quot;IPM_5&quot;, &quot;&quot;: &quot;&quot;}</string>
+       <string>{&quot;IPM&quot;: &quot;IPM5&quot;, &quot;&quot;: &quot;&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/timeplot_ipm.ui</string>
@@ -115,7 +115,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;18&quot;, &quot;XIDX&quot;: &quot;15&quot;, &quot;TITLE&quot;: &quot;T4 Th2 vs T1 Th2&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;7&quot;, &quot;XIDX&quot;: &quot;4&quot;, &quot;TITLE&quot;: &quot;T4 Th2 vs T1 Th2&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -143,7 +143,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;15&quot;, &quot;XIDX&quot;: &quot;14&quot;, &quot;TITLE&quot;: &quot;T1 Th2 vs Th1&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;4&quot;, &quot;XIDX&quot;: &quot;3&quot;, &quot;TITLE&quot;: &quot;T1 Th2 vs Th1&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -171,7 +171,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;15&quot;, &quot;XIDX&quot;: &quot;11&quot;, &quot;TITLE&quot;: &quot;Delay1 vs CC1&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;4&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;Delay1 vs CC1&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -199,7 +199,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;14&quot;, &quot;XIDX&quot;: &quot;1&quot;, &quot;TITLE&quot;: &quot;T1 Th1 vs IPM4&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;6&quot;, &quot;XIDX&quot;: &quot;8&quot;, &quot;TITLE&quot;: &quot;T1 Th1 vs IPM4&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -227,7 +227,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;12&quot;, &quot;XIDX&quot;: &quot;11&quot;, &quot;TITLE&quot;: &quot;CC2 vs CC1&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;CC2 vs CC1&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -255,7 +255,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;18&quot;, &quot;XIDX&quot;: &quot;12&quot;, &quot;TITLE&quot;: &quot;Delay (Ch15) vs CC2&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;7&quot;, &quot;XIDX&quot;: &quot;1&quot;, &quot;TITLE&quot;: &quot;Delay (Ch15) vs CC2&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -283,7 +283,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;12&quot;, &quot;XIDX&quot;: &quot;21&quot;, &quot;TITLE&quot;: &quot;CC &amp; DD vs Energy&quot;}</string>
+       <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDPH&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;CC &amp; DD vs Energy&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/event_builder_embedded.py</string>
@@ -379,7 +379,7 @@
        <string/>
       </property>
       <property name="macros" stdset="0">
-       <string>{&quot;IPM&quot;: &quot;IPM_4&quot;, &quot;&quot;: &quot;&quot;}</string>
+       <string>{&quot;IPM&quot;: &quot;IPM4&quot;, &quot;&quot;: &quot;&quot;}</string>
       </property>
       <property name="filename" stdset="0">
        <string>widgets/timeplot_ipm.ui</string>
