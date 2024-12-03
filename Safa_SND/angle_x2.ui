@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>303</width>
-    <height>256</height>
+    <height>284</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -289,7 +289,7 @@ font-size: 14 px;
              <string/>
             </property>
             <property name="text">
-             <string>0.0000 deg</string>
+             <string>20.9001 deg</string>
             </property>
             <property name="precision" stdset="0">
              <number>4</number>
@@ -310,7 +310,7 @@ font-size: 14 px;
              <string/>
             </property>
             <property name="channel" stdset="0">
-             <string notr="true">CA://XCS:SND:T1:TH2.RBV</string>
+             <string>CA://XCS:SND:T1:TH2.RBV</string>
             </property>
             <property name="enableRichText" stdset="0">
              <bool>false</bool>

@@ -1124,7 +1124,7 @@ background-color: rgb(170, 232, 255);</string>
     <bool>false</bool>
    </property>
    <property name="cursorPosition">
-    <number>3</number>
+    <number>4</number>
    </property>
    <property name="dragEnabled">
     <bool>false</bool>
@@ -1260,7 +1260,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -59.33610186857294, &quot;maxRange&quot;: 48.46110186857294, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1319,7 +1319,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;right&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;right&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -33.72469823229154, &quot;maxRange&quot;: 27.599698232291537, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="showRightAxis">
@@ -1375,7 +1375,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -839.9511651048531, &quot;maxRange&quot;: 636.8261651048531, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1422,7 +1422,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -59.33610186857294, &quot;maxRange&quot;: 48.46110186857294, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1469,7 +1469,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -25.510539470030032, &quot;maxRange&quot;: 19.885539470030032, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1516,7 +1516,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -34.0412574525817, &quot;maxRange&quot;: 27.916257452581707, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">

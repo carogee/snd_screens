@@ -70,8 +70,8 @@ class AngleX1Align(PyDMPushButton):
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
             n = 50
-            positions = np.repeat(np.linspace(start_angle,end_angle,steps),n)
-            yield from list_scan([d11],t1th1,positions)
+            positions1 = np.repeat(np.linspace(start_angle,end_angle,steps),n)
+            yield from list_scan([d11],t1th1,positions1)
             print("Scanned motor X1")
 
     def start_scan(self):
@@ -146,7 +146,7 @@ class AngleX4Align(PyDMPushButton):
             steps = int(self.stepLineEdit.text())
             n = 50
             positions = np.repeat(np.linspace(start_angle,end_angle,steps),n)
-            yield from list_scan([d14],t4th1,start_angle,end_angle,steps)
+            yield from list_scan([d14],t4th1,positions)
     def start_scan(self):
         RE(self.anglex4())
         print("scanning motor X4...")
@@ -169,7 +169,7 @@ class AngleCC1Align(PyDMPushButton):
             steps = int(self.stepLineEdit.text())
             n = 50
             positions = np.repeat(np.linspace(start_angle,end_angle,steps),n)
-            yield from list_scan([d8],t2th,start_angle,end_angle,steps)
+            yield from list_scan([d8],t2th,positions)
     def start_scan(self):
         RE(self.anglecc1())
         print("scanning motor cc1...")
