@@ -11,16 +11,10 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>300</width>
-    <height>250</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -44,14 +38,8 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>275</width>
+         <width>0</width>
          <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>275</width>
-         <height>37</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -82,14 +70,8 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>275</width>
-         <height>150</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>275</width>
-         <height>170</height>
+         <width>0</width>
+         <height>0</height>
         </size>
        </property>
        <property name="toolTip">
@@ -103,7 +85,7 @@
        </property>
        <property name="yAxes">
         <stringlist>
-         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -113.6058568, &quot;maxRange&quot;: 136.7308568, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+         <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -823.0776202710521, &quot;maxRange&quot;: 8210.327620271051, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
         </stringlist>
        </property>
        <property name="showLegend">
@@ -143,7 +125,7 @@
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
+          <enum>QSizePolicy::Preferred</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -178,12 +160,6 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>16777215</height>
-          </size>
          </property>
          <property name="font">
           <font>
