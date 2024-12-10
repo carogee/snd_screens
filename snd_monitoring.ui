@@ -16,6 +16,54 @@
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="1">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_8">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;7&quot;,&quot;XIDX&quot;:&quot;4&quot;,&quot;TITLE&quot;:&quot;T4 Th2 vs T1 Th2&quot;}</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>widgets/event_builder_embedded.py</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_3">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;4&quot;,&quot;XIDX&quot;:&quot;0&quot;,&quot;TITLE&quot;:&quot;Delay1 vs CC1&quot;}</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>widgets/event_builder_embedded.py</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_4">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;CC2 vs CC1&quot;}</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>widgets/event_builder_embedded.py</string>
+       </property>
+       <property name="loadWhenShown" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="disconnectWhenHidden" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="followSymlinks" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_2">
        <property name="toolTip">
@@ -51,19 +99,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_5">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="macros" stdset="0">
-        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;4&quot;,&quot;XIDX&quot;:&quot;3&quot;,&quot;TITLE&quot;:&quot;T1 Th2 vs Th1&quot;}</string>
-       </property>
-       <property name="filename" stdset="0">
-        <string>widgets/event_builder_embedded.py</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_1">
        <property name="toolTip">
@@ -92,33 +127,29 @@
         <string/>
        </property>
        <property name="macros" stdset="0">
-        <string>{&quot;IPM&quot;:&quot;IPM4&quot;,&quot;&quot;:&quot;&quot;}</string>
+        <string>{&quot;IPM&quot;: &quot;IPM4&quot;, &quot;&quot;: &quot;&quot;}</string>
        </property>
        <property name="filename" stdset="0">
-        <string>widgets/timeplot_ipm.ui</string>
+        <string>widgets/timeplot_ipm.py</string>
+       </property>
+       <property name="loadWhenShown" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="disconnectWhenHidden" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="followSymlinks" stdset="0">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_8">
+     <item row="3" column="1">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_11">
        <property name="toolTip">
         <string/>
        </property>
        <property name="macros" stdset="0">
-        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;7&quot;,&quot;XIDX&quot;:&quot;4&quot;,&quot;TITLE&quot;:&quot;T4 Th2 vs T1 Th2&quot;}</string>
-       </property>
-       <property name="filename" stdset="0">
-        <string>widgets/event_builder_embedded.py</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_4">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="macros" stdset="0">
-        <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:SNDDIO&quot;, &quot;YIDX&quot;: &quot;1&quot;, &quot;XIDX&quot;: &quot;0&quot;, &quot;TITLE&quot;: &quot;CC2 vs CC1&quot;}</string>
+        <string>{&quot;EBUILDPV&quot;: &quot;XCS:TT:01:EVTBUILDNOTT&quot;, &quot;YIDX&quot;: &quot;22&quot;, &quot;XIDX&quot;: &quot;21&quot;, &quot;TITLE&quot;: &quot;CC &amp; DD vs Energy&quot;}</string>
        </property>
        <property name="filename" stdset="0">
         <string>widgets/event_builder_embedded.py</string>
@@ -134,13 +165,35 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_3">
+     <item row="3" column="2">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_12">
        <property name="toolTip">
         <string/>
        </property>
        <property name="macros" stdset="0">
-        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;4&quot;,&quot;XIDX&quot;:&quot;0&quot;,&quot;TITLE&quot;:&quot;Delay1 vs CC1&quot;}</string>
+        <string>{}</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>widgets/timeplot_delay.py</string>
+       </property>
+       <property name="loadWhenShown" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="disconnectWhenHidden" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="followSymlinks" stdset="0">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_5">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:SNDDIO&quot;,&quot;YIDX&quot;:&quot;4&quot;,&quot;XIDX&quot;:&quot;3&quot;,&quot;TITLE&quot;:&quot;T1 Th2 vs Th1&quot;}</string>
        </property>
        <property name="filename" stdset="0">
         <string>widgets/event_builder_embedded.py</string>
@@ -153,10 +206,19 @@
         <string/>
        </property>
        <property name="macros" stdset="0">
-        <string>{&quot;IPM&quot;:&quot;CC Line&quot;}</string>
+        <string>{&quot;IPM&quot;: &quot;CC Line&quot;}</string>
        </property>
        <property name="filename" stdset="0">
-        <string>widgets/timeplot_cc.ui</string>
+        <string>widgets/timeplot_cc.py</string>
+       </property>
+       <property name="loadWhenShown" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="disconnectWhenHidden" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="followSymlinks" stdset="0">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -166,36 +228,10 @@
         <string/>
        </property>
        <property name="macros" stdset="0">
-        <string>{&quot;IPM&quot;:&quot;IPM5&quot;}</string>
+        <string>{&quot;IPM&quot;: &quot;IPM5&quot;}</string>
        </property>
        <property name="filename" stdset="0">
-        <string>widgets/timeplot_ipm.ui</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_11">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="macros" stdset="0">
-        <string>{&quot;EBUILDPV&quot;:&quot;XCS:TT:01:EVTBUILDNOTT&quot;,&quot;YIDX&quot;:&quot;1&quot;,&quot;XIDX&quot;:&quot;0&quot;,&quot;TITLE&quot;:&quot;CC &amp; DD vs Energy&quot;}</string>
-       </property>
-       <property name="filename" stdset="0">
-        <string>widgets/event_builder_embedded.py</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay_12">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="macros" stdset="0">
-        <string>{}</string>
-       </property>
-       <property name="filename" stdset="0">
-        <string>widgets/timeplot_delay.ui</string>
+        <string>widgets/timeplot_ipm.py</string>
        </property>
        <property name="loadWhenShown" stdset="0">
         <bool>true</bool>
