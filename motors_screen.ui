@@ -785,7 +785,7 @@
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>100</horstretch>
      <verstretch>100</verstretch>
     </sizepolicy>
@@ -976,7 +976,7 @@ background-color: rgb(170, 232, 255);</string>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -1028,7 +1028,7 @@ color: rgb(0, 0, 0)
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -1093,7 +1093,7 @@ background-color: rgb(170, 232, 255);</string>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -1225,7 +1225,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -628196282.6730387, &quot;maxRange&quot;: 1852971446.9712827, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -896972377.6573691, &quot;maxRange&quot;: 2121747541.9556131, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1290,7 +1290,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -25171115838.79625, &quot;maxRange&quot;: 64538875471.2236, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -34889080834.59354, &quot;maxRange&quot;: 74256840467.0209, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1304,71 +1304,6 @@ color: rgb(2,2,2);</string>
       <property name="curves">
        <stringlist>
         <string>{&quot;y_channel&quot;: &quot;calc://x4_ratio?var=ca://XCS:SND:DIO:AMPL_14&amp;var_2=ca://XCS:SND:DIO:AMPL_9&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T4:TH1&quot;, &quot;name&quot;: &quot;Ch.14/Ch.9&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
-       </stringlist>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="PyDMScatterPlot" name="X2plot">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>X2 </string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="showXGrid">
-       <bool>true</bool>
-      </property>
-      <property name="showYGrid">
-       <bool>true</bool>
-      </property>
-      <property name="axisColor">
-       <color>
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
-       </color>
-      </property>
-      <property name="yAxes">
-       <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -304933449.4821191, &quot;maxRange&quot;: 855929031.3922786, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
-       </stringlist>
-      </property>
-      <property name="title" stdset="0">
-       <string>X2 Align</string>
-      </property>
-      <property name="xLabels">
-       <stringlist>
-        <string>T1 TH2</string>
-       </stringlist>
-      </property>
-      <property name="mouseEnabledX" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="mouseEnabledY" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="curves">
-       <stringlist>
-        <string>{&quot;y_channel&quot;: &quot;calc://x2_ratio?var=ca://XCS:SND:DIO:AMPL_12&amp;var_two=ca://XCS:SND:DIO:AMPL_11&amp;expr=math.fabs(var/(0.0000001+var_two))&amp;update=var,var_two&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T1:TH2&quot;, &quot;name&quot;: &quot;Ch12/Ch11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
        </stringlist>
       </property>
      </widget>
@@ -1414,7 +1349,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -13710229.69558776, &quot;maxRange&quot;: 36732744.76861506, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -19174538.107267074, &quot;maxRange&quot;: 42197053.18029437, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1433,17 +1368,65 @@ color: rgb(2,2,2);</string>
      </widget>
     </item>
     <item row="1" column="5">
-     <widget class="PyDMShellCommand" name="PyDMShellCommand">
+     <widget class="PyDMShellCommand" name="RatioCalc">
       <property name="toolTip">
        <string/>
       </property>
       <property name="text">
        <string>Ratio Calculation</string>
       </property>
+      <property name="alarmSensitiveContent" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="alarmSensitiveBorder" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="PyDMToolTip" stdset="0">
+       <string/>
+      </property>
+      <property name="channel" stdset="0">
+       <string/>
+      </property>
+      <property name="PyDMIcon" stdset="0">
+       <string/>
+      </property>
+      <property name="showConfirmDialog" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="runCommandsInFullShell" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="confirmMessage" stdset="0">
+       <string>Are you sure you want to proceed?</string>
+      </property>
+      <property name="environmentVariables" stdset="0">
+       <string/>
+      </property>
+      <property name="showIcon" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="redirectCommandOutput" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="allowMultipleExecutions" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="titles" stdset="0">
+       <stringlist/>
+      </property>
       <property name="commands" stdset="0">
        <stringlist>
         <string>/cds/home/c/cagee/SND/snd_run_calc.sh</string>
        </stringlist>
+      </property>
+      <property name="passwordProtected" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="password" stdset="0">
+       <string/>
+      </property>
+      <property name="protectedPassword" stdset="0">
+       <string/>
       </property>
      </widget>
     </item>
@@ -1488,7 +1471,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -269226526.5883264, &quot;maxRange&quot;: 794130416.2419996, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -384416210.56401694, &quot;maxRange&quot;: 909320100.2176901, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1553,7 +1536,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -602647551.7614409, &quot;maxRange&quot;: 1110540816.9945102, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -788231167.9858899, &quot;maxRange&quot;: 1296124433.218959, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1571,6 +1554,71 @@ color: rgb(2,2,2);</string>
       </property>
      </widget>
     </item>
+    <item row="1" column="3">
+     <widget class="PyDMScatterPlot" name="X2plot">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>X2 </string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="showXGrid">
+       <bool>true</bool>
+      </property>
+      <property name="showYGrid">
+       <bool>true</bool>
+      </property>
+      <property name="axisColor">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="yAxes">
+       <stringlist>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -430685562.36647046, &quot;maxRange&quot;: 981681144.2766299, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+       </stringlist>
+      </property>
+      <property name="title" stdset="0">
+       <string>X2 Align</string>
+      </property>
+      <property name="xLabels">
+       <stringlist>
+        <string>T1 TH2</string>
+       </stringlist>
+      </property>
+      <property name="mouseEnabledX" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="mouseEnabledY" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="curves">
+       <stringlist>
+        <string>{&quot;y_channel&quot;: &quot;calc://x2_ratio?var=ca://XCS:SND:DIO:AMPL_12&amp;var_two=ca://XCS:SND:DIO:AMPL_11&amp;expr=math.fabs(var/(0.0000001+var_two))&amp;update=var,var_two&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T1:TH2&quot;, &quot;name&quot;: &quot;Ch12/Ch11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       </stringlist>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="PyDMLineEdit" name="DelayEnergyPV">
@@ -1583,7 +1631,7 @@ color: rgb(2,2,2);</string>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -1638,22 +1686,6 @@ background-color: rgb(170, 232, 255);</string>
     <enum>PyDMLineEdit::Default</enum>
    </property>
   </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1121</width>
-     <height>951</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-  </widget>
   <zorder>MainFrame</zorder>
   <zorder>gridFrame</zorder>
   <zorder>Table</zorder>
@@ -1661,7 +1693,6 @@ background-color: rgb(170, 232, 255);</string>
   <zorder>TimeDelayPV</zorder>
   <zorder>IntensityRatioPV</zorder>
   <zorder>DelayEnergyPV</zorder>
-  <zorder>frame</zorder>
  </widget>
  <customwidgets>
   <customwidget>

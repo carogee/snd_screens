@@ -1,4 +1,15 @@
+#from snd_calc import *
+
+import sys
+sys.path.insert(1,'/reg/g/pcds/pyps/apps/hutch-python/xcs/xcs')
+import numpy as np
+import matplotlib.pyplot as plt
+from ophyd import EpicsSignal
+from pcdsdevices import analog_signals
+from time import sleep
 
 
-from snd_calc import *
+from beamline import show_cc, show_delay, show_both
+from beamline import snd_correlation
+
 snd_correlation()

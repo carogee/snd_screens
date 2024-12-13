@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from ophyd import EpicsSignal
 from pcdsdevices import analog_signals
+from time import sleep
 
 aio = analog_signals.Acromag(name = 'xcs_aio', prefix = 'XCS:USR')
 
@@ -22,23 +23,24 @@ def show_both():
 
 
 
-def snd_correlation(nshots=240):
+def snd_correlation(nshots=240,do_ch=6):
+    " DCO is ch 6 IPM5 is ch 9"
     sndall=EpicsSignal('XCS:TT:01:SNDDIO.VALA')
     ipm5_vals=np.zeros(nshots)
-    dd_vals=np.zeros(nshots) #ch15                                                                                                                
-    do_vals=np.zeros(nshots) #ch9                                                                                                                 
-    cc_vals=np.zeros(nshots) #ch14                                                                                                                
-    #Ch8, CC (Ch9), Ch10, Ch11, Ch12, Ch13, Ch14, Delay (Ch15), IPM4 Sum, IPM5 Sum.                                                               
+    dd_vals=np.zeros(nshots) #ch15                                                                                                            
+    do_vals=np.zeros(nshots) #ch9                                                                                                             
+    cc_vals=np.zeros(nshots) #ch14                                                                                                            
+    #Ch8, CC (Ch9), Ch10, Ch11, Ch12, Ch13, Ch14, Delay (Ch15), IPM4 Sum, IPM5 Sum.                                                           
     print('Collect {} shots'.format(nshots))
-    show_cc()
+    show_cc();sleep(0.5)
     for i in range(nshots):
         snddata=sndall.get()
-        ipm5_vals[i]=snddata[9,]
         dd_vals[i]=snddata[7,]
         cc_vals[i]=snddata[1,]
-        do_vals[i]=snddata[6,]
-    do_ref=np.mean(do_vals)
-    cc_ref=np.mean(cc_vals)
+        do_vals[i]=snddata[do_ch,]
+        sleep(0.005)
+    do_ref=np.nanmean(do_vals)
+    cc_ref=np.nanmean(cc_vals)
     coff_cc=cc_ref/do_ref
     print('coefficient CC : {:.2f}'.format(coff_cc))
     plt.figure()
@@ -47,15 +49,18 @@ def snd_correlation(nshots=240):
     plt.grid();
     plt.xlabel('DO signal');
     plt.ylabel('CC signal'); plt.title("CC only")
-    show_delay()
+    show_delay();sleep(0.5)
+    dd_vals=np.zeros(nshots) #ch15                                                                                                            
+    do_vals=np.zeros(nshots) #ch9                                                                                                             
+    cc_vals=np.zeros(nshots) #ch14                                                                                                            
     for i in range(nshots):
         snddata=sndall.get()
-        ipm5_vals[i]=snddata[9,]
         dd_vals[i]=snddata[7,]
         cc_vals[i]=snddata[1,]
-        do_vals[i]=snddata[6,]
-    do_ref=np.mean(do_vals)
-    dd_ref=np.mean(cc_vals)
+        do_vals[i]=snddata[do_ch,]
+        sleep(0.005)
+    do_ref=np.nanmean(do_vals)
+    dd_ref=np.nanmean(dd_vals)
     coff_dd=dd_ref/do_ref
     print('coefficient DD : {:.2f}'.format(coff_dd))
     plt.subplot(2,2,2)
@@ -63,16 +68,18 @@ def snd_correlation(nshots=240):
     plt.grid();
     plt.xlabel('DO signal');
     plt.ylabel('DD signal'); plt.title("DD only")
-
     show_both()
+    dd_vals=np.zeros(nshots) #ch15                                                                                                            
+    do_vals=np.zeros(nshots) #ch9                                                                                                             
+    cc_vals=np.zeros(nshots) #ch14                                                                                                            
     for i in range(nshots):
         snddata=sndall.get()
-        ipm5_vals[i]=snddata[9,]
         dd_vals[i]=snddata[7,]*coff_dd
         cc_vals[i]=snddata[1,]*coff_cc
-        do_vals[i]=snddata[6,]
+        do_vals[i]=snddata[do_ch,]
+        sleep(0.005)
     ratios = 1+(dd_vals-cc_vals)/do_vals
-    ratio = np.mean(ratios)
+    ratio = np.nanmean(ratios)
     print('Ratio [1+(Delay-ChannelCut)/Sum]: {:.2f}'.format(ratio))
     plt.subplot(2,2,3)
     plt.plot(cc_vals,dd_vals,'.')
