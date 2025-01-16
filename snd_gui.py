@@ -24,6 +24,7 @@ from PyQt5.QtWidgets import QMainWindow, QWidget
 from bluesky.callbacks.best_effort import BestEffortCallback
 from bluesky.plan_stubs import stop
 from pcdsdevices.signal import AvgSignal
+from epics import caput
 
 bec = BestEffortCallback()
 RE.subscribe(bec)
@@ -45,6 +46,7 @@ class MotorControls(QtWidgets.QWidget):
         self.X4.clicked.connect(self.scan_openx4)
         self.CC1.clicked.connect(self.scan_opencc1)
         self.CC2.clicked.connect(self.scan_opencc2)
+        #self.CC_in.clicked.connect(self.insert_cc)
         #self.IntensityRatioPV.connect(self.average_ratio)
         # the functions that connect to the custom classes from  scan_theta.py
         # setwindow flags lines  enable modal pop up window for each motor
@@ -56,12 +58,14 @@ class MotorControls(QtWidgets.QWidget):
         self.angle_x1_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x1_scan.show()
         self.angle_x1_scan.start_scan()
+
     def scan_openx2(self):
         self.angle_x2_scan=AngleX2Align(self)
         self.startButton=AngleX2Align(self)
         self.angle_x2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x2_scan.show()
         self.angle_x2_scan.start_scan()
+
     def scan_openx3(self):
         self.angle_x3_scan=AngleX3Align(self)
         self.startButton=AngleX3Align(self)
@@ -75,18 +79,26 @@ class MotorControls(QtWidgets.QWidget):
         self.angle_x4_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x4_scan.show()
         self.angle_x4_scan.start_scan()
+
     def scan_opencc1(self):
         self.angle_cc1_scan=AngleCC1Align(self)
         self.startButton=AngleCC1Align(self)
         self.angle_cc1_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc1_scan.show()
         self.angle_cc1_scan.start_scan()
+
     def scan_opencc2(self):
         self.angle_cc2_scan=AngleCC2Align(self)
         self.startButton=AngleCC2Align(self)
         self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)		
         self.angle_cc2_scan.show()
         self.angle_cc2_scan.start_scan()
+
+    #def insert_cc(self):
+    #    print("insert cc script")
+    #    caput('XCS:SND:T2:TH', 16.1)
+    #    caput('XCS:SND:T3:TH', 16.1)
+        
     
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/motors_screen.ui'
@@ -94,12 +106,28 @@ class MotorControls(QtWidgets.QWidget):
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
 
+#class AvgSig(Display):
+    #def __init__(self, parent=None, args=None, macros=None):
+        #super(AvgSig, self).__init__(parent=parent, args=args, macros=macros)
+        #self.IntensityRatioPV.textChanged.connect(self.average)
+        
 
+    #def ui_filename(self):
+        #return '/cds/home/c/cagee/SND/motors_screen.ui'
+
+    #def ui_filepath(self):
+        #return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
+
+
+    #def average(self):
+        #value = float(self.IntensityRatioPV)
 
 
 if __name__=='__main__':
-	from pydm import PyDMApplication
-	app = QtWidgets.QApplication(sys.argv)
-	form = MotorControls()
-	form.show()
-	sys.exit(app.exec_())
+    from pydm import PyDMApplication
+    app = QtWidgets.QApplication(sys.argv)
+    form = MotorControls()
+    form.show()
+    sys.exit(app.exec_())
+        
+

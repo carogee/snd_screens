@@ -40,7 +40,7 @@
      <x>30</x>
      <y>60</y>
      <width>1011</width>
-     <height>421</height>
+     <height>451</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -557,7 +557,7 @@
    <widget class="PyDMRelatedDisplayButton" name="CC2">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>370</y>
       <width>131</width>
       <height>41</height>
@@ -622,7 +622,7 @@
    <widget class="PyDMRelatedDisplayButton" name="CC1">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>600</x>
       <y>370</y>
       <width>131</width>
       <height>41</height>
@@ -1142,7 +1142,7 @@ color: rgb(2,2,2);</string>
   <widget class="QFrame" name="gridFrame">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>510</y>
      <width>1071</width>
      <height>441</height>
@@ -1169,83 +1169,6 @@ color: rgb(2,2,2);</string>
     <property name="verticalSpacing">
      <number>1</number>
     </property>
-    <item row="2" column="3">
-     <widget class="PyDMScatterPlot" name="CC1plot">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>CC1 Align</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">gridline-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustIgnored</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-      <property name="transformationAnchor">
-       <enum>QGraphicsView::NoAnchor</enum>
-      </property>
-      <property name="showXGrid">
-       <bool>true</bool>
-      </property>
-      <property name="showYGrid">
-       <bool>true</bool>
-      </property>
-      <property name="axisColor">
-       <color>
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
-       </color>
-      </property>
-      <property name="yAxes">
-       <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1020136150.3775787, &quot;maxRange&quot;: 2244911314.6758227, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
-       </stringlist>
-      </property>
-      <property name="title" stdset="0">
-       <string>CC1 Align</string>
-      </property>
-      <property name="xLabels">
-       <stringlist>
-        <string>T2 TH</string>
-       </stringlist>
-      </property>
-      <property name="curves">
-       <stringlist>
-        <string>{&quot;y_channel&quot;: &quot;calc://cc1_ratio?var=ca://XCS:SND:DIO:AMPL_8&amp;var_2=ca://XCS:SND:DIO:AMPL_13&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T2:TH&quot;, &quot;name&quot;: &quot;Ch.8/Ch.13&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
-       </stringlist>
-      </property>
-      <property name="autoRangeX">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="5">
      <widget class="PyDMScatterPlot" name="X1plot">
       <property name="enabled">
@@ -1287,7 +1210,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -437200652.0439106, &quot;maxRange&quot;: 962104541.6975837, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -524562073.8995796, &quot;maxRange&quot;: 1049465963.5532527, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1311,8 +1234,8 @@ color: rgb(2,2,2);</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="PyDMScatterPlot" name="X3Plot">
+    <item row="0" column="3">
+     <widget class="PyDMScatterPlot" name="X2plot">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -1332,69 +1255,10 @@ color: rgb(2,2,2);</string>
        <cursorShape>CrossCursor</cursorShape>
       </property>
       <property name="toolTip">
-       <string>X3</string>
+       <string>X2 </string>
       </property>
-      <property name="toolTipDuration">
-       <number>-4</number>
-      </property>
-      <property name="showXGrid">
-       <bool>true</bool>
-      </property>
-      <property name="showYGrid">
-       <bool>true</bool>
-      </property>
-      <property name="axisColor">
-       <color>
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
-       </color>
-      </property>
-      <property name="yAxes">
-       <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -873272876.5150478, &quot;maxRange&quot;: 1381166141.748117, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
-       </stringlist>
-      </property>
-      <property name="title" stdset="0">
-       <string>X3 Align</string>
-      </property>
-      <property name="xLabels">
-       <stringlist>
-        <string>T4 TH2</string>
-       </stringlist>
-      </property>
-      <property name="curves">
-       <stringlist>
-        <string>{&quot;y_channel&quot;: &quot;calc://x3_ratio?var=ca://XCS:SND:DIO:AMPL_15&amp;var_2=ca://XCS:SND:DIO:AMPL_12&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T4:TH2&quot;, &quot;name&quot;: &quot;Ch.15/Ch.12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
-       </stringlist>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1" colspan="2">
-     <widget class="PyDMScatterPlot" name="CC2Plot">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>CC2</string>
-      </property>
-      <property name="toolTipDuration">
-       <number>-3</number>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="showXGrid">
        <bool>true</bool>
@@ -1411,20 +1275,26 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -21678499.03179958, &quot;maxRange&quot;: 44701014.10482688, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -583682235.490149, &quot;maxRange&quot;: 1134677817.4003084, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
-       <string>CC2 Align</string>
+       <string>X2 Align</string>
       </property>
       <property name="xLabels">
        <stringlist>
-        <string>T3 TH</string>
+        <string>T1 TH2</string>
        </stringlist>
+      </property>
+      <property name="mouseEnabledX" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="mouseEnabledY" stdset="0">
+       <bool>true</bool>
       </property>
       <property name="curves">
        <stringlist>
-        <string>{&quot;y_channel&quot;: &quot;calc://cc2_ratio?var=ca://XCS:SND:DIO:AMPL_9&amp;var_2=XCS:SND:DIO:AMPL_8&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T3:TH&quot;, &quot;name&quot;: &quot;Ch.9/Ch.8&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+        <string>{&quot;y_channel&quot;: &quot;calc://x2_ratio?var=ca://XCS:SND:DIO:AMPL_12&amp;var_two=ca://XCS:SND:DIO:AMPL_11&amp;expr=math.fabs(var/(0.0000001+var_two))&amp;update=var,var_two&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T1:TH2&quot;, &quot;name&quot;: &quot;Ch12/Ch11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
        </stringlist>
       </property>
      </widget>
@@ -1473,7 +1343,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -39342234423.6994, &quot;maxRange&quot;: 78709994056.12677, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -46712471152.15192, &quot;maxRange&quot;: 86080230784.57928, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1491,132 +1361,83 @@ color: rgb(2,2,2);</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
-     <widget class="PyDMScatterPlot" name="X2plot">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>265</width>
-        <height>212</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>X2 </string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="showXGrid">
-       <bool>true</bool>
-      </property>
-      <property name="showYGrid">
-       <bool>true</bool>
-      </property>
-      <property name="axisColor">
-       <color>
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
-       </color>
-      </property>
-      <property name="yAxes">
-       <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -488310123.997509, &quot;maxRange&quot;: 1039305705.9076684, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
-       </stringlist>
-      </property>
-      <property name="title" stdset="0">
-       <string>X2 Align</string>
-      </property>
-      <property name="xLabels">
-       <stringlist>
-        <string>T1 TH2</string>
-       </stringlist>
-      </property>
-      <property name="mouseEnabledX" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="mouseEnabledY" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="curves">
-       <stringlist>
-        <string>{&quot;y_channel&quot;: &quot;calc://x2_ratio?var=ca://XCS:SND:DIO:AMPL_12&amp;var_two=ca://XCS:SND:DIO:AMPL_11&amp;expr=math.fabs(var/(0.0000001+var_two))&amp;update=var,var_two&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T1:TH2&quot;, &quot;name&quot;: &quot;Ch12/Ch11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
-       </stringlist>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="5">
-     <widget class="PyDMShellCommand" name="RatioCalc">
-      <property name="toolTip">
-       <string/>
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="text">
-       <string>Ratio Calculation</string>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="alarmSensitiveContent" stdset="0">
-       <bool>false</bool>
-      </property>
-      <property name="alarmSensitiveBorder" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="PyDMToolTip" stdset="0">
-       <string/>
-      </property>
-      <property name="channel" stdset="0">
-       <string/>
-      </property>
-      <property name="PyDMIcon" stdset="0">
-       <string/>
-      </property>
-      <property name="showConfirmDialog" stdset="0">
-       <bool>false</bool>
-      </property>
-      <property name="runCommandsInFullShell" stdset="0">
-       <bool>false</bool>
-      </property>
-      <property name="confirmMessage" stdset="0">
-       <string>Are you sure you want to proceed?</string>
-      </property>
-      <property name="environmentVariables" stdset="0">
-       <string/>
-      </property>
-      <property name="showIcon" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="redirectCommandOutput" stdset="0">
-       <bool>false</bool>
-      </property>
-      <property name="allowMultipleExecutions" stdset="0">
-       <bool>true</bool>
-      </property>
-      <property name="titles" stdset="0">
-       <stringlist/>
-      </property>
-      <property name="commands" stdset="0">
-       <stringlist>
-        <string>/cds/home/c/cagee/SND/snd_run_calc.sh</string>
-       </stringlist>
-      </property>
-      <property name="passwordProtected" stdset="0">
-       <bool>false</bool>
-      </property>
-      <property name="password" stdset="0">
-       <string/>
-      </property>
-      <property name="protectedPassword" stdset="0">
-       <string/>
-      </property>
+      <widget class="PyDMShellCommand" name="RatioCalc">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>211</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Ratio Calculation</string>
+       </property>
+       <property name="alarmSensitiveContent" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="alarmSensitiveBorder" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="PyDMToolTip" stdset="0">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string/>
+       </property>
+       <property name="PyDMIcon" stdset="0">
+        <string/>
+       </property>
+       <property name="showConfirmDialog" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="runCommandsInFullShell" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="confirmMessage" stdset="0">
+        <string>Are you sure you want to proceed?</string>
+       </property>
+       <property name="environmentVariables" stdset="0">
+        <string/>
+       </property>
+       <property name="showIcon" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="redirectCommandOutput" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="allowMultipleExecutions" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="titles" stdset="0">
+        <stringlist/>
+       </property>
+       <property name="commands" stdset="0">
+        <stringlist>
+         <string>/cds/home/c/cagee/SND/snd_run_calc.sh</string>
+        </stringlist>
+       </property>
+       <property name="passwordProtected" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="password" stdset="0">
+        <string/>
+       </property>
+       <property name="protectedPassword" stdset="0">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </item>
     <item row="0" column="0">
@@ -1630,11 +1451,14 @@ color: rgb(2,2,2);</string>
       <widget class="QFrame" name="CCBruchFrame">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
          <y>10</y>
-         <width>231</width>
+         <width>130</width>
          <height>91</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -1645,9 +1469,9 @@ color: rgb(2,2,2);</string>
        <widget class="PyDMPushButton" name="CCBruchOpen">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>85</x>
           <y>30</y>
-          <width>71</width>
+          <width>41</width>
           <height>25</height>
          </rect>
         </property>
@@ -1718,9 +1542,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="CCBruchOpen_2">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>85</x>
           <y>60</y>
-          <width>71</width>
+          <width>41</width>
           <height>25</height>
          </rect>
         </property>
@@ -1793,7 +1617,7 @@ color: rgb(0, 0, 0);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>231</width>
+          <width>133</width>
           <height>25</height>
          </rect>
         </property>
@@ -1824,12 +1648,12 @@ color: rgb(0, 0, 0);
          <string>Delay Bruch:</string>
         </property>
        </widget>
-       <widget class="PyDMByteIndicator" name="CCBruchStatus">
+       <widget class="PyDMByteIndicator" name="CCBruchStatus_6">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>8</x>
           <y>50</y>
-          <width>101</width>
+          <width>71</width>
           <height>20</height>
          </rect>
         </property>
@@ -1837,7 +1661,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 11pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 10pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -1886,11 +1710,14 @@ color: rgb(0, 0, 0);
       <widget class="QFrame" name="CCBruchFrame_2">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
          <y>110</y>
-         <width>231</width>
+         <width>130</width>
          <height>91</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -1901,9 +1728,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="CCBruchOpen_3">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>85</x>
           <y>30</y>
-          <width>71</width>
+          <width>41</width>
           <height>25</height>
          </rect>
         </property>
@@ -1974,9 +1801,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="CCBruchOpen_4">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>85</x>
           <y>60</y>
-          <width>71</width>
+          <width>41</width>
           <height>25</height>
          </rect>
         </property>
@@ -2049,7 +1876,7 @@ color: rgb(0, 0, 0);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>231</width>
+          <width>131</width>
           <height>25</height>
          </rect>
         </property>
@@ -2083,9 +1910,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMByteIndicator" name="CCBruchStatus_2">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>8</x>
           <y>50</y>
-          <width>101</width>
+          <width>71</width>
           <height>20</height>
          </rect>
         </property>
@@ -2093,7 +1920,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 11pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 10pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -2139,6 +1966,716 @@ color: rgb(0, 0, 0);
         </property>
        </widget>
       </widget>
+      <widget class="QFrame" name="frame_4">
+       <property name="geometry">
+        <rect>
+         <x>135</x>
+         <y>10</y>
+         <width>130</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="PyDMByteIndicator" name="CCBruchStatus_5">
+        <property name="geometry">
+         <rect>
+          <x>3</x>
+          <y>50</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;Sans Serif&quot;;</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://XCS:SND:T1:TH2</string>
+        </property>
+        <property name="offColor" stdset="0">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="showLabels" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="bigEndian" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="circles" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="labelPosition" stdset="0">
+         <enum>QTabWidget::West</enum>
+        </property>
+        <property name="numBits" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="shift" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="labels" stdset="0">
+         <stringlist>
+          <string>Status</string>
+         </stringlist>
+        </property>
+       </widget>
+       <widget class="PyDMShellCommand" name="PyDMShellCommand_5">
+        <property name="geometry">
+         <rect>
+          <x>75</x>
+          <y>60</y>
+          <width>51</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>DD In</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string/>
+        </property>
+        <property name="PyDMIcon" stdset="0">
+         <string/>
+        </property>
+        <property name="showConfirmDialog" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="runCommandsInFullShell" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="confirmMessage" stdset="0">
+         <string>Are you sure you want to proceed?</string>
+        </property>
+        <property name="environmentVariables" stdset="0">
+         <string/>
+        </property>
+        <property name="showIcon" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="redirectCommandOutput" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="allowMultipleExecutions" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="titles" stdset="0">
+         <stringlist/>
+        </property>
+        <property name="commands" stdset="0">
+         <stringlist>
+          <string>/cds/home/c/cagee/SND/dd_in.sh</string>
+         </stringlist>
+        </property>
+        <property name="passwordProtected" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="password" stdset="0">
+         <string/>
+        </property>
+        <property name="protectedPassword" stdset="0">
+         <string/>
+        </property>
+       </widget>
+       <widget class="PyDMShellCommand" name="PyDMShellCommand_6">
+        <property name="geometry">
+         <rect>
+          <x>75</x>
+          <y>30</y>
+          <width>51</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 255, 0);</string>
+        </property>
+        <property name="text">
+         <string>DD Out</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string/>
+        </property>
+        <property name="PyDMIcon" stdset="0">
+         <string/>
+        </property>
+        <property name="showConfirmDialog" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="runCommandsInFullShell" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="confirmMessage" stdset="0">
+         <string>Are you sure you want to proceed?</string>
+        </property>
+        <property name="environmentVariables" stdset="0">
+         <string/>
+        </property>
+        <property name="showIcon" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="redirectCommandOutput" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="allowMultipleExecutions" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="titles" stdset="0">
+         <stringlist/>
+        </property>
+        <property name="commands" stdset="0">
+         <stringlist>
+          <string>/cds/home/c/cagee/SND/dd_out.sh</string>
+         </stringlist>
+        </property>
+        <property name="passwordProtected" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="password" stdset="0">
+         <string/>
+        </property>
+        <property name="protectedPassword" stdset="0">
+         <string/>
+        </property>
+       </widget>
+       <widget class="PyDMLabel" name="DelayLabel_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>130</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	qproperty-alignment: AlignCenter;
+	border: 1px solid #FF17365D;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: #FF17365D;
+	padding: 5px 0px;
+	color: rgb(255, 255, 255);
+	max-height: 25px;
+	font-size: 14px;
+}</string>
+        </property>
+        <property name="text">
+         <string>DD Crystal:</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frame_3">
+       <property name="geometry">
+        <rect>
+         <x>135</x>
+         <y>110</y>
+         <width>130</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="PyDMByteIndicator" name="CCBruchStatus_3">
+        <property name="geometry">
+         <rect>
+          <x>3</x>
+          <y>50</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;Sans Serif&quot;;</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://XCS:SND:T2:TH</string>
+        </property>
+        <property name="offColor" stdset="0">
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </property>
+        <property name="showLabels" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="bigEndian" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="circles" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="labelPosition" stdset="0">
+         <enum>QTabWidget::West</enum>
+        </property>
+        <property name="numBits" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="shift" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="labels" stdset="0">
+         <stringlist>
+          <string>Status</string>
+         </stringlist>
+        </property>
+       </widget>
+       <widget class="PyDMShellCommand" name="PyDMShellCommand">
+        <property name="geometry">
+         <rect>
+          <x>75</x>
+          <y>60</y>
+          <width>51</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>CC In</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string/>
+        </property>
+        <property name="PyDMIcon" stdset="0">
+         <string/>
+        </property>
+        <property name="showConfirmDialog" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="runCommandsInFullShell" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="confirmMessage" stdset="0">
+         <string>Are you sure you want to proceed?</string>
+        </property>
+        <property name="environmentVariables" stdset="0">
+         <string/>
+        </property>
+        <property name="showIcon" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="redirectCommandOutput" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="allowMultipleExecutions" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="titles" stdset="0">
+         <stringlist/>
+        </property>
+        <property name="commands" stdset="0">
+         <stringlist>
+          <string>/cds/home/c/cagee/SND/cc_in.sh</string>
+         </stringlist>
+        </property>
+        <property name="passwordProtected" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="password" stdset="0">
+         <string/>
+        </property>
+        <property name="protectedPassword" stdset="0">
+         <string/>
+        </property>
+       </widget>
+       <widget class="PyDMShellCommand" name="PyDMShellCommand_2">
+        <property name="geometry">
+         <rect>
+          <x>75</x>
+          <y>30</y>
+          <width>51</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 255, 0);</string>
+        </property>
+        <property name="text">
+         <string>CC Out</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string/>
+        </property>
+        <property name="PyDMIcon" stdset="0">
+         <string/>
+        </property>
+        <property name="showConfirmDialog" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="runCommandsInFullShell" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="confirmMessage" stdset="0">
+         <string>Are you sure you want to proceed?</string>
+        </property>
+        <property name="environmentVariables" stdset="0">
+         <string/>
+        </property>
+        <property name="showIcon" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="redirectCommandOutput" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="allowMultipleExecutions" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="titles" stdset="0">
+         <stringlist/>
+        </property>
+        <property name="commands" stdset="0">
+         <stringlist>
+          <string>/cds/home/c/cagee/SND/cc_out.sh</string>
+         </stringlist>
+        </property>
+        <property name="passwordProtected" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="password" stdset="0">
+         <string/>
+        </property>
+        <property name="protectedPassword" stdset="0">
+         <string/>
+        </property>
+       </widget>
+       <widget class="PyDMLabel" name="DelayLabel_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>130</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	qproperty-alignment: AlignCenter;
+	border: 1px solid #FF17365D;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: #FF17365D;
+	padding: 5px 0px;
+	color: rgb(255, 255, 255);
+	max-height: 25px;
+	font-size: 14px;
+}</string>
+        </property>
+        <property name="text">
+         <string>CC Crystal:</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="PyDMScatterPlot" name="CC1plot">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>CC1 Align</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="transformationAnchor">
+       <enum>QGraphicsView::NoAnchor</enum>
+      </property>
+      <property name="showXGrid">
+       <bool>true</bool>
+      </property>
+      <property name="showYGrid">
+       <bool>true</bool>
+      </property>
+      <property name="axisColor">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="yAxes">
+       <stringlist>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1223979593.7157927, &quot;maxRange&quot;: 2448754758.0140367, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+       </stringlist>
+      </property>
+      <property name="title" stdset="0">
+       <string>CC1 Align</string>
+      </property>
+      <property name="xLabels">
+       <stringlist>
+        <string>T2 TH</string>
+       </stringlist>
+      </property>
+      <property name="curves">
+       <stringlist>
+        <string>{&quot;y_channel&quot;: &quot;calc://cc1_ratio?var=ca://XCS:SND:DIO:AMPL_8&amp;var_2=ca://XCS:SND:DIO:AMPL_13&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T2:TH&quot;, &quot;name&quot;: &quot;Ch.8/Ch.13&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       </stringlist>
+      </property>
+      <property name="autoRangeX">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="2">
+     <widget class="PyDMScatterPlot" name="CC2Plot">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>CC2</string>
+      </property>
+      <property name="toolTipDuration">
+       <number>-3</number>
+      </property>
+      <property name="showXGrid">
+       <bool>true</bool>
+      </property>
+      <property name="showYGrid">
+       <bool>true</bool>
+      </property>
+      <property name="axisColor">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="yAxes">
+       <stringlist>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -25822704.795945443, &quot;maxRange&quot;: 48845219.86897274, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+       </stringlist>
+      </property>
+      <property name="title" stdset="0">
+       <string>CC2 Align</string>
+      </property>
+      <property name="xLabels">
+       <stringlist>
+        <string>T3 TH</string>
+       </stringlist>
+      </property>
+      <property name="curves">
+       <stringlist>
+        <string>{&quot;y_channel&quot;: &quot;calc://cc2_ratio?var=ca://XCS:SND:DIO:AMPL_9&amp;var_2=XCS:SND:DIO:AMPL_8&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T3:TH&quot;, &quot;name&quot;: &quot;Ch.9/Ch.8&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       </stringlist>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="PyDMScatterPlot" name="X3Plot">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>265</width>
+        <height>212</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>X3</string>
+      </property>
+      <property name="toolTipDuration">
+       <number>-4</number>
+      </property>
+      <property name="showXGrid">
+       <bool>true</bool>
+      </property>
+      <property name="showYGrid">
+       <bool>true</bool>
+      </property>
+      <property name="axisColor">
+       <color>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </property>
+      <property name="yAxes">
+       <stringlist>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1014022013.3032537, &quot;maxRange&quot;: 1521915278.5363228, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+       </stringlist>
+      </property>
+      <property name="title" stdset="0">
+       <string>X3 Align</string>
+      </property>
+      <property name="xLabels">
+       <stringlist>
+        <string>T4 TH2</string>
+       </stringlist>
+      </property>
+      <property name="curves">
+       <stringlist>
+        <string>{&quot;y_channel&quot;: &quot;calc://x3_ratio?var=ca://XCS:SND:DIO:AMPL_15&amp;var_2=ca://XCS:SND:DIO:AMPL_12&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2&quot;, &quot;x_channel&quot;: &quot;ca://XCS:SND:T4:TH2&quot;, &quot;name&quot;: &quot;Ch.15/Ch.12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 3, &quot;buffer_size&quot;: 1200, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       </stringlist>
+      </property>
      </widget>
     </item>
    </layout>
@@ -2208,6 +2745,41 @@ background-color: rgb(170, 232, 255);</string>
     <enum>PyDMLineEdit::Default</enum>
    </property>
   </widget>
+  <widget class="PyDMRelatedDisplayButton" name="CC_in">
+   <property name="geometry">
+    <rect>
+     <x>1020</x>
+     <y>470</y>
+     <width>71</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>CC IN</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="PyDMIconColor" stdset="0">
+    <color>
+     <red>170</red>
+     <green>255</green>
+     <blue>127</blue>
+    </color>
+   </property>
+   <property name="showIcon" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>MainFrame</zorder>
   <zorder>gridFrame</zorder>
   <zorder>Table</zorder>
@@ -2215,6 +2787,7 @@ background-color: rgb(170, 232, 255);</string>
   <zorder>TimeDelayPV</zorder>
   <zorder>IntensityRatioPV</zorder>
   <zorder>DelayEnergyPV</zorder>
+  <zorder>CC_in</zorder>
  </widget>
  <customwidgets>
   <customwidget>
