@@ -1154,7 +1154,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -556042634.6486362, &quot;maxRange&quot;: 1080946524.3023093, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -588782417.8276551, &quot;maxRange&quot;: 1113686307.4813282, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1219,7 +1219,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -618049436.5479581, &quot;maxRange&quot;: 1169045018.4581175, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -653791325.6480796, &quot;maxRange&quot;: 1204786907.558239, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1287,7 +1287,7 @@ background-color: rgb(170, 232, 255);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -49368325190.88654, &quot;maxRange&quot;: 88736084823.3139, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -52130413391.170555, &quot;maxRange&quot;: 91498173023.59792, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2486,7 +2486,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1297434280.7503893, &quot;maxRange&quot;: 2522209445.048633, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1373827155.2663698, &quot;maxRange&quot;: 2598602319.5646133, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2548,7 +2548,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -27316063.289243806, &quot;maxRange&quot;: 50338578.36227111, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -28869156.122274105, &quot;maxRange&quot;: 51891671.195301406, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2607,7 +2607,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1064740759.1400452, &quot;maxRange&quot;: 1572634024.3731143, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1117488254.8103085, &quot;maxRange&quot;: 1625381520.0433776, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2692,48 +2692,12 @@ background-color: rgb(170, 232, 255);</string>
     <enum>PyDMLineEdit::Default</enum>
    </property>
   </widget>
-  <widget class="PyDMRelatedDisplayButton" name="CC_in">
-   <property name="geometry">
-    <rect>
-     <x>1020</x>
-     <y>470</y>
-     <width>71</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string/>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(85, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string>CC IN</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="PyDMIconColor" stdset="0">
-    <color>
-     <red>170</red>
-     <green>255</green>
-     <blue>127</blue>
-    </color>
-   </property>
-   <property name="showIcon" stdset="0">
-    <bool>false</bool>
-   </property>
-  </widget>
   <zorder>MainFrame</zorder>
   <zorder>gridFrame</zorder>
   <zorder>Table</zorder>
   <zorder>CCEnergyPV</zorder>
   <zorder>TimeDelayPV</zorder>
   <zorder>DelayEnergyPV</zorder>
-  <zorder>CC_in</zorder>
  </widget>
  <customwidgets>
   <customwidget>
