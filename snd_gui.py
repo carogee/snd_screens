@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets, uic
 from bluesky import RunEngine
 RE = RunEngine({})
 from bluesky.plans import scan
-from ophyd.sim import motor, det
+from ophyd.signal import EpicsSignal
 from pydm import PyDMApplication
 
 from pydm.widgets.channel import PyDMChannel
@@ -14,8 +14,8 @@ from pydm.widgets.channel import PyDMChannel
 from pydm.data_plugins.local_plugin import LocalPlugin
 from scan_theta import AngleX1Align, AngleX2Align, AngleX3Align, AngleX4Align, AngleCC1Align, AngleCC2Align
 from pydm.widgets.pushbutton import PyDMPushButton
-from PyQt5.QtCore import QCoreApplication, Qt
-from PyQt5 import QtWebEngineWidgets, QtCore
+from PyQt5.QtCore import QCoreApplication, Qt, QTimer
+from PyQt5 import QtWebEngineWidgets, QtCore, QtWidgets
 from pydm.widgets.channel import PyDMChannel
 from pydm.widgets.scatterplot import PyDMScatterPlot
 from qtpy.QtCore import Slot
@@ -23,8 +23,10 @@ from qtpy.QtWidgets import QWidget
 from PyQt5.QtWidgets import QMainWindow, QWidget
 from bluesky.callbacks.best_effort import BestEffortCallback
 from bluesky.plan_stubs import stop
-from pcdsdevices.signal import AvgSignal
 from epics import caput
+from collections import deque
+import numpy as np
+
 
 bec = BestEffortCallback()
 RE.subscribe(bec)
@@ -123,11 +125,91 @@ class MotorControls(QtWidgets.QWidget):
         #value = float(self.IntensityRatioPV)
 
 
+# Class for displaying the average of last 10 values from a PV
+class AvgSignal:
+    def __init__(self, signal, averages=120, name=''):
+        self.signal = signal
+        self.averages = averages
+        self.history = []  # To hold the history of values
+
+    def get(self):
+        # Get the current value from EPICS
+        value = self.signal.value
+        # Maintain history for averaging
+        self.history.append(value)
+        if len(self.history) > self.averages:
+            self.history.pop(0)  # Keep only the last 'averages' values
+
+        return np.mean(self.history) if self.history else 0
+
+
+class MyDevice:
+    def __init__(self):
+        dcc = EpicsSignal('XCS:SND:DIO:AMPL_8', name='dcc_signal', auto_monitor=True)
+        # Initialize the EpicsSignal                                                                                 print("initializing epics signal")                       
+        self.dcc_signal = AvgSignal(signal=dcc, averages=120, name='dcc_signal')
+        
+class MyDisplay(Display):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.my_device = MyDevice()  # Create an instance of MyDevice
+
+        # Create a QLabel to display the average value
+        self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
+        self.average_label.setGeometry(230, 100, 200, 50)  # Set position and size
+        self.average_label.setText("Average: 0.0")
+
+        # Set up a timer to update the average value every second
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_average)
+        self.timer.start(1000)  # Update every second
+        print("initialized timer")
+    def update_average(self):
+        # Get the averaged value and update the label
+        averaged_value = self.my_device.dcc_signal.get()
+        self.average_label.setText(f"{averaged_value:.2f}")
+
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        # Initialize a deque to hold the last 10 values
+        self.value_history = deque(maxlen=10)
+
+        # Create a label to display the average
+        self.average_label = QtWidgets.QLabel(self)
+        self.average_label.setGeometry(10, 10, 200, 50)  # Set position and size
+        self.average_label.setText("Average: 0.0")
+
+        # Example PV to read from; replace with your actual PV name
+        self.pv = EpicsSignal("XCS:SND:DIO:AMPL_8", self)
+        self.pv.valueChanged.connect(self.update_average)
+        self.pv.connect()  # Connect to the PV
+
+    def update_average(self, value):
+        # Add the new value to the history deque
+        self.value_history.append(value)
+
+        # Calculate the average of the last 10 values
+        average_value = np.mean(list(self.value_history))
+
+        # Update the label with the average
+        self.average_label.setText(f"Average: {average_value:.2f}")
+    """
+
+    def ui_filename(self):
+        return '/cds/home/c/cagee/SND/motors_screen.ui'
+
+    def ui_filepath(self):
+        return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
+    
 if __name__=='__main__':
     from pydm import PyDMApplication
     app = QtWidgets.QApplication(sys.argv)
     form = MotorControls()
     form.show()
+    display = Mydisplay
+    display.show()
     sys.exit(app.exec_())
         
 

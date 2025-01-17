@@ -1083,62 +1083,6 @@ background-color: rgb(170, 232, 255);</string>
     <enum>PyDMLineEdit::Default</enum>
    </property>
   </widget>
-  <widget class="PyDMLineEdit" name="IntensityRatioPV">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>110</y>
-     <width>41</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="toolTip">
-    <string/>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 232, 255);
-color: rgb(2,2,2);</string>
-   </property>
-   <property name="frame">
-    <bool>false</bool>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Normal</enum>
-   </property>
-   <property name="precision" stdset="0">
-    <number>0</number>
-   </property>
-   <property name="showUnits" stdset="0">
-    <bool>false</bool>
-   </property>
-   <property name="precisionFromPV" stdset="0">
-    <bool>true</bool>
-   </property>
-   <property name="alarmSensitiveContent" stdset="0">
-    <bool>false</bool>
-   </property>
-   <property name="alarmSensitiveBorder" stdset="0">
-    <bool>false</bool>
-   </property>
-   <property name="PyDMToolTip" stdset="0">
-    <string/>
-   </property>
-   <property name="monitorDisp" stdset="0">
-    <bool>false</bool>
-   </property>
-   <property name="channel" stdset="0">
-    <string>calc://ratio?var=ca://XCS:TT:01:AMPL_12&amp;var_2=ca://XCS:TT:01:AMPL_8&amp;expr=math.fabs(var/(0.0000001+var_2))&amp;update=var,var_2</string>
-   </property>
-   <property name="displayFormat" stdset="0">
-    <enum>PyDMLineEdit::Decimal</enum>
-   </property>
-  </widget>
   <widget class="QFrame" name="gridFrame">
    <property name="geometry">
     <rect>
@@ -1210,7 +1154,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -524562073.8995796, &quot;maxRange&quot;: 1049465963.5532527, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -556042634.6486362, &quot;maxRange&quot;: 1080946524.3023093, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1275,7 +1219,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -583682235.490149, &quot;maxRange&quot;: 1134677817.4003084, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -618049436.5479581, &quot;maxRange&quot;: 1169045018.4581175, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1343,7 +1287,7 @@ color: rgb(2,2,2);</string>
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -46712471152.15192, &quot;maxRange&quot;: 86080230784.57928, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -49368325190.88654, &quot;maxRange&quot;: 88736084823.3139, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -1380,6 +1324,9 @@ color: rgb(2,2,2);</string>
        </property>
        <property name="toolTip">
         <string/>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 85, 255);</string>
        </property>
        <property name="text">
         <string>Ratio Calculation</string>
@@ -2539,7 +2486,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1223979593.7157927, &quot;maxRange&quot;: 2448754758.0140367, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1297434280.7503893, &quot;maxRange&quot;: 2522209445.048633, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2601,7 +2548,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -25822704.795945443, &quot;maxRange&quot;: 48845219.86897274, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -27316063.289243806, &quot;maxRange&quot;: 50338578.36227111, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2660,7 +2607,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1014022013.3032537, &quot;maxRange&quot;: 1521915278.5363228, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1064740759.1400452, &quot;maxRange&quot;: 1572634024.3731143, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2785,7 +2732,6 @@ background-color: rgb(170, 232, 255);</string>
   <zorder>Table</zorder>
   <zorder>CCEnergyPV</zorder>
   <zorder>TimeDelayPV</zorder>
-  <zorder>IntensityRatioPV</zorder>
   <zorder>DelayEnergyPV</zorder>
   <zorder>CC_in</zorder>
  </widget>
