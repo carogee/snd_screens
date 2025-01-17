@@ -173,33 +173,6 @@ class MyDisplay(Display):
         averaged_ratio = averaged_value_ch12/averaged_value_dcc
         self.average_label.setText(f"{averaged_ratio:.2f}")
 
-    """
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-        # Initialize a deque to hold the last 10 values
-        self.value_history = deque(maxlen=10)
-
-        # Create a label to display the average
-        self.average_label = QtWidgets.QLabel(self)
-        self.average_label.setGeometry(10, 10, 200, 50)  # Set position and size
-        self.average_label.setText("Average: 0.0")
-
-        # Example PV to read from; replace with your actual PV name
-        self.pv = EpicsSignal("XCS:SND:DIO:AMPL_8", self)
-        self.pv.valueChanged.connect(self.update_average)
-        self.pv.connect()  # Connect to the PV
-
-    def update_average(self, value):
-        # Add the new value to the history deque
-        self.value_history.append(value)
-
-        # Calculate the average of the last 10 values
-        average_value = np.mean(list(self.value_history))
-
-        # Update the label with the average
-        self.average_label.setText(f"Average: {average_value:.2f}")
-    """
 
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/motors_screen.ui'
