@@ -145,10 +145,12 @@ class AvgSignal:
 
 class MyDevice:
     def __init__(self):
+        ch12 = EpicsSignal('XCS:SND:DIO:AMPL_12', name='ch12', auto_monitor=True)
         dcc = EpicsSignal('XCS:SND:DIO:AMPL_8', name='dcc_signal', auto_monitor=True)
         # Initialize the EpicsSignal                                                                                 print("initializing epics signal")                       
+        self.ch12 = AvgSignal(signal=ch12, averages=120, name='ch12')
         self.dcc_signal = AvgSignal(signal=dcc, averages=120, name='dcc_signal')
-        
+
 class MyDisplay(Display):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -166,8 +168,10 @@ class MyDisplay(Display):
         print("initialized timer")
     def update_average(self):
         # Get the averaged value and update the label
-        averaged_value = self.my_device.dcc_signal.get()
-        self.average_label.setText(f"{averaged_value:.2f}")
+        averaged_value_dcc = self.my_device.dcc_signal.get()
+        averaged_value_ch12 = self.my_device.ch12.get()
+        averaged_ratio = averaged_value_ch12/averaged_value_dcc
+        self.average_label.setText(f"{averaged_ratio:.2f}")
 
     """
     def __init__(self, **kwargs):
@@ -208,7 +212,7 @@ if __name__=='__main__':
     app = QtWidgets.QApplication(sys.argv)
     form = MotorControls()
     form.show()
-    display = Mydisplay
+    display = MyDisplay()
     display.show()
     sys.exit(app.exec_())
         
