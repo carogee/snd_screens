@@ -34,12 +34,18 @@ RE.subscribe(bec)
 from bluesky.utils import install_kicker
 #install_kicker()
 
+current_directory = os.getcwd()
+print("current directory", current_directory)
+file_path=os.path.join(current_directory, 'motors_screen.ui')
+print("file path", file_path)
+
+
 class MotorControls(QtWidgets.QWidget):
 	
     def __init__(self, parent=None):
         super(MotorControls, self).__init__(parent)
-        uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
-
+        #uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
+        uic.loadUi(file_path, self)
 
         #PydmRelatedDisplay buttons connect to custom functions:
         self.X1.clicked.connect(self.scan_openx1)
@@ -96,36 +102,17 @@ class MotorControls(QtWidgets.QWidget):
         self.angle_cc2_scan.show()
         self.angle_cc2_scan.start_scan()
 
-    #def insert_cc(self):
-    #    print("insert cc script")
-    #    caput('XCS:SND:T2:TH', 16.1)
-    #    caput('XCS:SND:T3:TH', 16.1)
         
     
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/motors_screen.ui'
+        #return '/cds/home/c/cagee/SND/motors_screen.ui'
+        return str(file_path)
 
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
 
-#class AvgSig(Display):
-    #def __init__(self, parent=None, args=None, macros=None):
-        #super(AvgSig, self).__init__(parent=parent, args=args, macros=macros)
-        #self.IntensityRatioPV.textChanged.connect(self.average)
-        
-
-    #def ui_filename(self):
-        #return '/cds/home/c/cagee/SND/motors_screen.ui'
-
-    #def ui_filepath(self):
-        #return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
-
-
-    #def average(self):
-        #value = float(self.IntensityRatioPV)
-
-
-# Class for displaying the average of last 10 values from a PV
+"""
+# Class for displaying the average of last 120 values from a PV
 class AvgSignal:
     def __init__(self, signal, averages=120, name=''):
         self.signal = signal
@@ -179,14 +166,15 @@ class MyDisplay(Display):
 
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
-    
+"""   
+ 
 if __name__=='__main__':
     from pydm import PyDMApplication
     app = QtWidgets.QApplication(sys.argv)
     form = MotorControls()
     form.show()
-    display = MyDisplay()
-    display.show()
+    #display = MyDisplay()
+    #display.show()
     sys.exit(app.exec_())
         
 
