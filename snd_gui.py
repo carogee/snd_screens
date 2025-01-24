@@ -40,25 +40,63 @@ file_path=os.path.join(current_directory, 'motors_screen.ui')
 print("file path", file_path)
 
 
-class MotorControls(QtWidgets.QWidget):
-	
-    def __init__(self, parent=None):
-        super(MotorControls, self).__init__(parent)
-        #uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
+# Class for displaying the average of last 120 values from a PV
+class AvgSignal:
+    def __init__(self, signal, averages=120, name=''):
+        self.signal = signal
+        self.averages = averages
+        self.history = []  # To hold the history of values
+
+    def get(self):
+        # Get the current value from EPICS
+        value = self.signal.value
+        # Maintain history for averaging
+        self.history.append(value)
+        if len(self.history) > self.averages:
+            self.history.pop(0)  # Keep only the last 'averages' values
+
+        return np.mean(self.history) if self.history else 0
+
+
+class MyDevice:
+    def __init__(self):
+        ch12 = EpicsSignal('XCS:SND:DIO:AMPL_12', name='ch12', auto_monitor=True)
+        dcc = EpicsSignal('XCS:SND:DIO:AMPL_8', name='dcc_signal', auto_monitor=True)
+        # Initialize the EpicsSignal                                                                                 print("initializing epics signal")                       
+        self.ch12 = AvgSignal(signal=ch12, averages=120, name='ch12')
+        self.dcc_signal = AvgSignal(signal=dcc, averages=120, name='dcc_signal')
+
+
+class MyDisplay(Display):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.my_device = MyDevice()  # Create an instance of MyDevice
         uic.loadUi(file_path, self)
 
-        #PydmRelatedDisplay buttons connect to custom functions:
+        #PydmRelatedDisplay buttons connect to custom functions:                                           
         self.X1.clicked.connect(self.scan_openx1)
         self.X2.clicked.connect(self.scan_openx2)
         self.X3.clicked.connect(self.scan_openx3)
         self.X4.clicked.connect(self.scan_openx4)
         self.CC1.clicked.connect(self.scan_opencc1)
         self.CC2.clicked.connect(self.scan_opencc2)
-        #self.CC_in.clicked.connect(self.insert_cc)
-        #self.IntensityRatioPV.connect(self.average_ratio)
-        # the functions that connect to the custom classes from  scan_theta.py
-        # setwindow flags lines  enable modal pop up window for each motor
 
+        # Create a QLabel to display the average value
+        self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
+        self.average_label.setGeometry(223, 80, 200, 50)  # Set position and size
+        self.average_label.setText("Average: 0.0")
+
+        # Set up a timer to update the average value every second
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_average)
+        self.timer.start(1000)  # Update every second
+        print("initialized timer")
+    def update_average(self):
+        # Get the averaged value and update the label
+        averaged_value_dcc = self.my_device.dcc_signal.get()
+        averaged_value_ch12 = self.my_device.ch12.get()
+        averaged_ratio = averaged_value_ch12/averaged_value_dcc
+        self.average_label.setText(f"{averaged_ratio:.2f}")
 
     def scan_openx1(self):
         self.angle_x1_scan=AngleX1Align(self)
@@ -98,68 +136,9 @@ class MotorControls(QtWidgets.QWidget):
     def scan_opencc2(self):
         self.angle_cc2_scan=AngleCC2Align(self)
         self.startButton=AngleCC2Align(self)
-        self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)		
+        self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc2_scan.show()
         self.angle_cc2_scan.start_scan()
-
-        
-    
-    def ui_filename(self):
-        #return '/cds/home/c/cagee/SND/motors_screen.ui'
-        return str(file_path)
-
-    def ui_filepath(self):
-        return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
-
-
-# Class for displaying the average of last 120 values from a PV
-class AvgSignal:
-    def __init__(self, signal, averages=120, name=''):
-        self.signal = signal
-        self.averages = averages
-        self.history = []  # To hold the history of values
-
-    def get(self):
-        # Get the current value from EPICS
-        value = self.signal.value
-        # Maintain history for averaging
-        self.history.append(value)
-        if len(self.history) > self.averages:
-            self.history.pop(0)  # Keep only the last 'averages' values
-
-        return np.mean(self.history) if self.history else 0
-
-
-class MyDevice:
-    def __init__(self):
-        ch12 = EpicsSignal('XCS:SND:DIO:AMPL_12', name='ch12', auto_monitor=True)
-        dcc = EpicsSignal('XCS:SND:DIO:AMPL_8', name='dcc_signal', auto_monitor=True)
-        # Initialize the EpicsSignal                                                                                 print("initializing epics signal")                       
-        self.ch12 = AvgSignal(signal=ch12, averages=120, name='ch12')
-        self.dcc_signal = AvgSignal(signal=dcc, averages=120, name='dcc_signal')
-
-
-class MyDisplay(Display):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.my_device = MyDevice()  # Create an instance of MyDevice
-
-        # Create a QLabel to display the average value
-        self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
-        self.average_label.setGeometry(223, 80, 200, 50)  # Set position and size
-        self.average_label.setText("Average: 0.0")
-
-        # Set up a timer to update the average value every second
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_average)
-        self.timer.start(1000)  # Update every second
-        print("initialized timer")
-    def update_average(self):
-        # Get the averaged value and update the label
-        averaged_value_dcc = self.my_device.dcc_signal.get()
-        averaged_value_ch12 = self.my_device.ch12.get()
-        averaged_ratio = averaged_value_ch12/averaged_value_dcc
-        self.average_label.setText(f"{averaged_ratio:.2f}")
 
 
     def ui_filename(self):
@@ -172,8 +151,6 @@ class MyDisplay(Display):
 if __name__=='__main__':
     from pydm import PyDMApplication
     app = QtWidgets.QApplication(sys.argv)
-    form = MotorControls()
-    form.show()
     display = MyDisplay()
     display.show()
     sys.exit(app.exec_())
