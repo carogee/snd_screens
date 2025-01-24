@@ -111,7 +111,7 @@ class MotorControls(QtWidgets.QWidget):
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
 
-"""
+
 # Class for displaying the average of last 120 values from a PV
 class AvgSignal:
     def __init__(self, signal, averages=120, name=''):
@@ -138,6 +138,7 @@ class MyDevice:
         self.ch12 = AvgSignal(signal=ch12, averages=120, name='ch12')
         self.dcc_signal = AvgSignal(signal=dcc, averages=120, name='dcc_signal')
 
+
 class MyDisplay(Display):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -145,7 +146,7 @@ class MyDisplay(Display):
 
         # Create a QLabel to display the average value
         self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
-        self.average_label.setGeometry(230, 100, 200, 50)  # Set position and size
+        self.average_label.setGeometry(223, 80, 200, 50)  # Set position and size
         self.average_label.setText("Average: 0.0")
 
         # Set up a timer to update the average value every second
@@ -166,15 +167,13 @@ class MyDisplay(Display):
 
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
-"""   
+   
  
 if __name__=='__main__':
     from pydm import PyDMApplication
     app = QtWidgets.QApplication(sys.argv)
     form = MotorControls()
     form.show()
-    #display = MyDisplay()
-    #display.show()
+    display = MyDisplay()
+    display.show()
     sys.exit(app.exec_())
-        
-
