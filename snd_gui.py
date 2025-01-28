@@ -34,6 +34,7 @@ RE.subscribe(bec)
 from bluesky.utils import install_kicker
 #install_kicker()
 
+
 current_directory = os.getcwd()
 print("current directory", current_directory)
 file_path=os.path.join(current_directory, 'motors_screen.ui')
@@ -71,7 +72,8 @@ class MyDisplay(Display):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.my_device = MyDevice()  # Create an instance of MyDevice
-        uic.loadUi(file_path, self)
+        uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
+        #uic.loadUi(file_path, self)
 
         #PydmRelatedDisplay buttons connect to custom functions:                                           
         self.X1.clicked.connect(self.scan_openx1)
@@ -91,6 +93,7 @@ class MyDisplay(Display):
         self.timer.timeout.connect(self.update_average)
         self.timer.start(1000)  # Update every second
         print("initialized timer")
+
     def update_average(self):
         # Get the averaged value and update the label
         averaged_value_dcc = self.my_device.dcc_signal.get()
@@ -139,7 +142,6 @@ class MyDisplay(Display):
         self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc2_scan.show()
         self.angle_cc2_scan.start_scan()
-
 
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/motors_screen.ui'

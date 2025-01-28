@@ -16,7 +16,6 @@ from bluesky.plans import scan, list_scan, count
 from bluesky.plan_stubs import abs_set, trigger_and_read, stop
 from ophyd import Component as Cpt
 from ophyd import Device
-from ophyd.sim import det, det1, det2, det3, det4, motor, motor1, motor2, motor3 #simulation motors/detectors
 
 #import relevant pydm/qt 
 from PyQt5.QtCore import QCoreApplication, Qt
@@ -63,6 +62,8 @@ class AngleX1Align(PyDMPushButton):
         uic.loadUi("/cds/home/c/cagee/SND/angle_x1.ui",self)
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)	
+        self.test_label = QtWidgets.QLabel(self)
+        self.test_label.setText("X1")
 
     def anglex1(self):
         if not (self.startLineEdit.text().strip()) == "": 
@@ -77,14 +78,15 @@ class AngleX1Align(PyDMPushButton):
     def start_scan(self):
         #  Read values from UI and perform a Bluesky scan
         RE(self.anglex1())
-        
+        print("Scanning motor x1")
+
     def stop_scan(self):
         RE.stop()
         print("Stopped scanning motor X1")
 
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_x1.ui'
-
+    
 class AngleX2Align(PyDMPushButton):
     def __init__(self,parent=None):
         super(AngleX2Align,self).__init__(parent)
@@ -108,7 +110,7 @@ class AngleX2Align(PyDMPushButton):
         print("Stopped scanning motor X2")
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_x2.ui'
-
+   
 class AngleX3Align(PyDMPushButton):
     def __init__(self,parent=None):
         super(AngleX3Align,self).__init__(parent)
@@ -203,11 +205,11 @@ class AngleCC2Align(PyDMPushButton):
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_cc2.ui'
 
-
-
+"""
 if __name__=='__main__':
 	from pydm import PyDMApplication
 	app=QtWidgets.QApplication(sys.argv)
 	form=AngleX1Align()
 	form.show()
 	sys.exit(app.exec_())
+"""

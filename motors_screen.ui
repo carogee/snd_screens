@@ -64,7 +64,7 @@
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="d12">
     <property name="geometry">
      <rect>
       <x>500</x>
@@ -87,7 +87,7 @@
      <string>d12</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="d11">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -109,7 +109,7 @@
      <string>d11</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="d13">
     <property name="geometry">
      <rect>
       <x>724</x>
@@ -131,7 +131,7 @@
      <string>d13</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="d08">
     <property name="geometry">
      <rect>
       <x>500</x>
@@ -153,7 +153,7 @@
      <string>d08</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="d09">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -175,7 +175,7 @@
      <string>d09</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="d14">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -197,7 +197,7 @@
      <string>d14</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="d15">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -219,7 +219,7 @@
      <string>d15</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="d10">
     <property name="geometry">
      <rect>
       <x>890</x>
@@ -242,7 +242,7 @@
      <string>d10</string>
     </property>
    </widget>
-   <widget class="PyDMLabel" name="MotorScreenShot_3">
+   <widget class="PyDMLabel" name="MotorsImage">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -679,15 +679,15 @@
      <bool>false</bool>
     </property>
    </widget>
-   <zorder>MotorScreenShot_3</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>label_8</zorder>
+   <zorder>MotorsImage</zorder>
+   <zorder>d12</zorder>
+   <zorder>d11</zorder>
+   <zorder>d13</zorder>
+   <zorder>d08</zorder>
+   <zorder>d09</zorder>
+   <zorder>d14</zorder>
+   <zorder>d15</zorder>
+   <zorder>d10</zorder>
    <zorder>X3</zorder>
    <zorder>X2</zorder>
    <zorder>X4</zorder>
@@ -766,7 +766,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -857714404.5677749, &quot;maxRange&quot;: 1382618294.2214482, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -997582855.6185836, &quot;maxRange&quot;: 1522486745.272257, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -831,7 +831,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -947383289.6810179, &quot;maxRange&quot;: 1498378871.5911772, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1100077112.9335635, &quot;maxRange&quot;: 1651072694.8437228, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -899,7 +899,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -74818830818.74376, &quot;maxRange&quot;: 114186590451.17111, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -86618817279.46709, &quot;maxRange&quot;: 125986576911.89444, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -918,7 +918,7 @@
      </widget>
     </item>
     <item row="0" column="5">
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="CalcFrame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -1007,7 +1007,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QFrame" name="CCBruchFrame">
+      <widget class="QFrame" name="DelayBruchFrame">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1025,7 +1025,7 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="PyDMPushButton" name="CCBruchOpen">
+       <widget class="PyDMPushButton" name="DelayBruchOpen">
         <property name="geometry">
          <rect>
           <x>85</x>
@@ -1098,7 +1098,7 @@ color: rgb(0, 0, 0);
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="PyDMPushButton" name="CCBruchOpen_2">
+       <widget class="PyDMPushButton" name="DelayBruchClose">
         <property name="geometry">
          <rect>
           <x>85</x>
@@ -1207,7 +1207,7 @@ color: rgb(0, 0, 0);
          <string>Delay Bruch:</string>
         </property>
        </widget>
-       <widget class="PyDMByteIndicator" name="CCBruchStatus_6">
+       <widget class="PyDMByteIndicator" name="DelayBruchStatus">
         <property name="geometry">
          <rect>
           <x>8</x>
@@ -1266,7 +1266,7 @@ color: rgb(0, 0, 0);
         </property>
        </widget>
       </widget>
-      <widget class="QFrame" name="CCBruchFrame_2">
+      <widget class="QFrame" name="CCBruchFrame">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1284,7 +1284,7 @@ color: rgb(0, 0, 0);
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="PyDMPushButton" name="CCBruchOpen_3">
+       <widget class="PyDMPushButton" name="CCBruchOpen">
         <property name="geometry">
          <rect>
           <x>85</x>
@@ -1357,7 +1357,7 @@ color: rgb(0, 0, 0);
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="PyDMPushButton" name="CCBruchOpen_4">
+       <widget class="PyDMPushButton" name="CCBruchClose">
         <property name="geometry">
          <rect>
           <x>85</x>
@@ -1430,7 +1430,7 @@ color: rgb(0, 0, 0);
          <bool>false</bool>
         </property>
        </widget>
-       <widget class="PyDMLabel" name="CCLabel_2">
+       <widget class="PyDMLabel" name="CCBruchLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1466,7 +1466,7 @@ color: rgb(0, 0, 0);
          <string>CC Bruch:</string>
         </property>
        </widget>
-       <widget class="PyDMByteIndicator" name="CCBruchStatus_2">
+       <widget class="PyDMByteIndicator" name="CCBruchStatus">
         <property name="geometry">
          <rect>
           <x>8</x>
@@ -1525,7 +1525,7 @@ color: rgb(0, 0, 0);
         </property>
        </widget>
       </widget>
-      <widget class="QFrame" name="frame_4">
+      <widget class="QFrame" name="DDCrystalFrame">
        <property name="geometry">
         <rect>
          <x>135</x>
@@ -1544,7 +1544,7 @@ color: rgb(0, 0, 0);
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="PyDMByteIndicator" name="CCBruchStatus_5">
+       <widget class="PyDMByteIndicator" name="DDCrystalStatus">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -1602,7 +1602,7 @@ color: rgb(0, 0, 0);
          </stringlist>
         </property>
        </widget>
-       <widget class="PyDMShellCommand" name="PyDMShellCommand_5">
+       <widget class="PyDMShellCommand" name="DDCrystalIn">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -1674,7 +1674,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
        </widget>
-       <widget class="PyDMShellCommand" name="PyDMShellCommand_6">
+       <widget class="PyDMShellCommand" name="DDCrystalOut">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -1746,7 +1746,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
        </widget>
-       <widget class="PyDMLabel" name="DelayLabel_4">
+       <widget class="PyDMLabel" name="DDCrystalLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1783,7 +1783,7 @@ color: rgb(0, 0, 0);
         </property>
        </widget>
       </widget>
-      <widget class="QFrame" name="frame_3">
+      <widget class="QFrame" name="CCCrystalFrame">
        <property name="geometry">
         <rect>
          <x>135</x>
@@ -1801,7 +1801,7 @@ color: rgb(0, 0, 0);
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="PyDMByteIndicator" name="CCBruchStatus_3">
+       <widget class="PyDMByteIndicator" name="CCCrystalStatus">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -1859,7 +1859,7 @@ color: rgb(0, 0, 0);
          </stringlist>
         </property>
        </widget>
-       <widget class="PyDMShellCommand" name="PyDMShellCommand">
+       <widget class="PyDMShellCommand" name="CCCrystalIn">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -1931,7 +1931,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
        </widget>
-       <widget class="PyDMShellCommand" name="PyDMShellCommand_2">
+       <widget class="PyDMShellCommand" name="CCCrystalOut">
         <property name="geometry">
          <rect>
           <x>75</x>
@@ -2003,7 +2003,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
        </widget>
-       <widget class="PyDMLabel" name="DelayLabel_2">
+       <widget class="PyDMLabel" name="CCCrystalLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -2098,7 +2098,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -2001335511.2024927, &quot;maxRange&quot;: 3226110675.5007367, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -2327695431.530749, &quot;maxRange&quot;: 3552470595.828993, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2160,7 +2160,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -41626612.05577414, &quot;maxRange&quot;: 64649127.12880145, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -48261619.00454556, &quot;maxRange&quot;: 71284134.07757288, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2219,7 +2219,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1550768118.9011753, &quot;maxRange&quot;: 2058661384.1342444, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1776112021.6346824, &quot;maxRange&quot;: 2284005286.8677516, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2239,7 +2239,7 @@ color: rgb(0, 0, 0);
     </item>
    </layout>
   </widget>
-  <widget class="QFrame" name="frame_5">
+  <widget class="QFrame" name="PVTableFrame">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -2462,7 +2462,7 @@ background-color: rgb(170, 232, 255);</string>
 background-color: rgb(170, 232, 255);</string>
     </property>
     <property name="text">
-     <string>12474</string>
+     <string>ca://XCS:SND:CALC:E2</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2512,7 +2512,7 @@ background-color: rgb(170, 232, 255);</string>
 background-color: rgb(170, 232, 255);</string>
     </property>
     <property name="text">
-     <string>33</string>
+     <string>ca://XCS:SND:CALC:Delay</string>
     </property>
     <property name="textFormat">
      <enum>Qt::MarkdownText</enum>
@@ -2574,7 +2574,7 @@ background-color: rgb(170, 232, 255);</string>
      <bool>false</bool>
     </property>
     <property name="cursorPosition">
-     <number>5</number>
+     <number>0</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
