@@ -281,402 +281,154 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="PyDMRelatedDisplayButton" name="X3">
+   <widget class="PyDMPushButton" name="X1">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>0</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string/>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
-    </property>
-    <property name="text">
-     <string>X3 Align</string>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_x3.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist/>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="PyDMRelatedDisplayButton" name="X2">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>0</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string/>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
-    </property>
-    <property name="text">
-     <string>X2 Align</string>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_x2.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist/>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="PyDMRelatedDisplayButton" name="X4">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
+      <x>770</x>
       <y>370</y>
-      <width>131</width>
+      <width>121</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
+     <string notr="true">background-color: rgb(124, 183, 255);</string>
     </property>
     <property name="text">
-     <string>X4 Align</string>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_x4.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist/>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
+     <string>X1 ALIGN</string>
     </property>
    </widget>
-   <widget class="PyDMRelatedDisplayButton" name="CC2">
+   <widget class="PyDMPushButton" name="X2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>370</y>
-      <width>131</width>
+      <x>610</x>
+      <y>0</y>
+      <width>121</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
+     <string notr="true">background-color: rgb(126, 193, 255);</string>
     </property>
     <property name="text">
-     <string>CC2 Align</string>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_cc2.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist/>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
+     <string>X2 ALIGN</string>
     </property>
    </widget>
-   <widget class="PyDMRelatedDisplayButton" name="CC1">
+   <widget class="PyDMPushButton" name="X3">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>0</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(126, 193, 255);</string>
+    </property>
+    <property name="text">
+     <string>X3 ALIGN</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="X4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>370</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(126, 193, 255);</string>
+    </property>
+    <property name="text">
+     <string>X4 ALIGN</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="CC1">
     <property name="geometry">
      <rect>
       <x>600</x>
       <y>370</y>
-      <width>131</width>
+      <width>121</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
+     <string notr="true">background-color: rgb(126, 193, 255);</string>
     </property>
     <property name="text">
-     <string>CC1 Align</string>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_cc1.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist/>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
+     <string>CC1 ALIGN</string>
     </property>
    </widget>
-   <widget class="PyDMRelatedDisplayButton" name="X1">
+   <widget class="PyDMPushButton" name="CC2">
     <property name="geometry">
      <rect>
-      <x>760</x>
+      <x>320</x>
       <y>370</y>
-      <width>131</width>
+      <width>121</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="toolTip">
      <string/>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(134, 199, 255);</string>
+     <string notr="true">background-color: rgb(126, 193, 255);</string>
     </property>
     <property name="text">
-     <string>X1 Align</string>
-    </property>
-    <property name="autoRepeatDelay">
-     <number>500</number>
-    </property>
-    <property name="autoRepeatInterval">
-     <number>100</number>
-    </property>
-    <property name="alarmSensitiveContent" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="alarmSensitiveBorder" stdset="0">
-     <bool>true</bool>
-    </property>
-    <property name="PyDMToolTip" stdset="0">
-     <string/>
-    </property>
-    <property name="channel" stdset="0">
-     <string/>
-    </property>
-    <property name="PyDMIcon" stdset="0">
-     <string/>
-    </property>
-    <property name="filenames" stdset="0">
-     <stringlist>
-      <string>angle_x1.ui</string>
-     </stringlist>
-    </property>
-    <property name="titles" stdset="0">
-     <stringlist>
-      <string>X1 Align</string>
-     </stringlist>
-    </property>
-    <property name="showIcon" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="macros" stdset="0">
-     <stringlist>
-      <string>{}</string>
-     </stringlist>
-    </property>
-    <property name="openInNewWindow" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="passwordProtected" stdset="0">
-     <bool>false</bool>
-    </property>
-    <property name="password" stdset="0">
-     <string/>
-    </property>
-    <property name="protectedPassword" stdset="0">
-     <string/>
-    </property>
-    <property name="followSymlinks" stdset="0">
-     <bool>false</bool>
+     <string>CC2 ALIGN</string>
     </property>
    </widget>
    <zorder>MotorsImage</zorder>
@@ -688,12 +440,12 @@
    <zorder>d14</zorder>
    <zorder>d15</zorder>
    <zorder>d10</zorder>
-   <zorder>X3</zorder>
-   <zorder>X2</zorder>
-   <zorder>X4</zorder>
-   <zorder>CC2</zorder>
-   <zorder>CC1</zorder>
    <zorder>X1</zorder>
+   <zorder>X2</zorder>
+   <zorder>X3</zorder>
+   <zorder>X4</zorder>
+   <zorder>CC1</zorder>
+   <zorder>CC2</zorder>
   </widget>
   <widget class="QFrame" name="gridFrame">
    <property name="geometry">
@@ -766,7 +518,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -997582855.6185836, &quot;maxRange&quot;: 1522486745.272257, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1211610552.37213, &quot;maxRange&quot;: 1736514442.0258033, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -831,7 +583,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1100077112.9335635, &quot;maxRange&quot;: 1651072694.8437228, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1333730285.280227, &quot;maxRange&quot;: 1884725867.1903863, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -899,7 +651,7 @@
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -86618817279.46709, &quot;maxRange&quot;: 125986576911.89444, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -104675240332.2556, &quot;maxRange&quot;: 144042999964.68292, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2098,7 +1850,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -2327695431.530749, &quot;maxRange&quot;: 3552470595.828993, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -2827093698.514872, &quot;maxRange&quot;: 4051868862.813116, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2160,7 +1912,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -48261619.00454556, &quot;maxRange&quot;: 71284134.07757288, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -58414553.74086767, &quot;maxRange&quot;: 81437068.81389499, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2219,7 +1971,7 @@ color: rgb(0, 0, 0);
       </property>
       <property name="yAxes">
        <stringlist>
-        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -1776112021.6346824, &quot;maxRange&quot;: 2284005286.8677516, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
+        <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;&quot;, &quot;minRange&quot;: -2120934861.3613322, &quot;maxRange&quot;: 2628828126.594401, &quot;autoRange&quot;: false, &quot;logMode&quot;: false}</string>
        </stringlist>
       </property>
       <property name="title" stdset="0">
@@ -2462,7 +2214,7 @@ background-color: rgb(170, 232, 255);</string>
 background-color: rgb(170, 232, 255);</string>
     </property>
     <property name="text">
-     <string>ca://XCS:SND:CALC:E2</string>
+     <string>9345</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2512,7 +2264,7 @@ background-color: rgb(170, 232, 255);</string>
 background-color: rgb(170, 232, 255);</string>
     </property>
     <property name="text">
-     <string>ca://XCS:SND:CALC:Delay</string>
+     <string>-249</string>
     </property>
     <property name="textFormat">
      <enum>Qt::MarkdownText</enum>
@@ -2574,7 +2326,7 @@ background-color: rgb(170, 232, 255);</string>
      <bool>false</bool>
     </property>
     <property name="cursorPosition">
-     <number>0</number>
+     <number>6</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -2643,11 +2395,6 @@ background-color: rgb(170, 232, 255);</string>
    <class>PyDMPushButton</class>
    <extends>QPushButton</extends>
    <header>pydm.widgets.pushbutton</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMRelatedDisplayButton</class>
-   <extends>QPushButton</extends>
-   <header>pydm.widgets.related_display_button</header>
   </customwidget>
   <customwidget>
    <class>PyDMShellCommand</class>
