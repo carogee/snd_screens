@@ -62,8 +62,6 @@ class AngleX1Align(PyDMPushButton):
         uic.loadUi("/cds/home/c/cagee/SND/angle_x1.ui",self)
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)	
-        self.test_label = QtWidgets.QLabel(self)
-        self.test_label.setText("X1")
 
     def anglex1(self):
         if not (self.startLineEdit.text().strip()) == "": 
@@ -86,7 +84,7 @@ class AngleX1Align(PyDMPushButton):
 
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_x1.ui'
-    
+
 class AngleX2Align(PyDMPushButton):
     def __init__(self,parent=None):
         super(AngleX2Align,self).__init__(parent)
@@ -204,12 +202,12 @@ class AngleCC2Align(PyDMPushButton):
         print("Stopped Scanning motor cc2")
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_cc2.ui'
-
 """
 if __name__=='__main__':
-	from pydm import PyDMApplication
-	app=QtWidgets.QApplication(sys.argv)
+        from pydm import PyDMApplication
+        app=QtWidgets.QApplication(sys.argv)
 	form=AngleX1Align()
 	form.show()
-	sys.exit(app.exec_())
+        form.close()
+        sys.exit(app.exec_())
 """
