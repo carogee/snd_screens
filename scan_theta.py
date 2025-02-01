@@ -27,6 +27,9 @@ from pydm.widgets import PyDMRelatedDisplayButton, PyDMPushButton
 from bluesky.callbacks.best_effort import BestEffortCallback
 from bluesky.utils import install_kicker
 
+from scipy.optimize import curve_fit
+import matplotlib.pyplot as plt
+
 d12=EpicsSignalRO("XCS:SND:DIO:AMPL_12",name="diode 12") #define PV
 d15=EpicsSignalRO("XCS:SND:DIO:AMPL_15",name="diode 15")
 d8=EpicsSignalRO("XCS:SND:DIO:AMPL_8",name="diode 8")
@@ -74,7 +77,7 @@ class CustomBestEffortCallback(BestEffortCallback):
         # Capture the specific data you want to save
         if 'data' in doc:
             x1_all = doc['data'].get('x1 motor')
-            y1_all = doc['data'].get('diode 11')  # Replace with the actual key
+            y1_all = doc['data'].get('diode 11')  
             if x1_all is not None:
                 self.data_x.append(x1_all)
                 self.data_y.append(y1_all)
@@ -100,7 +103,6 @@ class AngleX1Align(PyDMPushButton):
         self.bec = CustomBestEffortCallback(self.results_x, self.results_y)
         self.RE.subscribe(self.bec)
 
-        self.last_uid = None
 
     def anglex1(self):
         if not (self.startLineEdit.text().strip()) == "":
@@ -116,55 +118,61 @@ class AngleX1Align(PyDMPushButton):
         print("Scanning motor x1")
         scan_results = self.RE(self.anglex1())
         
+        xy_dict = {} #dictionary for unique x and average y values
+
         # The results collected during the scan are stored in self.results
-        print("Collected data values x:", self.results_x)
-        print("Collected data values y:", self.results_y)
+        x_values = self.results_x
+        y_values = self.results_y
+        #print("Collected data values x:", x_values)
+        #print("Collected data values y:", y_values)
+
+        # Step 2: Populate the dictionary
+        for x, y in zip(x_values, y_values):
+            if x not in xy_dict:
+                xy_dict[x] = []
+            xy_dict[x].append(y)
+
+        # Step 3: Compute the averages
+        x_unique = []
+        y_avg = []
+
+        for x in sorted(xy_dict.keys()):  # Sort keys to maintain order
+            x_unique.append(x)
+            y_avg.append(np.mean(xy_dict[x]))
+
+        # Print or store the averaged results as needed
+        print("Unique X values:", x_unique)
+        print("Average Y values:", y_avg)
+
+        print("Fitting rocking curve")
+        initial_guess = [np.mean(x_unique), np.std(x_unique), np.max(y_avg),np.min(y_avg)]
+        popt, _ = curve_fit(gaussian, x_unique, y_avg, p0=initial_guess)
+        center, sigma, amplitude,yoffset = popt
+        print("center",popt[0])
+        print("sigma",popt[1])
+        print("amplitude",popt[2])
+        print("yoffset",popt[3])
+        
+        
+        
+        fig,axs = plt.subplots(2,2)
+        axs[0,0].plot(x_unique,y_avg,'.')
+        axs[0,0].set_xlabel('t1.th1')
+        #ax.grid()
+        
+        axs[0,0].plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        axs[0,0].set_title('Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
+        #axs[0,0].legend()
+        plt.tight_layout()
+        plt.show()
 
     def stop_scan(self):
         # Implement stop scan logic, if necessary
         print("Stopping scan")
-
-
-
-
-"""
-class AngleX1Align(PyDMPushButton):
-    #RE = RunEngine({})
-    #db = Broker.named('temp')
-    #bec = BestEffortCallback()
-
-    def __init__(self,parent=None):
-        super(AngleX1Align,self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_x1.ui",self)
-        self.startButton.clicked.connect(self.start_scan)
-        self.stopButton.clicked.connect(self.stop_scan)	
-        self.RE=RunEngine()
-        self.db = Broker.named('temp')
-        self.bec=BestEffortCallback()
-        self.RE.subscribe(self.bec)
-        #self.header = self.db[-1]
-        self.last_uid = None
-        self.results = []
         
-    def anglex1(self):
-        if not (self.startLineEdit.text().strip()) == "": 
-            start_angle=float(self.startLineEdit.text())
-            end_angle = float(self.stopLineEdit.text())
-            steps = int(self.stepLineEdit.text())
-            n = 50
-            positions1 = np.repeat(np.linspace(start_angle,end_angle,steps),n)
-            yield from list_scan([d11],t1th1,positions1)
-
-        #print("Scanned motor X1")
-        #print("header.table",t)
-        #x = np.linspace(start_angle,end_angle,steps)
-        #print("x positions", x)
-
-        
-
+    """
     def rocking_fit(self):
         print('Fitting x1 rocking curve')
-
                                                                                                                    
         x=th1;y=th1_data;                                                                                     
         initial_guess = [np.mean(x), np.std(x), np.max(y),np.min(y)]                                         
@@ -176,54 +184,11 @@ class AngleX1Align(PyDMPushButton):
         plt.plot(x, gaussian(x, *popt), linestyle='--', color='r');plt.tight_layout()                                 
         plt.title('Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))                               
         plt.draw()                                                                                                    
-        
-
-        
-    def start_scan(self):
-        #  Read values from UI and perform a Bluesky scan
-        print("Scanning motor x1")
-        try:
-            scan_results= self.RE(self.anglex1())
-            self.results.append(scan_results)
-            self.print_last_run(scan_results)
-            #print("array length", len(self.results))
-            #print("first entry", self.results[1])
-            print("All results collected")
-            print("results array",self.results)
-            self.last_uid = str(self.results[1])
-            print("type", type(self.last_uid))
-            self.uid_str = str(self.last_uid[2:10])
-            print("uid_str", self.uid_str)
-            self.header = self.db(motor='x1')
-            print("header",self.header)
-            #self.last_uid = uid_tuple[0]
-            #print(f"Last UID: {self.last_uid}")
-            #self.print_available_uids()
-            # Confirm available UIDs right after the scan
-            #print("Available UIDs in databroker after scan:")
-            #print("list db",list(self.db))
-        except Exception as e:
-            print(f"Error during scan execution: {e}")
-
-
-        print("Done scanning motor x1, now fitting")
-        #self.rocking_fit()
-   
-    def print_last_run(self,results):
-        print("Last run details:")
-        
-        for i, result in enumerate(results):
-            print(f"Scan step {i}: {result}")
-            #run_data = self.db[result]
-            #print("run data", run_data)
-
-    def stop_scan(self):
-        RE.stop()
-        print("Stopped scanning motor X1")
-
+    """
+    
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_x1.ui'
-"""
+
 class AngleX2Align(PyDMPushButton):
     def __init__(self,parent=None):
         super(AngleX2Align,self).__init__(parent)
