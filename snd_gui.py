@@ -7,6 +7,7 @@ from bluesky import RunEngine
 RE = RunEngine({})
 from bluesky.plans import scan
 from ophyd.signal import EpicsSignal
+from databroker import Broker
 from pydm import PyDMApplication
 
 from pydm.widgets.channel import PyDMChannel
@@ -27,7 +28,7 @@ from epics import caput
 from collections import deque
 import numpy as np
 
-
+#db = Broker.named('temp')
 bec = BestEffortCallback()
 RE.subscribe(bec)
 
@@ -107,7 +108,7 @@ class MyDisplay(Display):
         self.angle_x1_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x1_scan.show()
         self.angle_x1_scan.start_scan()
-
+       
     def scan_openx2(self):
         self.angle_x2_scan=AngleX2Align(self)
         self.startButton=AngleX2Align(self)
