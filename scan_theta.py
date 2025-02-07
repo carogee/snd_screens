@@ -109,7 +109,7 @@ class AngleX1Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 50
+            n = 100
             positions1 = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from list_scan([d11], t1th1, positions1)
 
@@ -162,7 +162,7 @@ class AngleX1Align(PyDMPushButton):
         
         axs[0,0].plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
         axs[0,0].set_title('Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        #axs[0,0].legend()
+        axs[0,0].legend()
         plt.tight_layout()
         plt.show()
 

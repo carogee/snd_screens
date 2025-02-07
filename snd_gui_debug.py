@@ -26,6 +26,7 @@ from bluesky.callbacks.best_effort import BestEffortCallback
 from bluesky.plan_stubs import stop
 from epics import caput
 from collections import deque
+from snd_calc import snd_correlation
 import numpy as np
 
 #db = Broker.named('temp')
@@ -88,6 +89,19 @@ class MyDisplay(Display):
         self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
         self.average_label.setGeometry(223, 100, 200, 50)  # Set position and size
         self.average_label.setText("Average: 0.0")
+        
+
+        #cc/dd ratio 
+        coff_cc_value, coff_dd_value, ratio_value = snd_correlation(nshots=240,do_ch=6)
+        self.cc_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets                                                                                                                                                    
+        self.cc_label.setGeometry(870, 570, 200, 50)  # Set position and size                                                                                                                                                  
+        self.cc_label.setText(f"CC: {coff_cc_value:.2f}")
+        self.dd_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets                                                                                                                                                            
+        self.dd_label.setGeometry(870, 585, 200, 50)  # Set position and size                                                                                                                                                          
+        self.dd_label.setText(f"DD: {coff_dd_value:.2f}")
+        self.ccdd_ratio_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets                                                                                                                                                   
+        self.ccdd_ratio_label.setGeometry(870, 600, 200, 50)  # Set position and size                                                                                                                                                
+        self.ccdd_ratio_label.setText(f"Ratio [1+(DD-CC)/Sum]: {ratio_value:.2f}")
 
         # Set up a timer to update the average value every second
         self.timer = QTimer(self)

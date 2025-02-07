@@ -81,6 +81,7 @@ def snd_correlation(nshots=240,do_ch=6):
     ratios = 1+(dd_vals-cc_vals)/do_vals
     ratio = np.nanmean(ratios)
     print('Ratio [1+(Delay-ChannelCut)/Sum]: {:.2f}'.format(ratio))
+    return coff_cc, coff_dd, ratio
     plt.subplot(2,2,3)
     plt.plot(cc_vals,dd_vals,'.')
     plt.grid()
@@ -92,5 +93,12 @@ def snd_correlation(nshots=240,do_ch=6):
     plt.xlabel('Sum signal');plt.title("Ratios")
     plt.ylabel('Ratios')
     plt.tight_layout()
+    #plt.ion()
     plt.show()
-    return
+    #return coff_cc, coff_dd, ratio
+
+#coff_cc_value, coff_dd_value, ratio_value =snd_correlation(nshots=240,do_ch=6)
+#print('coefficient CC : {:.2f}'.format(coff_cc_value))
+#print('coefficient DD : {:.2f}'.format(coff_dd_value))
+#print('Ratio [1+(Delay-ChannelCut)/Sum]: {:.2f}'.format(ratio_value))
+

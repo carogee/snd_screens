@@ -13,3 +13,5 @@ from beamline import show_cc, show_delay, show_both
 from beamline import snd_correlation
 
 snd_correlation()
+
+#coff_cc_value, coff_dd_value, ratio_value = snd_correlation(nshots=240,do_ch=6)
