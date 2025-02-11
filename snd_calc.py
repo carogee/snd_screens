@@ -48,7 +48,8 @@ def snd_correlation(nshots=240,do_ch=6):
     plt.plot(do_vals,cc_vals,'.')
     plt.grid();
     plt.xlabel('DO signal');
-    plt.ylabel('CC signal'); plt.title("CC only")
+    plt.ylabel('CC signal'); plt.title(f"CC only: Coefficient={coff_cc:.2f}")
+    plt.legend()
     show_delay();sleep(0.5)
     dd_vals=np.zeros(nshots) #ch15                                                                                                            
     do_vals=np.zeros(nshots) #ch9                                                                                                             
@@ -66,12 +67,13 @@ def snd_correlation(nshots=240,do_ch=6):
     plt.subplot(2,2,2)
     plt.plot(do_vals,dd_vals,'.')
     plt.grid();
-    plt.xlabel('DO signal');
-    plt.ylabel('DD signal'); plt.title("DD only")
+    plt.xlabel('DO signal')
+    plt.ylabel('DD signal')
+    plt.title(f"DD only: Coefficient={coff_dd:.2f}")
     show_both()
     dd_vals=np.zeros(nshots) #ch15                                                                                                            
     do_vals=np.zeros(nshots) #ch9                                                                                                             
-    cc_vals=np.zeros(nshots) #ch14                                                                                                            
+    cc_vals=np.zeros(nshots) #ch14                                                                          c                                  
     for i in range(nshots):
         snddata=sndall.get()
         dd_vals[i]=snddata[7,]*coff_dd
@@ -81,22 +83,25 @@ def snd_correlation(nshots=240,do_ch=6):
     ratios = 1+(dd_vals-cc_vals)/do_vals
     ratio = np.nanmean(ratios)
     print('Ratio [1+(Delay-ChannelCut)/Sum]: {:.2f}'.format(ratio))
-    return coff_cc, coff_dd, ratio
+    #return coff_cc, coff_dd, ratio
     plt.subplot(2,2,3)
     plt.plot(cc_vals,dd_vals,'.')
     plt.grid()
     plt.xlabel('CC signal')
-    plt.ylabel('DD signal'); plt.title("Both correlation")
+    plt.ylabel('DD signal')
+    plt.title("Both correlation")
     plt.subplot(2,2,4)
     plt.plot(do_vals,ratios,'.')
     plt.grid()
-    plt.xlabel('Sum signal');plt.title("Ratios")
+    plt.xlabel('Sum signal')
+    plt.title(f"Ratio [1+(DD-CC)/Sum]: {ratio:.2f}")
     plt.ylabel('Ratios')
     plt.tight_layout()
     #plt.ion()
     plt.show()
     #return coff_cc, coff_dd, ratio
 
+snd_correlation()
 #coff_cc_value, coff_dd_value, ratio_value =snd_correlation(nshots=240,do_ch=6)
 #print('coefficient CC : {:.2f}'.format(coff_cc_value))
 #print('coefficient DD : {:.2f}'.format(coff_dd_value))
