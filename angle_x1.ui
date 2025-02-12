@@ -89,7 +89,7 @@ font-size: 14 px;
           <item row="1" column="0">
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>Start Range:</string>
+             <string>Start Range (rel):</string>
             </property>
            </widget>
           </item>
@@ -130,7 +130,7 @@ font-size: 14 px;
           <item row="2" column="0">
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Stop Range:</string>
+             <string>Stop Range (rel):</string>
             </property>
            </widget>
           </item>
@@ -295,7 +295,7 @@ font-size: 14 px;
              <string/>
             </property>
             <property name="text">
-             <string>22.7600 deg</string>
+             <string>20.0000 deg</string>
             </property>
             <property name="precision" stdset="0">
              <number>4</number>

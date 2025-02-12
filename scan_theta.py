@@ -12,7 +12,7 @@ import numpy as np
 from ophyd.signal import EpicsSignalRO
 from ophyd.signal import EpicsSignal
 from bluesky import RunEngine
-from bluesky.plans import scan, list_scan, count
+from bluesky.plans import scan, list_scan, rel_list_scan, count
 from bluesky.plan_stubs import abs_set, trigger_and_read, stop
 from databroker import Broker, catalog
 from ophyd import Component as Cpt
@@ -88,15 +88,6 @@ class CustomBestEffortCallback(BestEffortCallback):
                     if y_all != None:
                         self.data_y.append(y_all)
 
-        
-
-        #if 'data' in doc:
-        #    x1_all = doc['data'].get('x1 motor')
-        #    y1_all = doc['data'].get('diode 11')  
-        #    if x1_all is not None:
-        #        self.data_x.append(x1_all)
-        #        self.data_y.append(y1_all)
-
 
 class AngleX1Align(PyDMPushButton):
     def __init__(self, parent=None):
@@ -126,7 +117,7 @@ class AngleX1Align(PyDMPushButton):
             steps = int(self.stepLineEdit.text())
             n = 100
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
-            yield from list_scan([d11], t1th1, positions)
+            yield from rel_list_scan([d11], t1th1, positions)
 
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan
