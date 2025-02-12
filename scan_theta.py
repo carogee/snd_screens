@@ -62,8 +62,8 @@ t4th2=EpicsSignal("XCS:SND:T4:TH2",name="x3 motor") #X3 align
 def gaussian(x, center, sigma, amplitude,yoffset):
     return amplitude * np.exp(-((x - center) ** 2) / (2 * sigma ** 2))+yoffset
 
-# Poly1 function for fitting                                                                    
-def poly1(x,slop,xoffset,yoffset):
+# Poly function for fitting                                                                    
+def poly(x,slop,xoffset,yoffset):
     return slop*(x+xoffset)+yoffset
 
 class CustomBestEffortCallback(BestEffortCallback):
@@ -75,12 +75,27 @@ class CustomBestEffortCallback(BestEffortCallback):
     def __call__(self, name, doc, escape=False):
         super().__call__(name, doc, escape=escape)  # Call the original BEC method
         # Capture the specific data you want to save
+        # Retrieve all values containing 'motor'
+
         if 'data' in doc:
-            x1_all = doc['data'].get('x1 motor')
-            y1_all = doc['data'].get('diode 11')  
-            if x1_all is not None:
-                self.data_x.append(x1_all)
-                self.data_y.append(y1_all)
+            for key in doc['data'].keys():
+                if 'motor' in key:
+                    x_all = doc['data'].get(key)
+                    if x_all != None:
+                        self.data_x.append(x_all)
+                if 'diode' in key:
+                    y_all = doc['data'].get(key)
+                    if y_all != None:
+                        self.data_y.append(y_all)
+
+        
+
+        #if 'data' in doc:
+        #    x1_all = doc['data'].get('x1 motor')
+        #    y1_all = doc['data'].get('diode 11')  
+        #    if x1_all is not None:
+        #        self.data_x.append(x1_all)
+        #        self.data_y.append(y1_all)
 
 
 class AngleX1Align(PyDMPushButton):
@@ -110,8 +125,8 @@ class AngleX1Align(PyDMPushButton):
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
             n = 100
-            positions1 = np.repeat(np.linspace(start_angle, end_angle, steps), n)
-            yield from list_scan([d11], t1th1, positions1)
+            positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
+            yield from list_scan([d11], t1th1, positions)
 
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan
