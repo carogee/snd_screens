@@ -156,7 +156,7 @@ font-size: 14 px;
              <string/>
             </property>
             <property name="channel" stdset="0">
-             <string>CA://XCS:SND:T1:TH1.MOVN</string>
+             <string>CA://XCS:SND:T2:TH.MOVN</string>
             </property>
             <property name="showLabels" stdset="0">
              <bool>true</bool>
