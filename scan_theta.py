@@ -8,12 +8,15 @@ import sys
 import time
 import os
 import numpy as np
+import bluesky.plans
+import bluesky.plan_stubs
 
 from ophyd.signal import EpicsSignalRO
 from ophyd.signal import EpicsSignal
 from bluesky import RunEngine
 from bluesky.plans import scan, list_scan, rel_list_scan, count
-from bluesky.plan_stubs import abs_set, trigger_and_read, stop
+from bluesky import plan_stubs as bps
+from bluesky.plan_stubs import abs_set, trigger_and_read, stop, sleep
 from databroker import Broker, catalog
 from ophyd import Component as Cpt
 from ophyd import Device
@@ -31,7 +34,6 @@ from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
 d12=EpicsSignalRO("XCS:SND:DIO:AMPL_12",name="diode 12") #define PV
-d15=EpicsSignalRO("XCS:SND:DIO:AMPL_15",name="diode 15")
 d8=EpicsSignalRO("XCS:SND:DIO:AMPL_8",name="diode 8")
 d9=EpicsSignalRO("XCS:SND:DIO:AMPL_9",name="diode 9")
 d11=EpicsSignalRO("XCS:SND:DIO:AMPL_11",name="diode 11")
@@ -169,7 +171,7 @@ class AngleX1Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        # Implement stop scan logic, if necessary
+        self.RE.stop()
         print("Stopped scanning x1 motor")
     
     def ui_filename(self):
@@ -253,7 +255,7 @@ class AngleX2Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        RE.stop()
+        self.RE.stop()
         print("Stopped scanning motor X2")
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/angle_x2.ui'
@@ -279,7 +281,7 @@ class AngleX3Align(PyDMPushButton):
         self.RE.subscribe(self.bec)
 
 
-    def anglex3(self):
+    def anglex3(self,*args, delay=1, **kwargs):
         if not (self.startLineEdit.text().strip()) == "":
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
@@ -287,18 +289,26 @@ class AngleX3Align(PyDMPushButton):
             n = 100
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d15], t4th2, positions)
-    
+            #detectors = [d15]
+            #def one_nd_step_with_delay(detectors, step, positions):
+            #    "This is a copy of bluesky.plan_stubs.one_nd_step with a sleep added."
+            #    motors = step.keys()
+            #    yield from bluesky.plan_stubs.move_per_step(step, positions)
+            #    yield from bluesky.plan_stubs.sleep(delay)
+            #    yield from bluesky.plan_stubs.trigger_and_read(list(detectors) + list(t4th2))
+
+            #kwargs.setdefault('per_step', one_nd_step_with_delay)
+            #yield from bluesky.plans.rel_list_scan(*args, **kwargs)
+
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                                       
         print("Scanning motor x3")
         scan_results = self.RE(self.anglex3())
         xy_dict = {} #dictionary for unique x and average y values                                           
-
         # The results collected during the scan are stored in self.results  
         x_values = self.results_x
         y_values = self.results_y
-        #print("Collected data values x:", x_values)                                                         
-        #print("Collected data values y:", y_values)                                                           
+
         # Step 2: Populate the dictionary                                                      
         for x, y in zip(x_values, y_values):
             if x not in xy_dict:
@@ -336,7 +346,7 @@ class AngleX3Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        RE.stop()
+        self.RE.stop()
         print("stopped scanning motor X3") 
 
     def ui_filename(self):
@@ -419,7 +429,7 @@ class AngleX4Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        RE.stop()
+        self.RE.stop()
         print("Stopped scanning motor X4")
 
     def ui_filename(self):
@@ -505,7 +515,7 @@ class AngleCC1Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        RE.stop()
+        self.RE.stop()
         print("Stopped scanning motor cc1")
 
     def ui_filename(self):
@@ -589,7 +599,7 @@ class AngleCC2Align(PyDMPushButton):
         plt.show()
 
     def stop_scan(self):
-        RE.stop()
+        self.RE.stop()
         print("Stopped Scanning motor cc2")
 
     def ui_filename(self):
