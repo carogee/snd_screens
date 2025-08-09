@@ -13,9 +13,28 @@ from epics import caput
 t2th=EpicsSignal("XCS:SND:T2:TH",name="cc1 motor")
 t3th=EpicsSignal("XCS:SND:T3:TH",name="cc2 motor")
 
-print("test")
-os.system('caput XCS:SND:T1:TH2 -2')
-os.system('caput XCS:SND:T4:TH2 -2')
+
+class DDCrystal_MoveIn(PyDMPushButton):
+    #def __init__(self, parent=None):
+    #    super(DDCrystal_MoveIn, self).__init__(parent)
+    #    uic.loadUi("/cds/home/c/cagee/SND/motors_screen.ui", self)
+
+    #    self.DDCrystalIn.clicked.connect(self.ddcrystal_in)
+
+    def ddcrystal_in(self):
+        if not (self.DDCrystal_LineEdit.text().strip()) == "":
+            dd_in = float(self.DDCrystal_LineEdit.text())
+            command_T1_TH2 = f'caput XCS:SND:T1:TH2 {dd_in}'
+            command_T4_TH2 = f'caput XCS:SND:T4:TH2 {dd_in}'
+            os.system(command_T1_TH2)
+            print("T1:TH2 moved to ",dd_in)
+            os.system(command_T4_TH2)
+            print("T4:TH2 moved to ",dd_in)
+        
+
+
+#os.system('caput XCS:SND:T1:TH2 -2')
+#os.system('caput XCS:SND:T4:TH2 -2')
 print("dd crystals in")
 
 

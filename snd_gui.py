@@ -14,6 +14,7 @@ from pydm.widgets.channel import PyDMChannel
 #from scan_theta import anglex1, anglex2, anglex3, anglex4, anglecc1, anglecc2 
 from pydm.data_plugins.local_plugin import LocalPlugin
 from scan_theta import AngleX1Align, AngleX2Align, AngleX3Align, AngleX4Align, AngleCC1Align, AngleCC2Align
+from dd_in import DDCrystal_MoveIn
 from pydm.widgets.pushbutton import PyDMPushButton
 from PyQt5.QtCore import QCoreApplication, Qt, QTimer
 from PyQt5 import QtWebEngineWidgets, QtCore, QtWidgets
@@ -83,6 +84,7 @@ class MyDisplay(Display):
         self.X4.clicked.connect(self.scan_openx4)
         self.CC1.clicked.connect(self.scan_opencc1)
         self.CC2.clicked.connect(self.scan_opencc2)
+        self.DDCrystalIn.clicked.connect(self.move_ddcrystalin)
 
         # Create a QLabel to display the average value
         self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
@@ -143,6 +145,18 @@ class MyDisplay(Display):
         self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc2_scan.show()
         self.angle_cc2_scan.start_scan()
+
+
+    def move_ddcrystalin(self):
+        if not (self.DDCrystal_LineEdit.text().strip()) == "":
+            dd_in = float(self.DDCrystal_LineEdit.text())
+            command_T1_TH2 = f'caput XCS:SND:T1:TH2 {dd_in}'
+            command_T4_TH2 = f'caput XCS:SND:T4:TH2 {dd_in}'
+            os.system(command_T1_TH2)
+            print("T1:TH2 moved to ",dd_in)
+            os.system(command_T4_TH2)
+            print("T4:TH2 moved to ",dd_in)
+
 
     def ui_filename(self):
         return '/cds/home/c/cagee/SND/motors_screen.ui'

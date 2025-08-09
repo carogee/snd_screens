@@ -21,10 +21,12 @@ from databroker import Broker, catalog
 from ophyd import Component as Cpt
 from ophyd import Device
 
+
 #import relevant pydm/qt 
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5 import QtWebEngineWidgets, QtWidgets, uic
 from PyQt5.QtWidgets import QMainWindow, QWidget
+
 
 from pydm.widgets import PyDMRelatedDisplayButton, PyDMPushButton
 from bluesky.callbacks.best_effort import BestEffortCallback
@@ -32,6 +34,9 @@ from bluesky.utils import install_kicker
 
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
+
+from pcdsdevices.sim import FastMotor, SlowMotor
+sim_x = SlowMotor(name='x')
 
 d12=EpicsSignalRO("XCS:SND:DIO:AMPL_12",name="diode 12") #define PV
 d8=EpicsSignalRO("XCS:SND:DIO:AMPL_8",name="diode 8")
@@ -122,6 +127,28 @@ class AngleX1Align(PyDMPushButton):
             yield from rel_list_scan([d11], t1th1, positions)
 
     def start_scan(self):
+        #attempt to do relative position scan with the daq
+        print("Scanning motor x1")
+        """
+        # Add the desired directory to the sys.path
+        sys.path.append('/cds/group/pcds/pyps/apps/hutch-python/xcs/xcs')
+        # Now you should be able to import xcs.db
+        from xcs.db import daq
+        if not (self.startLineEdit.text().strip()) == "":
+            start_angle = float(self.startLineEdit.text())
+            end_angle = float(self.stopLineEdit.text())
+            steps = int(self.stepLineEdit.text())
+            n = 3
+            positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
+            
+            daq.begin(record=False,events=None)
+            for ii in enumerate(positions):
+                print("position",positions[ii])
+                sim_x.move(positions[ii])
+                #time.sleep(0.05)
+            daq.end_run()
+            daq.disconnect()
+        """
         # Read values from UI and perform a Bluesky scan
         print("Scanning motor x1")
         scan_results = self.RE(self.anglex1())
@@ -169,6 +196,7 @@ class AngleX1Align(PyDMPushButton):
         plt.title('X1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
+        
 
     def stop_scan(self):
         self.RE.stop()
@@ -326,7 +354,7 @@ class AngleX3Align(PyDMPushButton):
         # Print or store the averaged results as needed                                                      
         print("Unique X values:", x_unique)
         print("Average Y values:", y_avg)
-
+        
         print("Fitting rocking curve")
         initial_guess = [np.mean(x_unique), np.std(x_unique), np.max(y_avg),np.min(y_avg)]
         popt, _ = curve_fit(gaussian, x_unique, y_avg, p0=initial_guess)
@@ -344,6 +372,7 @@ class AngleX3Align(PyDMPushButton):
         plt.title('X3 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
+        
 
     def stop_scan(self):
         self.RE.stop()
