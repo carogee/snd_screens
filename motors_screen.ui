@@ -178,9 +178,9 @@
    <widget class="QLabel" name="d14">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>260</y>
-      <width>41</width>
+      <width>51</width>
       <height>41</height>
      </rect>
     </property>
@@ -962,9 +962,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMByteIndicator" name="DelayBruchStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>3</x>
-          <y>50</y>
-          <width>81</width>
+          <x>10</x>
+          <y>45</y>
+          <width>60</width>
           <height>20</height>
          </rect>
         </property>
@@ -1228,9 +1228,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMByteIndicator" name="CCBruchStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>3</x>
-          <y>50</y>
-          <width>81</width>
+          <x>10</x>
+          <y>45</y>
+          <width>60</width>
           <height>20</height>
          </rect>
         </property>
@@ -1303,10 +1303,10 @@ color: rgb(0, 0, 0);
        <widget class="PyDMByteIndicator" name="DDCrystalStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>3</x>
-          <y>40</y>
-          <width>71</width>
-          <height>21</height>
+          <x>10</x>
+          <y>27</y>
+          <width>60</width>
+          <height>18</height>
          </rect>
         </property>
         <property name="font">
@@ -1367,9 +1367,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMShellCommand" name="DDCrystalOut">
         <property name="geometry">
          <rect>
-          <x>75</x>
+          <x>80</x>
           <y>30</y>
-          <width>51</width>
+          <width>45</width>
           <height>24</height>
          </rect>
         </property>
@@ -1480,9 +1480,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="DDCrystalIn">
         <property name="geometry">
          <rect>
-          <x>75</x>
+          <x>80</x>
           <y>60</y>
-          <width>51</width>
+          <width>45</width>
           <height>23</height>
          </rect>
         </property>
@@ -1503,12 +1503,12 @@ background-color: rgb(255, 0, 0);</string>
          <string/>
         </property>
        </widget>
-       <widget class="PyDMLineEdit" name="DDCrystal_LineEdit">
+       <widget class="PyDMLineEdit" name="DDCrystal_LineEdit_1">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>61</width>
+          <x>40</x>
+          <y>65</y>
+          <width>31</width>
           <height>23</height>
          </rect>
         </property>
@@ -1540,6 +1540,91 @@ background-color: rgb(255, 0, 0);</string>
          <string/>
         </property>
        </widget>
+       <widget class="PyDMLineEdit" name="DDCrystal_LineEdit">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>65</y>
+          <width>31</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="monitorDisp" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="T1_TH2">
+        <property name="geometry">
+         <rect>
+          <x>3</x>
+          <y>47</y>
+          <width>33</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+          <weight>50</weight>
+          <italic>true</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>T1:TH2</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="T1_TH2_2">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>47</y>
+          <width>35</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+          <weight>50</weight>
+          <italic>true</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>T4:TH2</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QFrame" name="CCCrystalFrame">
        <property name="geometry">
@@ -1562,9 +1647,9 @@ background-color: rgb(255, 0, 0);</string>
        <widget class="PyDMByteIndicator" name="CCCrystalStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>3</x>
-          <y>49</y>
-          <width>71</width>
+          <x>10</x>
+          <y>45</y>
+          <width>60</width>
           <height>21</height>
          </rect>
         </property>
