@@ -780,9 +780,9 @@
        <widget class="PyDMPushButton" name="DelayBruchOpen">
         <property name="geometry">
          <rect>
-          <x>85</x>
+          <x>82</x>
           <y>30</y>
-          <width>41</width>
+          <width>45</width>
           <height>25</height>
          </rect>
         </property>
@@ -853,9 +853,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="DelayBruchClose">
         <property name="geometry">
          <rect>
-          <x>85</x>
+          <x>82</x>
           <y>60</y>
-          <width>41</width>
+          <width>45</width>
           <height>25</height>
          </rect>
         </property>
@@ -956,22 +956,22 @@ color: rgb(0, 0, 0);
 }</string>
         </property>
         <property name="text">
-         <string>Delay Bruch:</string>
+         <string>Delay Branch:</string>
         </property>
        </widget>
        <widget class="PyDMByteIndicator" name="DelayBruchStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>5</x>
           <y>45</y>
-          <width>60</width>
+          <width>65</width>
           <height>20</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Sans Serif</family>
-          <pointsize>9</pointsize>
+          <pointsize>8</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -982,7 +982,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 8pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -1046,9 +1046,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="CCBruchOpen">
         <property name="geometry">
          <rect>
-          <x>85</x>
+          <x>82</x>
           <y>30</y>
-          <width>41</width>
+          <width>45</width>
           <height>25</height>
          </rect>
         </property>
@@ -1119,9 +1119,9 @@ color: rgb(0, 0, 0);
        <widget class="PyDMPushButton" name="CCBruchClose">
         <property name="geometry">
          <rect>
-          <x>85</x>
+          <x>82</x>
           <y>60</y>
-          <width>41</width>
+          <width>45</width>
           <height>25</height>
          </rect>
         </property>
@@ -1222,15 +1222,15 @@ color: rgb(0, 0, 0);
 }</string>
         </property>
         <property name="text">
-         <string>CC Bruch:</string>
+         <string>CC Branch:</string>
         </property>
        </widget>
        <widget class="PyDMByteIndicator" name="CCBruchStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>5</x>
           <y>45</y>
-          <width>60</width>
+          <width>65</width>
           <height>20</height>
          </rect>
         </property>
@@ -1238,7 +1238,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 8pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -1303,16 +1303,16 @@ color: rgb(0, 0, 0);
        <widget class="PyDMByteIndicator" name="DDCrystalStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>5</x>
           <y>27</y>
-          <width>60</width>
+          <width>65</width>
           <height>18</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Sans Serif</family>
-          <pointsize>9</pointsize>
+          <pointsize>8</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -1322,7 +1322,7 @@ color: rgb(0, 0, 0);
          <string/>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 8pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -1375,7 +1375,7 @@ color: rgb(0, 0, 0);
         </property>
         <property name="font">
          <font>
-          <pointsize>8</pointsize>
+          <pointsize>6</pointsize>
          </font>
         </property>
         <property name="toolTip">
@@ -1582,13 +1582,14 @@ background-color: rgb(255, 0, 0);</string>
          <rect>
           <x>3</x>
           <y>47</y>
-          <width>33</width>
+          <width>34</width>
           <height>18</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>7</pointsize>
+          <family>PT Sans</family>
+          <pointsize>6</pointsize>
           <weight>50</weight>
           <italic>true</italic>
           <bold>false</bold>
@@ -1612,7 +1613,8 @@ background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>7</pointsize>
+          <family>PT Sans</family>
+          <pointsize>6</pointsize>
           <weight>50</weight>
           <italic>true</italic>
           <bold>false</bold>
@@ -1647,16 +1649,16 @@ background-color: rgb(255, 0, 0);</string>
        <widget class="PyDMByteIndicator" name="CCCrystalStatus" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>5</x>
           <y>45</y>
-          <width>60</width>
+          <width>65</width>
           <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>Sans Serif</family>
-          <pointsize>9</pointsize>
+          <pointsize>8</pointsize>
           <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
@@ -1669,7 +1671,7 @@ background-color: rgb(255, 0, 0);</string>
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 9pt &quot;Sans Serif&quot;;</string>
+         <string notr="true">font: 8pt &quot;Sans Serif&quot;;</string>
         </property>
         <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
@@ -1716,7 +1718,7 @@ background-color: rgb(255, 0, 0);</string>
          <rect>
           <x>75</x>
           <y>60</y>
-          <width>51</width>
+          <width>50</width>
           <height>24</height>
          </rect>
         </property>
@@ -1793,7 +1795,7 @@ background-color: rgb(255, 0, 0);</string>
          <rect>
           <x>75</x>
           <y>30</y>
-          <width>51</width>
+          <width>50</width>
           <height>24</height>
          </rect>
         </property>
