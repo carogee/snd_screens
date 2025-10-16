@@ -1506,11 +1506,16 @@ background-color: rgb(255, 0, 0);</string>
        <widget class="PyDMLineEdit" name="DDCrystal_LineEdit_1">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>65</y>
-          <width>31</width>
-          <height>23</height>
+          <x>35</x>
+          <y>71</y>
+          <width>42</width>
+          <height>18</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>6</pointsize>
+         </font>
         </property>
         <property name="toolTip">
          <string/>
@@ -1543,11 +1548,16 @@ background-color: rgb(255, 0, 0);</string>
        <widget class="PyDMLineEdit" name="DDCrystal_LineEdit">
         <property name="geometry">
          <rect>
-          <x>5</x>
-          <y>65</y>
-          <width>31</width>
-          <height>23</height>
+          <x>35</x>
+          <y>50</y>
+          <width>42</width>
+          <height>18</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>6</pointsize>
+         </font>
         </property>
         <property name="toolTip">
          <string/>
@@ -1580,16 +1590,16 @@ background-color: rgb(255, 0, 0);</string>
        <widget class="QLabel" name="T1_TH2">
         <property name="geometry">
          <rect>
-          <x>3</x>
-          <y>47</y>
-          <width>34</width>
+          <x>2</x>
+          <y>50</y>
+          <width>30</width>
           <height>18</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>PT Sans</family>
-          <pointsize>6</pointsize>
+          <pointsize>8</pointsize>
           <weight>50</weight>
           <italic>true</italic>
           <bold>false</bold>
@@ -1599,22 +1609,25 @@ background-color: rgb(255, 0, 0);</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>T1:TH2</string>
+         <string>T1.Y1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
        <widget class="QLabel" name="T1_TH2_2">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>47</y>
-          <width>35</width>
+          <x>2</x>
+          <y>72</y>
+          <width>30</width>
           <height>18</height>
          </rect>
         </property>
         <property name="font">
          <font>
           <family>PT Sans</family>
-          <pointsize>6</pointsize>
+          <pointsize>8</pointsize>
           <weight>50</weight>
           <italic>true</italic>
           <bold>false</bold>
@@ -1624,7 +1637,10 @@ background-color: rgb(255, 0, 0);</string>
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>T4:TH2</string>
+         <string>T4.Y1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </widget>

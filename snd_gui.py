@@ -150,15 +150,15 @@ class MyDisplay(Display):
     def move_ddcrystalin(self):
         if not (self.DDCrystal_LineEdit.text().strip()) == "":
             dd_in = float(self.DDCrystal_LineEdit.text())
-            command_T1_TH2 = f'caput XCS:SND:T1:TH2 {dd_in}'
-            os.system(command_T1_TH2)
-            print("T1:TH2 moved to ",dd_in)
+            command_T1_Y1 = f'caput XCS:SND:T1:Y1 {dd_in}'
+            os.system(command_T1_Y1)
+            print("T1:Y1 moved to ",dd_in)
 
         if not (self.DDCrystal_LineEdit_1.text().strip()) == "":
             dd_in = float(self.DDCrystal_LineEdit_1.text())
-            command_T4_TH2 = f'caput XCS:SND:T4:TH2 {dd_in}'
-            os.system(command_T4_TH2)
-            print("T4:TH2 moved to ",dd_in)
+            command_T4_Y1 = f'caput XCS:SND:T4:Y1 {dd_in}'
+            os.system(command_T4_Y1)
+            print("T4:Y1 moved to ",dd_in)
 
 
     def ui_filename(self):

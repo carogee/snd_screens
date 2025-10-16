@@ -14,8 +14,8 @@ t2th=EpicsSignal("XCS:SND:T2:TH",name="cc1 motor")
 t3th=EpicsSignal("XCS:SND:T3:TH",name="cc2 motor")
 
 
-os.system('caput XCS:SND:T2:TH 15')
-os.system('caput XCS:SND:T3:TH 15')
+os.system('caput XCS:SND:T2:TH 25')
+os.system('caput XCS:SND:T3:TH 25')
 print("cc crystals in")
 
 
