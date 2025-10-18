@@ -87,7 +87,7 @@ font-size: 14 px;
            <number>6</number>
           </property>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="StartRange">
             <property name="text">
              <string>Start Range (rel):</string>
             </property>
@@ -122,13 +122,10 @@ font-size: 14 px;
             <property name="channel" stdset="0">
              <string/>
             </property>
-            <property name="displayFormat" stdset="0">
-             <enum>PyDMLineEdit::String</enum>
-            </property>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="StopRange">
             <property name="text">
              <string>Stop Range (rel):</string>
             </property>
@@ -169,7 +166,7 @@ font-size: 14 px;
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="nSteps">
             <property name="text">
              <string>Number of Steps:</string>
             </property>
@@ -209,8 +206,8 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+          <item row="5" column="0">
+           <widget class="PyDMByteIndicator" name="PyDMByteIndicator" native="true">
             <property name="toolTip">
              <string/>
             </property>
@@ -235,9 +232,6 @@ font-size: 14 px;
             <property name="circles" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="labelPosition" stdset="0">
-             <enum>QTabWidget::South</enum>
-            </property>
             <property name="numBits" stdset="0">
              <number>1</number>
             </property>
@@ -251,7 +245,7 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="5" column="1">
            <widget class="PyDMPushButton" name="startButton">
             <property name="toolTip">
              <string/>
@@ -270,7 +264,7 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
+          <item row="6" column="0">
            <widget class="PyDMLabel" name="PyDMLabel">
             <property name="toolTip">
              <string/>
@@ -283,7 +277,7 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="6" column="1">
            <widget class="PyDMLabel" name="PyDMLabel_2">
             <property name="toolTip">
              <string/>
@@ -317,7 +311,7 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="7" column="1">
            <widget class="PyDMPushButton" name="stopButton">
             <property name="toolTip">
              <string/>
@@ -337,6 +331,16 @@ color: rgb(0, 0, 0);</string>
             </property>
             <property name="pressValue" stdset="0">
              <string>1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="PyDMLineEdit" name="nShotsLineEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="nShots">
+            <property name="text">
+             <string>Number of Shots:</string>
             </property>
            </widget>
           </item>

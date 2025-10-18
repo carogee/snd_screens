@@ -122,7 +122,7 @@ class AngleX1Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d11], t1th1, positions)
 
@@ -231,7 +231,7 @@ class AngleX2Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d12], t1th2, positions)
     
@@ -314,7 +314,7 @@ class AngleX3Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d15], t4th2, positions)
             #detectors = [d15]
@@ -406,7 +406,7 @@ class AngleX4Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d14], t4th1, positions)
     
@@ -490,7 +490,7 @@ class AngleCC1Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d8], t2th, positions)
 
@@ -576,7 +576,7 @@ class AngleCC2Align(PyDMPushButton):
             start_angle = float(self.startLineEdit.text())
             end_angle = float(self.stopLineEdit.text())
             steps = int(self.stepLineEdit.text())
-            n = 100
+            n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d9], t3th, positions)
 
