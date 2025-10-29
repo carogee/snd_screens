@@ -206,6 +206,16 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="nShots">
+            <property name="text">
+             <string>Number of Shots:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="PyDMLineEdit" name="nShotsLineEdit"/>
+          </item>
           <item row="5" column="0">
            <widget class="PyDMByteIndicator" name="PyDMByteIndicator" native="true">
             <property name="toolTip">
@@ -242,25 +252,6 @@ font-size: 14 px;
              <stringlist>
               <string></string>
              </stringlist>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="PyDMPushButton" name="startButton">
-            <property name="toolTip">
-             <string/>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(7, 7, 7);</string>
-            </property>
-            <property name="text">
-             <string>START SCAN</string>
-            </property>
-            <property name="monitorDisp" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="channel" stdset="0">
-             <string/>
             </property>
            </widget>
           </item>
@@ -311,7 +302,26 @@ font-size: 14 px;
             </property>
            </widget>
           </item>
-          <item row="7" column="1">
+          <item row="8" column="0">
+           <widget class="PyDMPushButton" name="startButton">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(7, 7, 7);</string>
+            </property>
+            <property name="text">
+             <string>START SCAN</string>
+            </property>
+            <property name="monitorDisp" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
            <widget class="PyDMPushButton" name="stopButton">
             <property name="toolTip">
              <string/>
@@ -334,15 +344,12 @@ color: rgb(0, 0, 0);</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="nShots">
+          <item row="9" column="1">
+           <widget class="PyDMPushButton" name="moveToCenter">
             <property name="text">
-             <string>Number of Shots:</string>
+             <string>Move to Center</string>
             </property>
            </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="PyDMLineEdit" name="nShotsLineEdit"/>
           </item>
          </layout>
         </item>

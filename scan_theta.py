@@ -20,6 +20,7 @@ from bluesky.plan_stubs import abs_set, trigger_and_read, stop, sleep
 from databroker import Broker, catalog
 from ophyd import Component as Cpt
 from ophyd import Device
+from epics import caput
 
 
 #import relevant pydm/qt 
@@ -103,6 +104,7 @@ class AngleX1Align(PyDMPushButton):
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker
         self.RE = RunEngine()
@@ -125,6 +127,12 @@ class AngleX1Align(PyDMPushButton):
             n = int(self.nShotsLineEdit.text())
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d11], t1th1, positions)
+
+    #def move_to_center(self,center):
+    #    print("Moving to", center)
+    #    command_move = f'caput XCS:SND:T1:TH1 {center}'
+    #    os.system(command_move)
+    #    print("Angle x1 moved to center position ", center)
 
     def start_scan(self):
         #attempt to do relative position scan with the daq
@@ -183,6 +191,7 @@ class AngleX1Align(PyDMPushButton):
         initial_guess = [np.mean(x_unique), np.std(x_unique), np.max(y_avg),np.min(y_avg)]
         popt, _ = curve_fit(gaussian, x_unique, y_avg, p0=initial_guess)
         center, sigma, amplitude,yoffset = popt
+        
         print("center",popt[0])
         print("sigma",popt[1])
         print("amplitude",popt[2])
@@ -196,7 +205,18 @@ class AngleX1Align(PyDMPushButton):
         plt.title('X1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
-        
+
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+        #self.move_to_center(center)
+
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T1:TH1 {self.center}'
+        os.system(command_move)
+        print("Angle x1 moved to center position ", self.center)
+
 
     def stop_scan(self):
         self.RE.stop()
