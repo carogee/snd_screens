@@ -230,12 +230,6 @@ font-size: 14 px;
         </item>
         <item row="4" column="2">
          <widget class="PyDMByteIndicator" name="PyDMByteIndicator" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
           <property name="font">
            <font>
             <pointsize>14</pointsize>

@@ -128,11 +128,6 @@ class AngleX1Align(PyDMPushButton):
             positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
             yield from rel_list_scan([d11], t1th1, positions)
 
-    #def move_to_center(self,center):
-    #    print("Moving to", center)
-    #    command_move = f'caput XCS:SND:T1:TH1 {center}'
-    #    os.system(command_move)
-    #    print("Angle x1 moved to center position ", center)
 
     def start_scan(self):
         #attempt to do relative position scan with the daq
@@ -166,8 +161,6 @@ class AngleX1Align(PyDMPushButton):
         # The results collected during the scan are stored in self.results
         x_values = self.results_x
         y_values = self.results_y
-        #print("Collected data values x:", x_values)
-        #print("Collected data values y:", y_values)
 
         # Step 2: Populate the dictionary
         for x, y in zip(x_values, y_values):
@@ -232,6 +225,7 @@ class AngleX2Align(PyDMPushButton):
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker                                                             
         self.RE = RunEngine()
@@ -302,6 +296,16 @@ class AngleX2Align(PyDMPushButton):
         plt.legend()
         plt.show()
 
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+ 
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T1:TH2 {self.center}'
+        os.system(command_move)
+        print("Angle x2 moved to center position ", self.center)
+
     def stop_scan(self):
         self.RE.stop()
         print("Stopped scanning motor X2")
@@ -315,6 +319,7 @@ class AngleX3Align(PyDMPushButton):
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker                                                             
         self.RE = RunEngine()
@@ -393,6 +398,16 @@ class AngleX3Align(PyDMPushButton):
         plt.legend()
         plt.show()
         
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+        #self.move_to_center(center)                                                                                                          
+
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T4:TH2 {self.center}'
+        os.system(command_move)
+        print("Angle x3 moved to center position ", self.center)
 
     def stop_scan(self):
         self.RE.stop()
@@ -407,6 +422,7 @@ class AngleX4Align(PyDMPushButton):
         uic.loadUi("/cds/home/c/cagee/SND/angle_x4.ui", self)
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker                                                             
         self.RE = RunEngine()
@@ -476,6 +492,17 @@ class AngleX4Align(PyDMPushButton):
         plt.title('X4 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
+        
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+        #self.move_to_center(center)                                                                                                          
+
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T4:TH1 {self.center}'
+        os.system(command_move)
+        print("Angle x4 moved to center position ", self.center)
 
     def stop_scan(self):
         self.RE.stop()
@@ -491,6 +518,7 @@ class AngleCC1Align(PyDMPushButton):
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker                                                             
         self.RE = RunEngine()
@@ -563,6 +591,17 @@ class AngleCC1Align(PyDMPushButton):
         plt.legend()
         plt.show()
 
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+        #self.move_to_center(center)                                                                                                          
+
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T2:TH {self.center}'
+        os.system(command_move)
+        print("Angle cc1 moved to center position ", self.center)
+
     def stop_scan(self):
         self.RE.stop()
         print("Stopped scanning motor cc1")
@@ -577,6 +616,7 @@ class AngleCC2Align(PyDMPushButton):
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
+        self.moveToCenter.clicked.connect(self.move_to_center)
 
         # Initialize RunEngine and Broker                                                             
         self.RE = RunEngine()
@@ -646,6 +686,17 @@ class AngleCC2Align(PyDMPushButton):
         plt.title('CC2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
+
+        self.center = popt[0]
+        print("move_to_center", self.center)
+        return self.center
+        #self.move_to_center(center)                                                                                                          
+
+    def move_to_center(self):
+        print("Moving to", self.center)
+        command_move = f'caput XCS:SND:T3:TH {self.center}'
+        os.system(command_move)
+        print("Angle cc2 moved to center position ", self.center)
 
     def stop_scan(self):
         self.RE.stop()
