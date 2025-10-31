@@ -84,7 +84,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d12</string>
+     <string>DD</string>
     </property>
    </widget>
    <widget class="QLabel" name="d11">
@@ -106,7 +106,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d11</string>
+     <string>T1D</string>
     </property>
    </widget>
    <widget class="QLabel" name="d13">
@@ -128,7 +128,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d13</string>
+     <string>DCI</string>
     </property>
    </widget>
    <widget class="QLabel" name="d08">
@@ -150,7 +150,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d08</string>
+     <string>DCC</string>
     </property>
    </widget>
    <widget class="QLabel" name="d09">
@@ -172,7 +172,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d09</string>
+     <string>DCO</string>
     </property>
    </widget>
    <widget class="QLabel" name="d14">
@@ -194,7 +194,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d14</string>
+     <string>DO</string>
     </property>
    </widget>
    <widget class="QLabel" name="d15">
@@ -216,7 +216,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d15</string>
+     <string>T4D</string>
     </property>
    </widget>
    <widget class="QLabel" name="d10">
@@ -239,7 +239,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>d10</string>
+     <string>DI</string>
     </property>
    </widget>
    <widget class="PyDMLabel" name="MotorsImage">
