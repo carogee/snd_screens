@@ -1,4 +1,0 @@
-#!/bin/bash                                                                                             
-source pcds_conda
-cd /cds/home/c/cagee/SND
-python crystals.py

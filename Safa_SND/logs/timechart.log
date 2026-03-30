@@ -1,8 +1,0 @@
-[2024-08-22 13:46:55,544] [WARNING ] - Unable to import QtWebEngineWidgets must be imported before a QCoreApplication instance is created; typhos web views disabled.
-[2024-08-22 13:47:10,565] [ERROR   ] - Unable to remove connection for <PyDMChannel (CA://XCS:SND:T1:TH1.MOVN)>
-Traceback (most recent call last):
-  File "/cds/group/pcds/pyps/conda/py39/envs/pcds-5.8.4/lib/python3.9/site-packages/pydm/widgets/channel.py", line 164, in disconnect
-    plugin.remove_connection(self, destroying=destroying)
-  File "/cds/group/pcds/pyps/conda/py39/envs/pcds-5.8.4/lib/python3.9/site-packages/pydm/data_plugins/plugin.py", line 320, in remove_connection
-    self.connections[connection_id].deleteLater()
-RuntimeError: wrapped C/C++ object of type Connection has been deleted
