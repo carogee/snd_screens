@@ -31,343 +31,6 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="toolTipDuration">
-      <number>-1</number>
-     </property>
-     <property name="text">
-      <string>CC1 vs IPM4</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QLabel" name="label_7">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="toolTipDuration">
-      <number>-1</number>
-     </property>
-     <property name="locale">
-      <locale language="English" country="UnitedStates"/>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="text">
-      <string>T1 Th1 vs IPM4</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" colspan="2">
-    <widget class="QLabel" name="label_5">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Delay1 vs CC1</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="PyDMScatterPlot" name="PyDMScatterPlot">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>297</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-right-color: rgb(168, 133, 255);
-</string>
-     </property>
-     <property name="sceneRect">
-      <rectf>
-       <x>0.000000000000000</x>
-       <y>0.000000000000000</y>
-       <width>311.000000000000000</width>
-       <height>200.000000000000000</height>
-      </rectf>
-     </property>
-     <property name="showXGrid">
-      <bool>true</bool>
-     </property>
-     <property name="showYGrid">
-      <bool>true</bool>
-     </property>
-     <property name="axisColor">
-      <color>
-       <red>254</red>
-       <green>254</green>
-       <blue>254</blue>
-      </color>
-     </property>
-     <property name="yAxes">
-      <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;CH08&quot;, &quot;minRange&quot;: -90.08969402208092, &quot;maxRange&quot;: 93.33969402208092, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
-      </stringlist>
-     </property>
-     <property name="title" stdset="0">
-      <string extracomment="SND DIO">IPM4 vs CC (CH08)</string>
-     </property>
-     <property name="xLabels">
-      <stringlist>
-       <string>IPM4</string>
-      </stringlist>
-     </property>
-     <property name="showLegend">
-      <bool>false</bool>
-     </property>
-     <property name="curves">
-      <stringlist>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:IPM_4&quot;, &quot;name&quot;: &quot;CH08&quot;, &quot;color&quot;: &quot;#fdfeff&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
-      </stringlist>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_8">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="showXGrid">
-      <bool>true</bool>
-     </property>
-     <property name="showYGrid">
-      <bool>true</bool>
-     </property>
-     <property name="axisColor">
-      <color>
-       <red>254</red>
-       <green>254</green>
-       <blue>254</blue>
-      </color>
-     </property>
-     <property name="yAxes">
-      <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -214.3125, &quot;maxRange&quot;: 212.4375, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
-      </stringlist>
-     </property>
-     <property name="xLabels">
-      <stringlist>
-       <string>IPM4</string>
-      </stringlist>
-     </property>
-     <property name="showLegend">
-      <bool>false</bool>
-     </property>
-     <property name="curves">
-      <stringlist>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:IPM_4&quot;, &quot;name&quot;: &quot;CH11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
-      </stringlist>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2" colspan="2">
-    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_4">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="showXGrid">
-      <bool>true</bool>
-     </property>
-     <property name="showYGrid">
-      <bool>true</bool>
-     </property>
-     <property name="axisColor">
-      <color>
-       <red>255</red>
-       <green>255</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="yAxes">
-      <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -83.04541207400698, &quot;maxRange&quot;: 72.42041207400698, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
-      </stringlist>
-     </property>
-     <property name="xLabels">
-      <stringlist>
-       <string>CC(CH08)</string>
-      </stringlist>
-     </property>
-     <property name="curves">
-      <stringlist>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
-      </stringlist>
-     </property>
-     <property name="TextColor" stdset="0">
-      <color>
-       <red>255</red>
-       <green>255</green>
-       <blue>255</blue>
-      </color>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>CC2 vs CC1</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLabel" name="label_3">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>T1 Th2 vs Th1</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2" colspan="2">
-    <widget class="QLabel" name="label_6">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>DELAY (CH15) vs CC2</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="0">
     <widget class="PyDMScatterPlot" name="PyDMScatterPlot_2">
      <property name="sizePolicy">
@@ -400,7 +63,7 @@
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -80.17375383436367, &quot;maxRange&quot;: 131.79875383436365, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -72.30272388172042, &quot;maxRange&quot;: 130.17772388172042, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="xLabels">
@@ -418,13 +81,10 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_3">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
+   <item row="7" column="2" colspan="2">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot_4">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -438,6 +98,20 @@
      <property name="toolTip">
       <string/>
      </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="sceneRect">
+      <rectf>
+       <x>0.000000000000000</x>
+       <y>0.000000000000000</y>
+       <width>300.000000000000000</width>
+       <height>200.000000000000000</height>
+      </rectf>
+     </property>
      <property name="showXGrid">
       <bool>true</bool>
      </property>
@@ -446,25 +120,156 @@
      </property>
      <property name="axisColor">
       <color>
-       <red>255</red>
-       <green>255</green>
-       <blue>255</blue>
+       <red>253</red>
+       <green>253</green>
+       <blue>253</blue>
       </color>
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -83.04541207400698, &quot;maxRange&quot;: 72.42041207400698, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -291.5707741091994, &quot;maxRange&quot;: 301.5707741091994, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="xLabels">
       <stringlist>
-       <string>CH11</string>
+       <string>time [sec]</string>
       </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
      </property>
      <property name="curves">
       <stringlist>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 3, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_15&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH15&quot;, &quot;color&quot;: &quot;#55aaff&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
       </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::OnValueChange</enum>
+     </property>
+     <property name="timeSpan">
+      <double>600.000000000000000</double>
+     </property>
+     <property name="updateInterval">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="2">
+    <widget class="QLabel" name="label_5">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Delay1 vs CC1</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="PyDMTimePlot" name="PyDMTimePlot">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="cursor" stdset="0">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="sceneRect">
+      <rectf>
+       <x>0.000000000000000</x>
+       <y>0.000000000000000</y>
+       <width>308.000000000000000</width>
+       <height>200.000000000000000</height>
+      </rectf>
+     </property>
+     <property name="showXGrid">
+      <bool>true</bool>
+     </property>
+     <property name="showYGrid">
+      <bool>true</bool>
+     </property>
+     <property name="axisColor">
+      <color>
+       <red>248</red>
+       <green>248</green>
+       <blue>248</blue>
+      </color>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;XCS-SB2-BMMON:SUM&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -42.86081940510159, &quot;maxRange&quot;: 55.11081940510159, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="xLabels">
+      <stringlist>
+       <string>time [sec]</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="mouseEnabledX" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:IPM_5&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;IPM5&quot;, &quot;color&quot;: &quot;#dbf0e0&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;XCS-SB2-BMMON:SUM&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+      </stringlist>
+     </property>
+     <property name="updateMode" stdset="0">
+      <enum>PyDMTimePlot::AtFixedRate</enum>
+     </property>
+     <property name="timeSpan">
+      <double>600.000000000000000</double>
+     </property>
+     <property name="updateInterval">
+      <double>1.000000000000000</double>
      </property>
     </widget>
    </item>
@@ -508,7 +313,7 @@
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -67.17157439751546, &quot;maxRange&quot;: 59.17157439751546, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -62.16294570526704, &quot;maxRange&quot;: 67.41294570526703, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="xLabels">
@@ -545,8 +350,8 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
-    <widget class="QLabel" name="label_4">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -560,11 +365,23 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="toolTipDuration">
+      <number>-1</number>
+     </property>
      <property name="text">
-      <string>T4 Th2 vs T1 Th2</string>
+      <string>CC1 vs IPM4</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -624,7 +441,7 @@
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;XCS-SB1-BMMON:SUM&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -179.4894112, &quot;maxRange&quot;: 195.4894112, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;XCS-SB1-BMMON:SUM&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -116.47425305151863, &quot;maxRange&quot;: 149.84925305151864, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="xLabels">
@@ -686,7 +503,7 @@
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -67.17157439751546, &quot;maxRange&quot;: 59.17157439751546, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -81.29646962129293, &quot;maxRange&quot;: 79.29646962129293, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="xLabels">
@@ -697,6 +514,56 @@
      <property name="curves">
       <stringlist>
        <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_15&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;name&quot;: &quot;CH15&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 3, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_8">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="showXGrid">
+      <bool>true</bool>
+     </property>
+     <property name="showYGrid">
+      <bool>true</bool>
+     </property>
+     <property name="axisColor">
+      <color>
+       <red>254</red>
+       <green>254</green>
+       <blue>254</blue>
+      </color>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -209.56797303100342, &quot;maxRange&quot;: 231.19297303100342, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="xLabels">
+      <stringlist>
+       <string>IPM4</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>false</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:IPM_4&quot;, &quot;name&quot;: &quot;CH11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
       </stringlist>
      </property>
     </widget>
@@ -762,7 +629,7 @@
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -114.72246679925924, &quot;maxRange&quot;: 124.34746679925924, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -108.5553204620948, &quot;maxRange&quot;: 117.9303204620948, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
      </property>
      <property name="title" stdset="0">
@@ -799,28 +666,23 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_11">
+   <item row="4" column="1">
+    <widget class="QLabel" name="label_4">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
      <property name="font">
       <font>
+       <pointsize>12</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>IPM5</string>
+      <string>T4 Th2 vs T1 Th2</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -850,49 +712,32 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
-    <widget class="PyDMTimePlot" name="PyDMTimePlot">
+   <item row="1" column="0">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="minimumSize">
       <size>
-       <width>300</width>
+       <width>297</width>
        <height>200</height>
       </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="cursor" stdset="0">
-      <cursorShape>ArrowCursor</cursorShape>
      </property>
      <property name="toolTip">
       <string/>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAsNeeded</enum>
+     <property name="styleSheet">
+      <string notr="true">border-right-color: rgb(168, 133, 255);
+</string>
      </property>
      <property name="sceneRect">
       <rectf>
        <x>0.000000000000000</x>
        <y>0.000000000000000</y>
-       <width>311.000000000000000</width>
+       <width>308.000000000000000</width>
        <height>200.000000000000000</height>
       </rectf>
      </property>
@@ -904,196 +749,31 @@
      </property>
      <property name="axisColor">
       <color>
-       <red>248</red>
-       <green>248</green>
-       <blue>248</blue>
+       <red>254</red>
+       <green>254</green>
+       <blue>254</blue>
       </color>
      </property>
      <property name="yAxes">
       <stringlist>
-       <string>{&quot;name&quot;: &quot;XCS-SB2-BMMON:SUM&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -39.7566936, &quot;maxRange&quot;: 43.1316936, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;CH08&quot;, &quot;minRange&quot;: -99.24012429010965, &quot;maxRange&quot;: 84.86512429010965, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
       </stringlist>
+     </property>
+     <property name="title" stdset="0">
+      <string extracomment="SND DIO">IPM4 vs CC (CH08)</string>
      </property>
      <property name="xLabels">
       <stringlist>
-       <string>time [sec]</string>
+       <string>IPM4</string>
       </stringlist>
      </property>
      <property name="showLegend">
-      <bool>true</bool>
-     </property>
-     <property name="mouseEnabledX" stdset="0">
       <bool>false</bool>
      </property>
      <property name="curves">
       <stringlist>
-       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:IPM_5&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;IPM5&quot;, &quot;color&quot;: &quot;#dbf0e0&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;XCS-SB2-BMMON:SUM&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:IPM_4&quot;, &quot;name&quot;: &quot;CH08&quot;, &quot;color&quot;: &quot;#fdfeff&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
       </stringlist>
-     </property>
-     <property name="updateMode" stdset="0">
-      <enum>PyDMTimePlot::AtFixedRate</enum>
-     </property>
-     <property name="timeSpan">
-      <double>600.000000000000000</double>
-     </property>
-     <property name="updateInterval">
-      <double>1.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_7">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="sceneRect">
-      <rectf>
-       <x>0.000000000000000</x>
-       <y>0.000000000000000</y>
-       <width>311.000000000000000</width>
-       <height>200.000000000000000</height>
-      </rectf>
-     </property>
-     <property name="showXGrid">
-      <bool>true</bool>
-     </property>
-     <property name="showYGrid">
-      <bool>true</bool>
-     </property>
-     <property name="axisColor">
-      <color>
-       <red>255</red>
-       <green>255</green>
-       <blue>255</blue>
-      </color>
-     </property>
-     <property name="yAxes">
-      <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;CH 09 &amp; 15&quot;, &quot;minRange&quot;: -104.125, &quot;maxRange&quot;: 137.375, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
-      </stringlist>
-     </property>
-     <property name="xLabels">
-      <stringlist>
-       <string>Photon Energy</string>
-      </stringlist>
-     </property>
-     <property name="showLegend">
-      <bool>true</bool>
-     </property>
-     <property name="curves">
-      <stringlist>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_9&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:EPHOTON&quot;, &quot;name&quot;: &quot;CH09 &quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
-       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_15&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:EPHOTON&quot;, &quot;name&quot;: &quot;CH15 &quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
-      </stringlist>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="2" colspan="2">
-    <widget class="PyDMTimePlot" name="PyDMTimePlot_4">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAsNeeded</enum>
-     </property>
-     <property name="sceneRect">
-      <rectf>
-       <x>0.000000000000000</x>
-       <y>0.000000000000000</y>
-       <width>300.000000000000000</width>
-       <height>200.000000000000000</height>
-      </rectf>
-     </property>
-     <property name="showXGrid">
-      <bool>true</bool>
-     </property>
-     <property name="showYGrid">
-      <bool>true</bool>
-     </property>
-     <property name="axisColor">
-      <color>
-       <red>253</red>
-       <green>253</green>
-       <blue>253</blue>
-      </color>
-     </property>
-     <property name="yAxes">
-      <stringlist>
-       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;mean&quot;, &quot;minRange&quot;: -322.7127064, &quot;maxRange&quot;: 307.5877064, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
-      </stringlist>
-     </property>
-     <property name="xLabels">
-      <stringlist>
-       <string>time [sec]</string>
-      </stringlist>
-     </property>
-     <property name="showLegend">
-      <bool>true</bool>
-     </property>
-     <property name="curves">
-      <stringlist>
-       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH11&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
-       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
-       <string>{&quot;channel&quot;: &quot;ca://XCS:TT:01:AMPL_15&quot;, &quot;plot_style&quot;: &quot;Line&quot;, &quot;name&quot;: &quot;CH15&quot;, &quot;color&quot;: &quot;#55aaff&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 2, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;}</string>
-      </stringlist>
-     </property>
-     <property name="updateMode" stdset="0">
-      <enum>PyDMTimePlot::OnValueChange</enum>
-     </property>
-     <property name="timeSpan">
-      <double>600.000000000000000</double>
-     </property>
-     <property name="updateInterval">
-      <double>1.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2" colspan="2">
-    <widget class="QLabel" name="label_9">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Delay Line</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -1119,6 +799,326 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>T1 Th2 vs Th1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>IPM5</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="label_7">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="toolTipDuration">
+      <number>-1</number>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="text">
+      <string>T1 Th1 vs IPM4</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="showXGrid">
+      <bool>true</bool>
+     </property>
+     <property name="showYGrid">
+      <bool>true</bool>
+     </property>
+     <property name="axisColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -77.4053801866057, &quot;maxRange&quot;: 88.4053801866057, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="xLabels">
+      <stringlist>
+       <string>CC(CH08)</string>
+      </stringlist>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:AMPL_8&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
+     </property>
+     <property name="TextColor" stdset="0">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="showXGrid">
+      <bool>true</bool>
+     </property>
+     <property name="showYGrid">
+      <bool>true</bool>
+     </property>
+     <property name="axisColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -77.4053801866057, &quot;maxRange&quot;: 88.4053801866057, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="xLabels">
+      <stringlist>
+       <string>CH11</string>
+      </stringlist>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_12&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:AMPL_11&quot;, &quot;name&quot;: &quot;CH12&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 3, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="2">
+    <widget class="QLabel" name="label_9">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Delay Line</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="QLabel" name="label_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>DELAY (CH15) vs CC2</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CC2 vs CC1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="PyDMScatterPlot" name="PyDMScatterPlot_7">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="sceneRect">
+      <rectf>
+       <x>0.000000000000000</x>
+       <y>0.000000000000000</y>
+       <width>308.000000000000000</width>
+       <height>200.000000000000000</height>
+      </rectf>
+     </property>
+     <property name="showXGrid">
+      <bool>true</bool>
+     </property>
+     <property name="showYGrid">
+      <bool>true</bool>
+     </property>
+     <property name="axisColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="yAxes">
+      <stringlist>
+       <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: &quot;CH 09 &amp; 15&quot;, &quot;minRange&quot;: -118.61096192370748, &quot;maxRange&quot;: 68.36096192370748, &quot;autoRange&quot;: true, &quot;logMode&quot;: false}</string>
+      </stringlist>
+     </property>
+     <property name="xLabels">
+      <stringlist>
+       <string>Photon Energy</string>
+      </stringlist>
+     </property>
+     <property name="showLegend">
+      <bool>true</bool>
+     </property>
+     <property name="curves">
+      <stringlist>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_9&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:EPHOTON&quot;, &quot;name&quot;: &quot;CH09 &quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+       <string>{&quot;y_channel&quot;: &quot;ca://XCS:TT:01:AMPL_15&quot;, &quot;x_channel&quot;: &quot;ca://XCS:TT:01:EPHOTON&quot;, &quot;name&quot;: &quot;CH15 &quot;, &quot;color&quot;: &quot;red&quot;, &quot;lineStyle&quot;: 0, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: &quot;o&quot;, &quot;symbolSize&quot;: 3, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;barWidth&quot;: null, &quot;upperThreshold&quot;: null, &quot;lowerThreshold&quot;: null, &quot;thresholdColor&quot;: &quot;white&quot;, &quot;redraw_mode&quot;: 2, &quot;buffer_size&quot;: 240, &quot;bufferSizeChannelAddress&quot;: null}</string>
+      </stringlist>
      </property>
     </widget>
    </item>
