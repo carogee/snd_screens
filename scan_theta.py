@@ -21,7 +21,7 @@ from databroker import Broker, catalog
 from ophyd import Component as Cpt
 from ophyd import Device
 from epics import caput
-
+from os import path
 
 #import relevant pydm/qt 
 from PyQt5.QtCore import QCoreApplication, Qt
@@ -56,6 +56,9 @@ t3th=EpicsSignal("XCS:SND:T3:TH",name="cc2 motor")
 t4th1=EpicsSignal("XCS:SND:T4:TH1",name="x4 motor")
 t4th2=EpicsSignal("XCS:SND:T4:TH2",name="x3 motor") #X3 align
 
+current_directory = os.getcwd()
+print("current directory", current_directory)
+
 #RE=RunEngine()
 #db = Broker.named('temp')
 #bec=BestEffortCallback()
@@ -66,7 +69,7 @@ t4th2=EpicsSignal("XCS:SND:T4:TH2",name="x3 motor") #X3 align
 # each class for the 6 different buttons/motors
 # classes for pop up Buttons in snd_gui.py to call on: 
 
-# Gaussian function for fitting                                                                 
+# Gaussian function for fitting                                                     
 def gaussian(x, center, sigma, amplitude,yoffset):
     return amplitude * np.exp(-((x - center) ** 2) / (2 * sigma ** 2))+yoffset
 
@@ -100,7 +103,8 @@ class CustomBestEffortCallback(BestEffortCallback):
 class AngleX1Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleX1Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_x1.ui", self)
+        file_path = os.path.join(current_directory, 'angle_x1.ui')
+        uic.loadUi(file_path, self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -216,12 +220,13 @@ class AngleX1Align(PyDMPushButton):
         print("Stopped scanning x1 motor")
     
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_x1.ui'
+        return file_path
 
 class AngleX2Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleX2Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_x2.ui", self)
+        file_path = os.path.join(current_directory, 'angle_x2.ui')
+        uic.loadUi(file_path, self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -310,12 +315,13 @@ class AngleX2Align(PyDMPushButton):
         self.RE.stop()
         print("Stopped scanning motor X2")
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_x2.ui'
+        return file_path
    
 class AngleX3Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleX3Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_x3.ui", self)
+        file_path = os.path.join(current_directory, 'angle_x3.ui')
+        uic.loadUi(file_path, self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -414,12 +420,14 @@ class AngleX3Align(PyDMPushButton):
         print("stopped scanning motor X3") 
 
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_x3.ui'
+        return file_path
 
 class AngleX4Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleX4Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_x4.ui", self)
+        file_path = os.path.join(current_directory, 'angle_x4.ui')
+        uic.loadUi(file_path, self)
+
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
         self.moveToCenter.clicked.connect(self.move_to_center)
@@ -509,12 +517,13 @@ class AngleX4Align(PyDMPushButton):
         print("Stopped scanning motor X4")
 
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_x4.ui'
+        return file_path
 
 class AngleCC1Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleCC1Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_cc1.ui", self)
+        file_path = os.path.join(current_directory, 'angle_cc1.ui')
+        uic.loadUi(file_path, self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -607,12 +616,13 @@ class AngleCC1Align(PyDMPushButton):
         print("Stopped scanning motor cc1")
 
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_cc1.ui'
+        return file_path
 
 class AngleCC2Align(PyDMPushButton):
     def __init__(self, parent=None):
         super(AngleCC2Align, self).__init__(parent)
-        uic.loadUi("/cds/home/c/cagee/SND/angle_cc2.ui", self)
+        file_path = os.path.join(current_directory, 'angle_cc2.ui')
+        uic.loadUi(file_path, self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -703,7 +713,7 @@ class AngleCC2Align(PyDMPushButton):
         print("Stopped Scanning motor cc2")
 
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/angle_cc2.ui'
+        return file_path
 
 """
 if __name__=='__main__':
