@@ -8,7 +8,7 @@ RE = RunEngine({})
 from bluesky.plans import scan
 from ophyd.signal import EpicsSignal
 from databroker import Broker
-from pydm import PyDMApplication
+#from pydm import PyDMApplication
 
 from pydm.widgets.channel import PyDMChannel
 #from scan_theta import anglex1, anglex2, anglex3, anglex4, anglecc1, anglecc2 
@@ -16,6 +16,7 @@ from pydm.data_plugins.local_plugin import LocalPlugin
 from scan_theta import AngleX1Align, AngleX2Align, AngleX3Align, AngleX4Align, AngleCC1Align, AngleCC2Align
 from dd_in import DDCrystal_MoveIn
 from pydm.widgets.pushbutton import PyDMPushButton
+from pydm.widgets import PyDMLabel
 from PyQt5.QtCore import QCoreApplication, Qt, QTimer
 from PyQt5 import QtWebEngineWidgets, QtCore, QtWidgets
 from pydm.widgets.channel import PyDMChannel
@@ -28,6 +29,11 @@ from bluesky.plan_stubs import stop
 from epics import caput
 from collections import deque
 import numpy as np
+
+from qtpy.QtWidgets import QTableWidgetItem, QHeaderView, QLabel
+from qtpy.QtCore import Qt
+from pydm.widgets.display_format import DisplayFormat
+from qtpy.QtGui import QColor
 
 #db = Broker.named('temp')
 bec = BestEffortCallback()
@@ -74,7 +80,7 @@ class MyDisplay(Display):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.my_device = MyDevice()  # Create an instance of MyDevice
-        uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
+        #uic.loadUi('/cds/home/c/cagee/SND/motors_screen.ui', self)
         #uic.loadUi(file_path, self)
 
         #PydmRelatedDisplay buttons connect to custom functions:                                           
@@ -87,9 +93,9 @@ class MyDisplay(Display):
         self.DDCrystalIn.clicked.connect(self.move_ddcrystalin)
 
         # Create a QLabel to display the average value
-        self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
-        self.average_label.setGeometry(223, 100, 200, 50)  # Set position and size
-        self.average_label.setText("Average: 0.0")
+        #self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
+        #self.average_label.setGeometry(223, 100, 200, 50)  # Set position and size
+        #self.average_label.setText("Average: 0.0")
 
         # Set up a timer to update the average value every second
         self.timer = QTimer(self)
@@ -97,12 +103,120 @@ class MyDisplay(Display):
         self.timer.start(1000)  # Update every second
         print("initialized timer")
 
+        self.setup_pv_table()
+
+    #def update_average(self):
+    #    # Get the averaged value and update the label
+    #    averaged_value_dcc = self.my_device.dcc_signal.get()
+    #    averaged_value_ch12 = self.my_device.ch12.get()
+    #    averaged_ratio = averaged_value_ch12/averaged_value_dcc
+    #    self.average_label.setText(f"{averaged_ratio:.2f}")
     def update_average(self):
-        # Get the averaged value and update the label
-        averaged_value_dcc = self.my_device.dcc_signal.get()
-        averaged_value_ch12 = self.my_device.ch12.get()
-        averaged_ratio = averaged_value_ch12/averaged_value_dcc
-        self.average_label.setText(f"{averaged_ratio:.2f}")
+        """
+        Calculates the ratio and updates the 'Intensity Ratio' cell in the table.
+        """
+        try:
+            averaged_value_dcc = self.my_device.dcc_signal.get()
+            averaged_value_ch12 = self.my_device.ch12.get()
+
+            # Prevent a crash if the denominator is zero
+            if averaged_value_dcc == 0:
+                ratio_text = "N/A (Div 0)"
+            else:
+                # This is your calculation
+                averaged_ratio = averaged_value_ch12 / averaged_value_dcc
+                ratio_text = f"{averaged_ratio:.4f}" # Format to 4 decimal places
+
+            # Update the specific label inside our table.
+            # The 'hasattr' check prevents an error if the label doesn't exist yet.
+            if hasattr(self, 'intensity_ratio_label'):
+                self.intensity_ratio_label.setText(ratio_text)
+
+        except Exception as e:
+            # This will catch any other unexpected errors during the calculation
+            # and prevent your whole GUI from crashing.
+            print(f"Error during average update: {e}")
+            if hasattr(self, 'intensity_ratio_label'):
+                self.intensity_ratio_label.setText("Error")
+
+
+    def setup_pv_table(self):
+        """
+        Populates the table with a mix of PV-driven and code-driven values.
+        """
+
+        table_data = [
+            {"description": "CC Energy (eV)",       "pv": "XCS:SND:CALC:E2"},
+            {"description": "Time Delay (ps)",      "pv": "XCS:SND:CALC:Delay"},
+            {"description": "Intensity Ratio (1s)"}, 
+            {"description": "Delay Energy (eV)",    "pv": "XCS:SND:CALC:E1"},
+        ]
+
+        table = self.ui.PVTable
+        table.setRowCount(len(table_data))
+        table.setColumnCount(2)
+        table.setHorizontalHeaderLabels(["Parameter", "Value"])
+        
+        light_grey_color = QColor("#F0F0F0") # A pleasant light grey
+        white_background_style = "background-color: white;"
+
+        # --- CHANGE #2: The loop logic ---
+        # This loop now checks if a row is for a PV or for our special case.
+        for row_index, item in enumerate(table_data):
+            description_text = item["description"]
+            description_widget_item = QTableWidgetItem(description_text)
+            description_widget_item.setBackground(light_grey_color)
+            table.setItem(row_index, 0, description_widget_item)
+
+            # Check if the row has a PV defined
+            if "pv" in item:
+                # This is a normal PV row, so we use a PyDMLabel
+                value_label = PyDMLabel()
+                value_label.channel = f"ca://{item['pv']}"
+                value_label.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
+                value_label.setStyleSheet(white_background_style)
+                if item["description"] == "Delay Energy (eV)":
+                    value_label.precisionFromPV = False
+                    # Set the display format to Scientific.
+                    value_label.displayFormat = DisplayFormat.Exponential
+                    # For scientific notation, a lower precision is usually desired.
+                    value_label.precision = 2
+                else:
+                    value_label.displayFormat = DisplayFormat.Decimal
+                    value_label.precisionFromPV = True
+                    value_label.precision = 3
+                table.setCellWidget(row_index, 1, value_label)
+            else:
+                # --- CHANGE #3: Create a regular QLabel and save a reference ---
+                # This is our special "Intensity Ratio" row
+                # 1. Create a standard QLabel
+                value_label = QLabel("Calculating...") # Initial text
+                value_label.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
+                value_label.setStyleSheet(white_background_style)
+                # 2. Save this label as an attribute of the class.
+                #    This allows the update_average function to find it later.
+                self.intensity_ratio_label = value_label
+            
+                # 3. Place the label in the table cell
+                table.setCellWidget(row_index, 1, self.intensity_ratio_label)
+
+
+        desired_row_height = 32
+        table.verticalHeader().setVisible(False)
+        table.verticalHeader().setDefaultSectionSize(desired_row_height)
+        table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
+        table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
+        
+        # Style the header to match the medium grey in the image
+        header_style = """
+            QHeaderView::section {
+                background-color: #C0C0C0; /* Medium grey background */
+                color: black;              /* Black text */
+                font-weight: bold;
+                padding: 4px;
+            }
+        """
+        table.horizontalHeader().setStyleSheet(header_style)
 
     def scan_openx1(self):
         self.angle_x1_scan=AngleX1Align(self)
@@ -162,7 +276,7 @@ class MyDisplay(Display):
 
 
     def ui_filename(self):
-        return '/cds/home/c/cagee/SND/motors_screen.ui'
+        return file_path
 
     def ui_filepath(self):
         return path.join(path.dirname(path.realpath(__file__)), self.ui_filename())
@@ -170,7 +284,7 @@ class MyDisplay(Display):
  
 if __name__=='__main__':
     from pydm import PyDMApplication
-    app = QtWidgets.QApplication(sys.argv)
+    app = PyDMApplication(use_main_window=False)
     display = MyDisplay()
     display.show()
     sys.exit(app.exec_())
