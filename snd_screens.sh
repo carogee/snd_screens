@@ -1,7 +1,7 @@
 #!/bin/bash                                                                                             
 
 source /cds/group/pcds/pyps/conda/dev_conda
+cd /reg/g/pcds/epics-dev/screens/pydm/xcs/snd_screens
 
-#pydm /cds/home/c/cagee/SND/snd_corr.ui &
-pydm /cds/home/c/cagee/SND/snd_monitoring.ui &
-python /cds/home/c/cagee/SND/snd_gui.py &
+pydm /reg/g/pcds/epics-dev/screens/pydm/xcs/snd_screens/snd_monitoring.ui &
+python /reg/g/pcds/epics-dev/screens/pydm/xcs/snd_screens/snd_gui.py &
