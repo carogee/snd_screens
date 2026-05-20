@@ -17,10 +17,66 @@ from ophyd.signal import EpicsSignal
 from ophyd.signal import EpicsSignalRO
 from PyQt5 import QtWidgets, uic
 from pydm.widgets import PyDMPushButton
-
-from lcls_beamline_toolbox.utility.bluesky_alignment import gaussian, scan_fit_center
+from scipy.optimize import curve_fit
 
 UI_DIR = Path(__file__).resolve().parent
+
+
+def gaussian(x, center, sigma, amplitude, yoffset):
+    return amplitude * np.exp(-((x - center) ** 2) / (2 * sigma ** 2)) + yoffset
+
+
+def scan_fit_center(
+    RE,
+    motor,
+    detector,
+    *,
+    start,
+    stop,
+    steps,
+    shots_per_step=1,
+    move=True,
+):
+    positions = np.repeat(np.linspace(start, stop, steps), shots_per_step)
+    data_x = []
+    data_y = []
+
+    def collect(name, doc):
+        if name == "event":
+            data_x.append(doc["data"][motor.name])
+            data_y.append(doc["data"][detector.name])
+
+    token = RE.subscribe(collect)
+    RE(bps.rel_list_scan([detector], motor, positions))
+    RE.unsubscribe(token)
+
+    xy = {}
+    for x, y in zip(data_x, data_y):
+        xy.setdefault(x, []).append(y)
+
+    x_unique = np.array(sorted(xy.keys()))
+    y_avg = np.array([np.mean(xy[x]) for x in x_unique])
+
+    initial_guess = [
+        np.mean(x_unique),
+        np.std(x_unique),
+        np.max(y_avg),
+        np.min(y_avg),
+    ]
+    popt, _ = curve_fit(gaussian, x_unique, y_avg, p0=initial_guess)
+    center, sigma, amplitude, yoffset = popt
+
+    if move:
+        RE(bps.mv(motor, float(center)))
+
+    return {
+        "x": x_unique,
+        "y": y_avg,
+        "center": center,
+        "sigma": sigma,
+        "amplitude": amplitude,
+        "yoffset": yoffset,
+    }
 
 d12 = EpicsSignalRO("XCS:SND:DIO:AMPL_12", name="diode 12")
 d8 = EpicsSignalRO("XCS:SND:DIO:AMPL_8", name="diode 8")
