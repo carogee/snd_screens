@@ -736,7 +736,7 @@
        </property>
        <property name="commands" stdset="0">
         <stringlist>
-         <string>/cds/home/c/cagee/SND/snd_run_calc.sh</string>
+         <string>/reg/g/pcds/epics-dev/screens/pydm/xcs/snd_screens/snd_run_calc.sh</string>
         </stringlist>
        </property>
        <property name="passwordProtected" stdset="0">
