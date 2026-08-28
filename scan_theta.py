@@ -194,11 +194,16 @@ class AngleX1Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
         
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t1.th1')
-        plt.ylabel('diode 11')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 11 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('X1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
@@ -292,11 +297,16 @@ class AngleX2Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
 
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t1.th2')
-        plt.ylabel('diode 12')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 12 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('X2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
@@ -395,11 +405,16 @@ class AngleX3Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
 
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t4.th2')
-        plt.ylabel('diode 15')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 15 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('X3 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
@@ -492,11 +507,16 @@ class AngleX4Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
 
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t4.th1')
-        plt.ylabel('diode 14')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 14 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('X4 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
@@ -591,11 +611,16 @@ class AngleCC1Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
 
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t2.th')
-        plt.ylabel('diode 8')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 8 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('CC1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
@@ -688,11 +713,16 @@ class AngleCC2Align(PyDMPushButton):
         print("amplitude",popt[2])
         print("yoffset",popt[3])
 
+        # Normalize data and fit so baseline -> 0 and peak -> 1
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+
         plt.figure()
-        plt.plot(x_unique,y_avg,'.')
+        plt.plot(x_fit, y_norm, '.')
         plt.xlabel('t3.th')
-        plt.ylabel('diode 9')
-        plt.plot(x_unique, gaussian(x_unique, *popt), linestyle='--', color='r')
+        plt.ylabel('diode 9 (normalized)')
+        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
         plt.title('CC2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         plt.legend()
         plt.show()
