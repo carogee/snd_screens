@@ -73,9 +73,50 @@ print("current directory", current_directory)
 def gaussian(x, center, sigma, amplitude,yoffset):
     return amplitude * np.exp(-((x - center) ** 2) / (2 * sigma ** 2))+yoffset
 
-# Poly function for fitting                                                                    
+# Poly function for fitting
 def poly(x,slop,xoffset,yoffset):
     return slop*(x+xoffset)+yoffset
+
+# Render the normalized data + fit either onto an embedded Qt canvas (if given)
+# or into a standalone matplotlib window (fallback, original behavior).
+# On the embedded canvas the most recent 2 scans and their fits are kept and
+# shown together (latest emphasized, previous faded), with a legend.
+def render_fit(canvas, x, y_norm, fit_norm, xlabel, ylabel, title):
+    if canvas is not None:
+        # Persist the last 2 (scan, fit) pairs on the canvas across runs.
+        if not hasattr(canvas, 'scan_history'):
+            canvas.scan_history = []
+        canvas.scan_history.append((np.array(x), np.array(y_norm), np.array(fit_norm)))
+        canvas.scan_history = canvas.scan_history[-2:]
+
+        ax = canvas.ax
+        ax.clear()
+        colors = {'latest': 'C0', 'previous': 'C1'}
+        n = len(canvas.scan_history)
+        for i, (xh, yh, fh) in enumerate(canvas.scan_history):
+            age = 'latest' if i == n - 1 else 'previous'
+            c = colors[age]
+            alpha = 1.0 if age == 'latest' else 0.45
+            ax.plot(xh, yh, marker='.', linestyle='none', color=c, alpha=alpha,
+                    label='scan ({})'.format(age))
+            ax.plot(xh, fh, linestyle='--', color=c, alpha=alpha,
+                    label='fit ({})'.format(age))
+        ax.set_xlabel(xlabel, fontsize=8)
+        ax.set_ylabel(ylabel, fontsize=8)
+        ax.set_title(title, fontsize=8)
+        ax.tick_params(labelsize=7)
+        ax.legend(fontsize=6)
+        canvas.fig.tight_layout()
+        canvas.draw_idle()
+    else:
+        plt.figure()
+        plt.plot(x, y_norm, marker='.', linestyle='none', label='scan')
+        plt.plot(x, fit_norm, linestyle='--', color='r', label='fit')
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.title(title)
+        plt.legend()
+        plt.show()
 
 class CustomBestEffortCallback(BestEffortCallback):
     def __init__(self, data_x, data_y, *args, **kwargs):
@@ -101,8 +142,9 @@ class CustomBestEffortCallback(BestEffortCallback):
 
 
 class AngleX1Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleX1Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x1.ui')
         uic.loadUi(file_path, self)
 
@@ -199,14 +241,9 @@ class AngleX1Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t1.th1')
-        plt.ylabel('diode 11 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('X1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't1.th1', 'diode 11 (normalized)',
+                   'X1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
 
         self.center = popt[0]
         print("move_to_center", self.center)
@@ -228,8 +265,9 @@ class AngleX1Align(PyDMPushButton):
         return file_path
 
 class AngleX2Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleX2Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x2.ui')
         uic.loadUi(file_path, self)
 
@@ -302,14 +340,9 @@ class AngleX2Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t1.th2')
-        plt.ylabel('diode 12 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('X2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't1.th2', 'diode 12 (normalized)',
+                   'X2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
 
         self.center = popt[0]
         print("move_to_center", self.center)
@@ -328,8 +361,9 @@ class AngleX2Align(PyDMPushButton):
         return file_path
    
 class AngleX3Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleX3Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x3.ui')
         uic.loadUi(file_path, self)
 
@@ -410,14 +444,9 @@ class AngleX3Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t4.th2')
-        plt.ylabel('diode 15 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('X3 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't4.th2', 'diode 15 (normalized)',
+                   'X3 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         
         self.center = popt[0]
         print("move_to_center", self.center)
@@ -438,8 +467,9 @@ class AngleX3Align(PyDMPushButton):
         return file_path
 
 class AngleX4Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleX4Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x4.ui')
         uic.loadUi(file_path, self)
 
@@ -512,14 +542,9 @@ class AngleX4Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t4.th1')
-        plt.ylabel('diode 14 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('X4 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't4.th1', 'diode 14 (normalized)',
+                   'X4 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
         
         self.center = popt[0]
         print("move_to_center", self.center)
@@ -540,8 +565,9 @@ class AngleX4Align(PyDMPushButton):
         return file_path
 
 class AngleCC1Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleCC1Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_cc1.ui')
         uic.loadUi(file_path, self)
 
@@ -616,14 +642,9 @@ class AngleCC1Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t2.th')
-        plt.ylabel('diode 8 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('CC1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't2.th', 'diode 8 (normalized)',
+                   'CC1 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
 
         self.center = popt[0]
         print("move_to_center", self.center)
@@ -644,8 +665,9 @@ class AngleCC1Align(PyDMPushButton):
         return file_path
 
 class AngleCC2Align(PyDMPushButton):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, canvas=None):
         super(AngleCC2Align, self).__init__(parent)
+        self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_cc2.ui')
         uic.loadUi(file_path, self)
 
@@ -718,14 +740,9 @@ class AngleCC2Align(PyDMPushButton):
         y_norm = (np.array(y_avg) - yoffset) / amplitude
         fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
 
-        plt.figure()
-        plt.plot(x_fit, y_norm, '.')
-        plt.xlabel('t3.th')
-        plt.ylabel('diode 9 (normalized)')
-        plt.plot(x_fit, fit_norm, linestyle='--', color='r')
-        plt.title('CC2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
-        plt.legend()
-        plt.show()
+        render_fit(self.canvas, x_fit, y_norm, fit_norm,
+                   't3.th', 'diode 9 (normalized)',
+                   'CC2 Center : {:.5f}'.format(center)+' FWHM: {:.5f}'.format(2.333*sigma))
 
         self.center = popt[0]
         print("move_to_center", self.center)

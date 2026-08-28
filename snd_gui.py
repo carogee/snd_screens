@@ -35,6 +35,19 @@ from qtpy.QtCore import Qt
 from pydm.widgets.display_format import DisplayFormat
 from qtpy.QtGui import QColor
 
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+from matplotlib.figure import Figure
+
+
+# Embeddable matplotlib canvas sized to match the scatter plots it replaces.
+class MplCanvas(FigureCanvasQTAgg):
+    def __init__(self, width=2.65, height=2.12, dpi=100):
+        self.fig = Figure(figsize=(width, height), dpi=dpi)
+        self.ax = self.fig.add_subplot(111)
+        super().__init__(self.fig)
+        self.setMinimumSize(265, 212)
+        self.setMaximumSize(265, 212)
+
 #db = Broker.named('temp')
 bec = BestEffortCallback()
 RE.subscribe(bec)
@@ -104,6 +117,32 @@ class MyDisplay(Display):
         print("initialized timer")
 
         self.setup_pv_table()
+        self._embed_plot_canvases()
+
+    def _embed_plot_canvases(self):
+        """Replace the 6 PyDMScatterPlot widgets on motors_screen.ui with
+        embedded matplotlib canvases, kept in self.mpl_canvases so scans can
+        redraw them at runtime."""
+        self.mpl_canvases = {}
+        mapping = {
+            'x1': 'X1plot', 'x2': 'X2plot', 'x3': 'X3Plot',
+            'x4': 'X4Plot', 'cc1': 'CC1plot', 'cc2': 'CC2Plot',
+        }
+        # Widgets from the loaded .ui live under self.ui, not self.
+        ui = getattr(self, 'ui', self)
+        for key, wname in mapping.items():
+            old = getattr(ui, wname, None) or ui.findChild(QWidget, wname)
+            if old is None:
+                print(f"Warning: scatter plot '{wname}' not found; skipping")
+                continue
+            grid = old.parent().layout()
+            idx = grid.indexOf(old)
+            row, col, rowspan, colspan = grid.getItemPosition(idx)
+            grid.removeWidget(old)
+            old.deleteLater()
+            canvas = MplCanvas()
+            grid.addWidget(canvas, row, col, rowspan, colspan)
+            self.mpl_canvases[key] = canvas
 
     #def update_average(self):
     #    # Get the averaged value and update the label
@@ -219,42 +258,42 @@ class MyDisplay(Display):
         table.horizontalHeader().setStyleSheet(header_style)
 
     def scan_openx1(self):
-        self.angle_x1_scan=AngleX1Align(self)
+        self.angle_x1_scan=AngleX1Align(self, canvas=self.mpl_canvases.get('x1'))
         self.startButton=AngleX1Align(self)
         self.angle_x1_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x1_scan.show()
         self.angle_x1_scan.start_scan()
        
     def scan_openx2(self):
-        self.angle_x2_scan=AngleX2Align(self)
+        self.angle_x2_scan=AngleX2Align(self, canvas=self.mpl_canvases.get('x2'))
         self.startButton=AngleX2Align(self)
         self.angle_x2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x2_scan.show()
         self.angle_x2_scan.start_scan()
 
     def scan_openx3(self):
-        self.angle_x3_scan=AngleX3Align(self)
+        self.angle_x3_scan=AngleX3Align(self, canvas=self.mpl_canvases.get('x3'))
         self.startButton=AngleX3Align(self)
         self.angle_x3_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x3_scan.show()
         self.angle_x3_scan.start_scan()
 
     def scan_openx4(self):
-        self.angle_x4_scan=AngleX4Align(self)
+        self.angle_x4_scan=AngleX4Align(self, canvas=self.mpl_canvases.get('x4'))
         self.startButton=AngleX4Align(self)
         self.angle_x4_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_x4_scan.show()
         self.angle_x4_scan.start_scan()
 
     def scan_opencc1(self):
-        self.angle_cc1_scan=AngleCC1Align(self)
+        self.angle_cc1_scan=AngleCC1Align(self, canvas=self.mpl_canvases.get('cc1'))
         self.startButton=AngleCC1Align(self)
         self.angle_cc1_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc1_scan.show()
         self.angle_cc1_scan.start_scan()
 
     def scan_opencc2(self):
-        self.angle_cc2_scan=AngleCC2Align(self)
+        self.angle_cc2_scan=AngleCC2Align(self, canvas=self.mpl_canvases.get('cc2'))
         self.startButton=AngleCC2Align(self)
         self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)
         self.angle_cc2_scan.show()
