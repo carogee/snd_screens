@@ -306,6 +306,28 @@
      <string>X1 ALIGN</string>
     </property>
    </widget>
+   <widget class="PyDMPushButton" name="ScanConfigButton">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>430</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(124, 255, 183);</string>
+    </property>
+    <property name="text">
+     <string>Scan Config</string>
+    </property>
+   </widget>
    <widget class="PyDMPushButton" name="X2">
     <property name="geometry">
      <rect>

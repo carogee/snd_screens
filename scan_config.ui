@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Scan Config</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_main">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_x3">
+      <item>
+       <widget class="QLabel" name="label_x3">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: X3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_x3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_x3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_x3">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_x3">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_x3">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_x3">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_x3">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_x3">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_x3">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_x3">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_x3">
+           <property name="text">
+            <string>Position T4.TH2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_x3">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T4:TH2.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_x3" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T4:TH2.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_x3">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_x3">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_x3">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_x2">
+      <item>
+       <widget class="QLabel" name="label_x2">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: X2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_x2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_x2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_x2">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_x2">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_x2">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_x2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_x2">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_x2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_x2">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_x2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_x2">
+           <property name="text">
+            <string>Position T1.TH2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_x2">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T1:TH2.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_x2" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T1:TH2.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_x2">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_x2">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_x2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_x1">
+      <item>
+       <widget class="QLabel" name="label_x1">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: X1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_x1">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_x1">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_x1">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_x1">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_x1">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_x1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_x1">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_x1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_x1">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_x1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_x1">
+           <property name="text">
+            <string>Position T1.TH1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_x1">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T1:TH1.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_x1" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T1:TH1.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_x1">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_x1">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_x1">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_x4">
+      <item>
+       <widget class="QLabel" name="label_x4">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: X4</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_x4">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_x4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_x4">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_x4">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_x4">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_x4">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_x4">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_x4">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_x4">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_x4">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_x4">
+           <property name="text">
+            <string>Position T4.TH1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_x4">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T4:TH1.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_x4" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T4:TH1.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_x4">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_x4">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_x4">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_cc2">
+      <item>
+       <widget class="QLabel" name="label_cc2">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: CC2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_cc2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_cc2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_cc2">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_cc2">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_cc2">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_cc2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_cc2">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_cc2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_cc2">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_cc2">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_cc2">
+           <property name="text">
+            <string>Position T3.TH</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_cc2">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T3:TH.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_cc2" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T3:TH.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_cc2">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_cc2">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_cc2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_cc1">
+      <item>
+       <widget class="QLabel" name="label_cc1">
+        <property name="styleSheet">
+         <string notr="true">
+background-color: rgb(19, 94, 255);
+qproperty-alignment: AlignCenter;
+border: 1px solid #FF17365D;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+padding: 5 px 0 px;
+color: rgb(255,255,255);
+max-height: 25 px;
+font-size: 14 px;
+</string>
+        </property>
+        <property name="text">
+         <string>Configuring Angle Motor: CC1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_cc1">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(194, 197, 211);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_cc1">
+         <item row="0" column="0">
+          <widget class="QLabel" name="StartRange_cc1">
+           <property name="text">
+            <string>Start Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="startLineEdit_cc1">
+           <property name="precisionFromPV" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="StopRange_cc1">
+           <property name="text">
+            <string>Stop Range (rel):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stopLineEdit_cc1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="nSteps_cc1">
+           <property name="text">
+            <string>Number of Steps:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="stepLineEdit_cc1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="nShots_cc1">
+           <property name="text">
+            <string>Number of Shots:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="PyDMLineEdit" name="nShotsLineEdit_cc1">
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="PyDMLabel" name="PositionLabel_cc1">
+           <property name="text">
+            <string>Position T2.TH</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PositionRBV_cc1">
+           <property name="text">
+            <string>   20.0000 deg</string>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="showUnits" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T2:TH.RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMByteIndicator" name="byte_cc1" native="true">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="channel" stdset="0">
+            <string>CA://XCS:SND:T2:TH.MOVN</string>
+           </property>
+           <property name="showLabels" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="circles" stdset="0">
+            <bool>true</bool>
+           </property>
+           <property name="numBits" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="labels" stdset="0">
+            <stringlist>
+             <string></string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="PyDMPushButton" name="startButton_cc1">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(7, 7, 7);</string>
+           </property>
+           <property name="text">
+            <string>START SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="PyDMPushButton" name="moveToCenter_cc1">
+           <property name="text">
+            <string>Move to Center</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="PyDMPushButton" name="stopButton_cc1">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 86, 52);
+color: rgb(0, 0, 0);</string>
+           </property>
+           <property name="text">
+            <string>STOP SCAN</string>
+           </property>
+           <property name="channel" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

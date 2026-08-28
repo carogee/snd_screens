@@ -775,6 +775,118 @@ class AngleCC2Align(PyDMPushButton):
     def ui_filename(self):
         return file_path
 
+
+# Per-motor scan configuration used by the combined ScanConfig window.
+MOTORS = {
+    'x1':  dict(det=d11, motor=t1th1, pv='XCS:SND:T1:TH1', xlabel='t1.th1', ylabel='diode 11 (normalized)', title='X1'),
+    'x2':  dict(det=d12, motor=t1th2, pv='XCS:SND:T1:TH2', xlabel='t1.th2', ylabel='diode 12 (normalized)', title='X2'),
+    'x3':  dict(det=d15, motor=t4th2, pv='XCS:SND:T4:TH2', xlabel='t4.th2', ylabel='diode 15 (normalized)', title='X3'),
+    'x4':  dict(det=d14, motor=t4th1, pv='XCS:SND:T4:TH1', xlabel='t4.th1', ylabel='diode 14 (normalized)', title='X4'),
+    'cc1': dict(det=d8,  motor=t2th,  pv='XCS:SND:T2:TH',  xlabel='t2.th',  ylabel='diode 8 (normalized)',  title='CC1'),
+    'cc2': dict(det=d9,  motor=t3th,  pv='XCS:SND:T3:TH',  xlabel='t3.th',  ylabel='diode 9 (normalized)',  title='CC2'),
+}
+
+
+class ScanConfig(QWidget):
+    """Combined scan-config window: all 6 angle sections in one 2x3 UI.
+
+    Each section's START/STOP/Move-to-Center buttons drive that motor's scan,
+    drawing the normalized fit into the embedded canvas passed in via
+    ``canvases`` (keyed 'x1'..'cc2')."""
+
+    def __init__(self, parent=None, canvases=None):
+        super(ScanConfig, self).__init__(parent)
+        self.canvases = canvases or {}
+        file_path = os.path.join(current_directory, 'scan_config.ui')
+        uic.loadUi(file_path, self)
+
+        # One RunEngine + Broker shared across all sections.
+        self.RE = RunEngine()
+        self.db = Broker.named('temp')
+        self.results_x = []
+        self.results_y = []
+        self.bec = CustomBestEffortCallback(self.results_x, self.results_y)
+        self.RE.subscribe(self.bec)
+
+        self.center = {}
+
+        for key in MOTORS:
+            # Pre-fill default scan parameters.
+            getattr(self, 'startLineEdit_{}'.format(key)).setText('-0.002')
+            getattr(self, 'stopLineEdit_{}'.format(key)).setText('0.002')
+            getattr(self, 'stepLineEdit_{}'.format(key)).setText('21')
+            getattr(self, 'nShotsLineEdit_{}'.format(key)).setText('60')
+            # Wire this section's buttons (default arg captures the key).
+            getattr(self, 'startButton_{}'.format(key)).clicked.connect(
+                lambda *a, k=key: self.start_scan(k))
+            getattr(self, 'stopButton_{}'.format(key)).clicked.connect(
+                lambda *a, k=key: self.stop_scan(k))
+            getattr(self, 'moveToCenter_{}'.format(key)).clicked.connect(
+                lambda *a, k=key: self.move_to_center(k))
+
+    def _scan_plan(self, key):
+        cfg = MOTORS[key]
+        start = getattr(self, 'startLineEdit_{}'.format(key)).text().strip()
+        if start == "":
+            return
+        start_angle = float(start)
+        end_angle = float(getattr(self, 'stopLineEdit_{}'.format(key)).text())
+        steps = int(getattr(self, 'stepLineEdit_{}'.format(key)).text())
+        n = int(getattr(self, 'nShotsLineEdit_{}'.format(key)).text())
+        positions = np.repeat(np.linspace(start_angle, end_angle, steps), n)
+        yield from rel_list_scan([cfg['det']], cfg['motor'], positions)
+
+    def start_scan(self, key):
+        cfg = MOTORS[key]
+        print("Scanning motor", key)
+        # Fresh buffers each run (the window persists across scans). Clear in
+        # place so the callback keeps referencing the same lists.
+        self.results_x.clear()
+        self.results_y.clear()
+        self.RE(self._scan_plan(key))
+
+        xy_dict = {}  # unique x -> list of y
+        for x, y in zip(self.results_x, self.results_y):
+            xy_dict.setdefault(x, []).append(y)
+        if not xy_dict:
+            print("No data collected for", key)
+            return
+
+        x_unique, y_avg = [], []
+        for x in sorted(xy_dict.keys()):
+            x_unique.append(x)
+            y_avg.append(np.mean(xy_dict[x]))
+
+        print("Fitting rocking curve")
+        initial_guess = [np.mean(x_unique), np.std(x_unique), np.max(y_avg), np.min(y_avg)]
+        popt, _ = curve_fit(gaussian, x_unique, y_avg, p0=initial_guess)
+        center, sigma, amplitude, yoffset = popt
+
+        # Normalize data + fit so baseline -> 0 and peak -> 1.
+        x_fit = np.array(x_unique)
+        y_norm = (np.array(y_avg) - yoffset) / amplitude
+        fit_norm = (gaussian(x_fit, *popt) - yoffset) / amplitude
+        render_fit(self.canvases.get(key), x_fit, y_norm, fit_norm,
+                   cfg['xlabel'], cfg['ylabel'],
+                   '{} Center : {:.5f} FWHM: {:.5f}'.format(cfg['title'], center, 2.333 * sigma))
+
+        self.center[key] = center
+        print(key, "center", center)
+        return center
+
+    def stop_scan(self, key):
+        self.RE.stop()
+        print("Stopped scanning", key)
+
+    def move_to_center(self, key):
+        if key not in self.center:
+            print("No center yet for", key, "- run a scan first")
+            return
+        cfg = MOTORS[key]
+        os.system('caput {} {}'.format(cfg['pv'], self.center[key]))
+        print(key, "moved to center", self.center[key])
+
+
 """
 if __name__=='__main__':
         from pydm import PyDMApplication

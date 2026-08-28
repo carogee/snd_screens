@@ -14,6 +14,7 @@ from pydm.widgets.channel import PyDMChannel
 #from scan_theta import anglex1, anglex2, anglex3, anglex4, anglecc1, anglecc2 
 from pydm.data_plugins.local_plugin import LocalPlugin
 from scan_theta import AngleX1Align, AngleX2Align, AngleX3Align, AngleX4Align, AngleCC1Align, AngleCC2Align
+from scan_theta import ScanConfig
 from dd_in import DDCrystal_MoveIn
 from pydm.widgets.pushbutton import PyDMPushButton
 from pydm.widgets import PyDMLabel
@@ -104,6 +105,7 @@ class MyDisplay(Display):
         self.CC1.clicked.connect(self.scan_opencc1)
         self.CC2.clicked.connect(self.scan_opencc2)
         self.DDCrystalIn.clicked.connect(self.move_ddcrystalin)
+        self.ScanConfigButton.clicked.connect(self.open_scan_config)
 
         # Create a QLabel to display the average value
         #self.average_label = QtWidgets.QLabel(self)  # Use QLabel from QtWidgets
@@ -256,6 +258,12 @@ class MyDisplay(Display):
             }
         """
         table.horizontalHeader().setStyleSheet(header_style)
+
+    def open_scan_config(self):
+        # Combined 2x3 scan-config window; scans draw into the embedded canvases.
+        self.scan_config = ScanConfig(self, canvases=self.mpl_canvases)
+        self.scan_config.setWindowFlags(QtCore.Qt.Window)
+        self.scan_config.show()
 
     def scan_openx1(self):
         self.angle_x1_scan=AngleX1Align(self, canvas=self.mpl_canvases.get('x1'))
