@@ -77,6 +77,13 @@ def gaussian(x, center, sigma, amplitude,yoffset):
 def poly(x,slop,xoffset,yoffset):
     return slop*(x+xoffset)+yoffset
 
+# Default scan input values, applied to each Align popup after its UI loads.
+def set_scan_defaults(widget):
+    widget.startLineEdit.setText('-0.002')   # start range (rel)
+    widget.stopLineEdit.setText('0.002')     # stop range (rel)
+    widget.stepLineEdit.setText('21')        # number of steps
+    widget.nShotsLineEdit.setText('60')      # number of shots
+
 # Render the normalized data + fit either onto an embedded Qt canvas (if given)
 # or into a standalone matplotlib window (fallback, original behavior).
 # On the embedded canvas the most recent 2 scans and their fits are kept and
@@ -147,6 +154,7 @@ class AngleX1Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x1.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -270,6 +278,7 @@ class AngleX2Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x2.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -366,6 +375,7 @@ class AngleX3Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x3.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -472,6 +482,7 @@ class AngleX4Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_x4.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -570,6 +581,7 @@ class AngleCC1Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_cc1.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
@@ -670,6 +682,7 @@ class AngleCC2Align(PyDMPushButton):
         self.canvas = canvas
         file_path = os.path.join(current_directory, 'angle_cc2.ui')
         uic.loadUi(file_path, self)
+        set_scan_defaults(self)
 
         self.startButton.clicked.connect(self.start_scan)
         self.stopButton.clicked.connect(self.stop_scan)
