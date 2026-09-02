@@ -8,6 +8,7 @@ import sys
 import time
 import os
 import numpy as np
+from collections import deque
 import bluesky.plans
 import bluesky.plan_stubs
 
@@ -20,7 +21,7 @@ from bluesky.plan_stubs import abs_set, trigger_and_read, stop, sleep
 from databroker import Broker, catalog
 from ophyd import Component as Cpt
 from ophyd import Device
-from epics import caput
+from epics import caput, caget
 from os import path
 
 #import relevant pydm/qt 
@@ -77,6 +78,33 @@ def gaussian(x, center, sigma, amplitude,yoffset):
 def poly(x,slop,xoffset,yoffset):
     return slop*(x+xoffset)+yoffset
 
+# Motor closed-loop enable check. The motor record's CNEN field is an enum:
+# 0 = Disable, 1 = Enable. A disabled axis will not drive to the commanded
+# position (it stalls and flags MISS), so scanning it is meaningless.
+def motor_enabled(pv):
+    return caget(pv + '.CNEN') == 1
+
+# Guard used by every scan: if the motor is disabled (or its CNEN can't be
+# read), log the reason, pop an error dialog, and return False so the caller
+# aborts the scan instead of driving a disabled axis.
+def check_motor_enabled(widget, pv):
+    cnen = caget(pv + '.CNEN')
+    if cnen == 1:
+        return True
+    if cnen == 0:
+        detail = 'is disabled (CNEN = Disable)'
+    else:
+        detail = 'could not be read (CNEN = {!r})'.format(cnen)
+    msg = ('Cannot scan: motor {pv} {detail}.\n'
+           'Enable it before scanning with:\n'
+           '    caput {pv}.CNEN Enable'.format(pv=pv, detail=detail))
+    print('ERROR:', msg)
+    try:
+        QtWidgets.QMessageBox.critical(widget, 'Motor disabled', msg)
+    except Exception:
+        pass
+    return False
+
 # Default scan input values, applied to each Align popup after its UI loads.
 def set_scan_defaults(widget):
     widget.startLineEdit.setText('-0.002')   # start range (rel)
@@ -90,23 +118,28 @@ def set_scan_defaults(widget):
 # shown together (latest emphasized, previous faded), with a legend.
 def render_fit(canvas, x, y_norm, fit_norm, xlabel, ylabel, title):
     if canvas is not None:
-        # Persist the last 2 (scan, fit) pairs on the canvas across runs.
-        if not hasattr(canvas, 'scan_history'):
-            canvas.scan_history = []
+        # Persist the most recent 2 (scan, fit) pairs on the canvas across runs.
+        # A maxlen=2 deque automatically drops anything older than the last 2,
+        # so a 3rd scan replaces the 1st.
+        if not isinstance(getattr(canvas, 'scan_history', None), deque):
+            canvas.scan_history = deque(maxlen=2)
         canvas.scan_history.append((np.array(x), np.array(y_norm), np.array(fit_norm)))
-        canvas.scan_history = canvas.scan_history[-2:]
 
+        history = list(canvas.scan_history)
         ax = canvas.ax
         ax.clear()
-        colors = {'latest': 'C0', 'previous': 'C1'}
-        n = len(canvas.scan_history)
-        for i, (xh, yh, fh) in enumerate(canvas.scan_history):
+        colors = {'latest': 'C0', 'previous': 'k'}       # previous = black
+        markers = {'latest': 's', 'previous': '.'}       # latest = square
+        sizes = {'latest': 4, 'previous': 6}             # square marker size
+        fit_styles = {'latest': '-.', 'previous': '--'}  # latest = dash-dot
+        n = len(history)
+        for i, (xh, yh, fh) in enumerate(history):
             age = 'latest' if i == n - 1 else 'previous'
             c = colors[age]
             alpha = 1.0 if age == 'latest' else 0.45
-            ax.plot(xh, yh, marker='.', linestyle='none', color=c, alpha=alpha,
-                    label='scan ({})'.format(age))
-            ax.plot(xh, fh, linestyle='--', color=c, alpha=alpha,
+            ax.plot(xh, yh, marker=markers[age], linestyle='none', color=c, alpha=alpha,
+                    markersize=sizes[age], label='scan ({})'.format(age))
+            ax.plot(xh, fh, linestyle=fit_styles[age], color=c, alpha=alpha,
                     label='fit ({})'.format(age))
         ax.set_xlabel(xlabel, fontsize=8)
         ax.set_ylabel(ylabel, fontsize=8)
@@ -208,6 +241,8 @@ class AngleX1Align(PyDMPushButton):
         """
         # Read values from UI and perform a Bluesky scan
         print("Scanning motor x1")
+        if not check_motor_enabled(self, 'XCS:SND:T1:TH1'):
+            return
         scan_results = self.RE(self.anglex1())
         
         xy_dict = {} #dictionary for unique x and average y values
@@ -309,6 +344,8 @@ class AngleX2Align(PyDMPushButton):
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                              
         print("Scanning motor x2")
+        if not check_motor_enabled(self, 'XCS:SND:T1:TH2'):
+            return
         scan_results = self.RE(self.anglex2())
         xy_dict = {} #dictionary for unique x and average y values                                    
         # The results collected during the scan are stored in self.results                    
@@ -416,6 +453,8 @@ class AngleX3Align(PyDMPushButton):
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                                       
         print("Scanning motor x3")
+        if not check_motor_enabled(self, 'XCS:SND:T4:TH2'):
+            return
         scan_results = self.RE(self.anglex3())
         xy_dict = {} #dictionary for unique x and average y values                                           
         # The results collected during the scan are stored in self.results  
@@ -513,6 +552,8 @@ class AngleX4Align(PyDMPushButton):
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                                       
         print("Scanning motor x1")
+        if not check_motor_enabled(self, 'XCS:SND:T4:TH1'):
+            return
         scan_results = self.RE(self.anglex4())
         xy_dict = {} #dictionary for unique x and average y values                                             
         # The results collected during the scan are stored in self.results                                   
@@ -612,6 +653,8 @@ class AngleCC1Align(PyDMPushButton):
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                                       
         print("Scanning motor cc1")
+        if not check_motor_enabled(self, 'XCS:SND:T2:TH'):
+            return
         scan_results = self.RE(self.anglecc1())
 
         xy_dict = {} #dictionary for unique x and average y values                                           
@@ -713,6 +756,8 @@ class AngleCC2Align(PyDMPushButton):
     def start_scan(self):
         # Read values from UI and perform a Bluesky scan                                                       
         print("Scanning motor cc2")
+        if not check_motor_enabled(self, 'XCS:SND:T3:TH'):
+            return
         scan_results = self.RE(self.anglecc2())
         xy_dict = {} #dictionary for unique x and average y values                                           
 
@@ -839,6 +884,8 @@ class ScanConfig(QWidget):
     def start_scan(self, key):
         cfg = MOTORS[key]
         print("Scanning motor", key)
+        if not check_motor_enabled(self, cfg['pv']):
+            return
         # Fresh buffers each run (the window persists across scans). Clear in
         # place so the callback keeps referencing the same lists.
         self.results_x.clear()

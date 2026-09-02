@@ -259,53 +259,38 @@ class MyDisplay(Display):
         """
         table.horizontalHeader().setStyleSheet(header_style)
 
+    def _ensure_scan_config(self):
+        # One shared ScanConfig instance drives both the config window and the
+        # per-motor scan buttons, so they use the same parameters.
+        if getattr(self, 'scan_config', None) is None:
+            self.scan_config = ScanConfig(self, canvases=self.mpl_canvases)
+        return self.scan_config
+
     def open_scan_config(self):
         # Combined 2x3 scan-config window; scans draw into the embedded canvases.
-        self.scan_config = ScanConfig(self, canvases=self.mpl_canvases)
-        self.scan_config.setWindowFlags(QtCore.Qt.Window)
-        self.scan_config.show()
+        cfg = self._ensure_scan_config()
+        cfg.setWindowFlags(QtCore.Qt.Window)
+        cfg.show()
 
+    # The 6 motor buttons start that motor's scan directly, using the current
+    # ScanConfig parameters, WITHOUT opening the configuration window.
     def scan_openx1(self):
-        self.angle_x1_scan=AngleX1Align(self, canvas=self.mpl_canvases.get('x1'))
-        self.startButton=AngleX1Align(self)
-        self.angle_x1_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_x1_scan.show()
-        self.angle_x1_scan.start_scan()
-       
+        self._ensure_scan_config().start_scan('x1')
+
     def scan_openx2(self):
-        self.angle_x2_scan=AngleX2Align(self, canvas=self.mpl_canvases.get('x2'))
-        self.startButton=AngleX2Align(self)
-        self.angle_x2_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_x2_scan.show()
-        self.angle_x2_scan.start_scan()
+        self._ensure_scan_config().start_scan('x2')
 
     def scan_openx3(self):
-        self.angle_x3_scan=AngleX3Align(self, canvas=self.mpl_canvases.get('x3'))
-        self.startButton=AngleX3Align(self)
-        self.angle_x3_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_x3_scan.show()
-        self.angle_x3_scan.start_scan()
+        self._ensure_scan_config().start_scan('x3')
 
     def scan_openx4(self):
-        self.angle_x4_scan=AngleX4Align(self, canvas=self.mpl_canvases.get('x4'))
-        self.startButton=AngleX4Align(self)
-        self.angle_x4_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_x4_scan.show()
-        self.angle_x4_scan.start_scan()
+        self._ensure_scan_config().start_scan('x4')
 
     def scan_opencc1(self):
-        self.angle_cc1_scan=AngleCC1Align(self, canvas=self.mpl_canvases.get('cc1'))
-        self.startButton=AngleCC1Align(self)
-        self.angle_cc1_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_cc1_scan.show()
-        self.angle_cc1_scan.start_scan()
+        self._ensure_scan_config().start_scan('cc1')
 
     def scan_opencc2(self):
-        self.angle_cc2_scan=AngleCC2Align(self, canvas=self.mpl_canvases.get('cc2'))
-        self.startButton=AngleCC2Align(self)
-        self.angle_cc2_scan.setWindowFlags(QtCore.Qt.Window)
-        self.angle_cc2_scan.show()
-        self.angle_cc2_scan.start_scan()
+        self._ensure_scan_config().start_scan('cc2')
 
 
     def move_ddcrystalin(self):
