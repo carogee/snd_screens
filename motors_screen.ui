@@ -736,7 +736,7 @@
        </property>
        <property name="commands" stdset="0">
         <stringlist>
-         <string>/reg/g/pcds/epics-dev/screens/pydm/xcs/snd_screens/snd_run_calc.sh</string>
+         <string>$SND_DIR/snd_run_calc.sh</string>
         </stringlist>
        </property>
        <property name="passwordProtected" stdset="0">
@@ -1446,7 +1446,7 @@ color: rgb(0, 0, 0);
         </property>
         <property name="commands" stdset="0">
          <stringlist>
-          <string>/cds/home/c/cagee/SND/dd_out.sh</string>
+          <string>$SND_DIR/dd_out.sh</string>
          </stringlist>
         </property>
         <property name="passwordProtected" stdset="0">
@@ -1817,7 +1817,7 @@ background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="commands" stdset="0">
          <stringlist>
-          <string>/cds/home/c/cagee/SND/cc_in.sh</string>
+          <string>$SND_DIR/cc_in.sh</string>
          </stringlist>
         </property>
         <property name="passwordProtected" stdset="0">
@@ -1894,7 +1894,7 @@ background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="commands" stdset="0">
          <stringlist>
-          <string>/cds/home/c/cagee/SND/cc_out.sh</string>
+          <string>$SND_DIR/cc_out.sh</string>
          </stringlist>
         </property>
         <property name="passwordProtected" stdset="0">

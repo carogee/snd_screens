@@ -8,8 +8,8 @@ from ophyd import EpicsSignal
 from pcdsdevices import analog_signals
 from time import sleep
 
-from beamline import show_cc, show_delay, show_both
-from beamline import snd_correlation
+from beamline_snd import show_cc, show_delay, show_both
+from beamline_snd import snd_correlation
 
 #from snd_calc import show_cc, show_delay, show_both
 #from snd_calc import snd_correlation

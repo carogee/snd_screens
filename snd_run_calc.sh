@@ -1,4 +1,5 @@
-#!/bin/bash 
+#!/bin/bash
 source pcds_conda
-cd /cds/home/c/cagee/SND
-python snd_run_calc.py
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+python "$SCRIPT_DIR/snd_run_calc.py"
